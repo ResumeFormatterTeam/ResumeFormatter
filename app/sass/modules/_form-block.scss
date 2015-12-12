@@ -1,0 +1,53 @@
+.form-block {
+  margin: 1.5em auto;
+  background-color: $background;
+  max-width: 960px;
+  font-weight: 600;
+  color: $primary1;
+
+  .form-grouping {
+    width: 46%;
+    margin:1em;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+  }
+  .form-full-width {
+    margin: .5em 1em 0 1em;
+    width: 95%;
+  }
+  .button-container {
+    margin: 0 1em 0 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  h2 {
+    padding: .5em;
+    background-color: $primary2;
+    color: $light-background;
+  }
+
+  input, textarea {
+    border: none;
+    padding: .5em;
+    margin: .5em 0;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+
+  button {
+    float: right;
+    font-family: Lato;
+    width: 6em;
+    padding: .75em;
+    margin: 1em 0;
+    border: none;
+    box-shadow: 3px 3px 1px darken($background, 10%);
+    color: $light-background;
+    background-color: $primary2;
+  }
+}

@@ -3,3 +3,10 @@ body {
   min-height: 100vh;
   flex-direction: column;
 }
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: .5em 1.5em .5em 1.5em;
+}
