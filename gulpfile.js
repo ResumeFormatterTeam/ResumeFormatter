@@ -62,6 +62,6 @@ gulp.task('mocha', function() {
     .pipe(mocha({reporter: 'landing'}));
 });
 
-gulp.task('build:dev', ['webpack:dev', 'static:dev', 'sass:dev', 'img:dev']);
+gulp.task('build:dev', ['webpack:dev', 'static:dev', 'sass:dev']);
 gulp.task('default', ['build:dev']);
 

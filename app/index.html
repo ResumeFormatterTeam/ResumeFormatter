@@ -2,47 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="application.css">
   <title>The Amazing Resume Formatter</title>
 </head>
-<body>
+<body data-ng-app="resumeApp" data-ng-controller="ResumesController">
 <header>
   <h1 class="logo">The Amazing Resume Formatter!</h1>
 </header>
 <main>
-  <section class="form-block">
-    <section class="form-block-top">
-        <h2>Personal Info</h2>
-        <button class="collapse" type="button">Collapse</button>
-    </section>
-    <form class="personal-info-form">
-       <div class="form-half-width">
-      <label for="fullName">Full Name:</label>
-        <input type="text" id="firstName" placeholder="First">
-        <input type="text" id="lastName" placeholder="Last">
-        <label for="jobTitle">Job Title:</label>
-        <input type="text" id="jobTitle" placeholder="Bear Wrangler">
-        <label for="phoneNumber">Phone Number:</label>
-        <input type="tel" placeholder="555-555-5555" id="phoneNumber">
-      </div>
-
-      <div class="form-half-width">
-        <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="bearwrangler@example.com">
-        <label for="website">Website:</label>
-        <input type="url" id="website" placeholder="http://www.thebearwranglerlife.com">
-        <label for="linkedIn">LinkedIn:</label>
-        <input type="url" id="linkedIn" placeholder="https://www.linkedin.com/in/bearwrangler">
-      </div>
-      <div class="form-full-width">
-      <label for="personalSummary">Personal Summary:</label>
-      <textarea id="personalSummary" placeholder="I've been a bear wrangler for 25 years. I know how to wrangle all kinds of bears--polar bears, grizzly bears, black, brown, panda, even koala bears. You name it, I can wrangle it."></textarea>
-    </div>
-     <div class="button-container">
-      <button class="save-info-button" type="submit">Save Info</button>
-    </div>
-    </form>
-  </section>
+  <div data-form-block-directive
+  header-text="Personal Info"
+  formClass="personal-info-form">
+    <div class="form-half-width">
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="firstName" placeholder="First">
+    <input type="text" id="lastName" placeholder="Last">
+    <label for="jobTitle">Job Title:</label>
+    <input type="text" id="jobTitle" placeholder="Bear Wrangler">
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" placeholder="555-555-5555" id="phoneNumber">
+  </div>
+  <div class="form-half-width">
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="bearwrangler@example.com">
+    <label for="website">Website:</label>
+    <input type="url" id="website" placeholder="http://www.thebearwranglerlife.com">
+    <label for="linkedIn">LinkedIn:</label>
+    <input type="url" id="linkedIn" placeholder="https://www.linkedin.com/in/bearwrangler">
+  </div>
+  <div class="form-full-width">
+    <label for="personalSummary">Personal Summary:</label>
+    <textarea id="personalSummary" placeholder="I've been a bear wrangler for 25 years. I know how to wrangle all kinds of bears--polar bears, grizzly bears, black, brown, panda, even koala bears. You name it, I can wrangle it."></textarea>
+  </div>
+</div>
   <section class="form-block">
     <section class="form-block-top">
         <h2>Skills</h2>

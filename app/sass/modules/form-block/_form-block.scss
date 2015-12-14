@@ -16,6 +16,12 @@
     align-items: center;
   }
 
+  .transcluded-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
   .form-half-width {
     width: 46%;
     margin:1em;
