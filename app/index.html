@@ -10,10 +10,13 @@
   <h1 class="logo">The Amazing Resume Formatter!</h1>
 </header>
 <main>
-  <section class="form-block personal-info">
-    <h2>Personal Info</h2>
+  <section class="form-block">
+    <section class="form-block-top">
+        <h2>Personal Info</h2>
+        <button class="collapse" type="button">Collapse</button>
+    </section>
     <form class="personal-info-form">
-       <div class="form-grouping">
+       <div class="form-half-width">
       <label for="fullName">Full Name:</label>
         <input type="text" id="firstName" placeholder="First">
         <input type="text" id="lastName" placeholder="Last">
@@ -23,7 +26,7 @@
         <input type="tel" placeholder="555-555-5555" id="phoneNumber">
       </div>
 
-      <div class="form-grouping">
+      <div class="form-half-width">
         <label for="email">Email:</label>
         <input type="email" id="email" placeholder="bearwrangler@example.com">
         <label for="website">Website:</label>
@@ -41,19 +44,73 @@
     </form>
   </section>
   <section class="form-block">
-    <h2>Skills</h2>
+    <section class="form-block-top">
+        <h2>Skills</h2>
+        <button class="collapse" type="button">Collapse</button>
+    </section>
+    <form>
+      <div class="form-full-width">
+        <label for="proficientSkills">Proficient Skils (Comma Separated)</label>
+        <input type="text" id="proficientSkills" placeholder="Mountaineering, Trapping Bears, Wrangling Bears">
+      </div>
+      <div class="form-full-width">
+        <label for="growingSkills">Growing Skills (Comma Separated)</label>
+        <input type="growingSkills" placeholder="Space Travel, Hyena Wrangling, Underwater Lion Taming">
+      </div>
+     <div class="button-container">
+      <button class="save-info-button" type="submit">Save Info</button>
+    </div>
+    </form>
+  </section>
+  <section class="form-block">
+    <section class="form-block-top">
+        <h2>Projects</h2>
+        <button class="collapse" type="button">Collapse</button>
+    </section>
+    <form>
+      <div class="form-half-width">
+        <label for="projectName">Project Name:</label>
+        <input type="text" id="projectName" placeholder="Bear Wranglers Without Borders">
+        <label for="projectUrl">Project Url:</label>
+        <input type="text" id="projectUrl" placeholder="http://www.bearwranglerswithoutborders.com">
+      </div>
+      <div class="form-half-width">
+        <label for="projectCity">City:</label>
+        <input type="text" id="projectCity" placeholder="Billings, MT">
+        <label for="projectDate">Date of Project:</label>
+        <input type="date">
+      </div>
+      <div class="form-full-width">
+        <strong>Bullet Points:</strong>
+        <ul class="bullet-point-inputs">
+          <li>
+            <input type="projectBulletPoint">
+            <button type="button">Remove</button>
+          </li>
+          <li>
+            <input type="projectBulletPoint">
+            <button type="button">Remove</button>
+          </li>
+          <li>
+            <input type="projectBulletPoint">
+            <button type="button">Remove</button>
+          </li>
+        </ul>
+      </div>
+    </form>
+  </section>
+  <section class="form-block">
+    <section class="form-block-top">
+        <h2>Experience</h2>
+        <button class="collapse" type="button">Collapse</button>
+    </section>
     <form></form>
   </section>
   <section class="form-block">
-    <h2>Projects</h2>
-    <form></form>
-  </section>
-  <section class="form-block">
-    <h2>Experience</h2>
-    <form></form>
-  </section>
-  <section class="form-block">
-    <h2>Education</h2>
+    <section class="form-block-top">
+        <h2>Education</h2>
+        <button class="collapse" type="button">Collapse</button>
+    </section>
     <form></form>
   </section>
 </main>

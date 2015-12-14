@@ -5,7 +5,18 @@
   font-weight: 600;
   color: $primary1;
 
-  .form-grouping {
+  .form-block-top {
+    font-family: Lato;
+    padding: 1em;
+    padding-bottom: 0;
+    color: $light-background;
+    background-color: $primary2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form-half-width {
     width: 46%;
     margin:1em;
     min-width: 320px;
@@ -15,6 +26,9 @@
   .form-full-width {
     margin: .5em 1em 0 1em;
     width: 95%;
+    input {
+      width: 100%;
+    }
   }
   .button-container {
     margin: 0 1em 0 0;
@@ -22,10 +36,10 @@
     width: 100%;
   }
 
-  h2 {
-    padding: .5em;
-    background-color: $primary2;
-    color: $light-background;
+  .bullet-point-inputs {
+    input {
+      width: 85%;
+    }
   }
 
   input, textarea {
@@ -38,16 +52,4 @@
     width: 100%;
   }
 
-
-  button {
-    float: right;
-    font-family: Lato;
-    width: 6em;
-    padding: .75em;
-    margin: 1em 0;
-    border: none;
-    box-shadow: 3px 3px 1px darken($background, 10%);
-    color: $light-background;
-    background-color: $primary2;
-  }
 }
