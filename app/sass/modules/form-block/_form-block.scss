@@ -16,27 +16,15 @@
     align-items: center;
   }
 
-  .transcluded-form {
+  .transcluded-flex-wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  .form-half-width {
-    width: 46%;
-    margin:1em;
-    min-width: 320px;
-    display: flex;
-    flex-direction: column;
-  }
-  .form-full-width {
-    margin: .5em 1em 0 1em;
-    width: 95%;
-    input {
-      width: 100%;
-    }
-  }
-  .button-container {
+  .align-right-flex {
+    display:flex;
+    justify-content:flex-end;
     margin: 0 1em 0 0;
     padding: 0;
     width: 100%;
@@ -52,10 +40,6 @@
     border: none;
     padding: .5em;
     margin: .5em 0;
-  }
-
-  textarea {
-    width: 100%;
   }
 
 }
