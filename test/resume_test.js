@@ -18,7 +18,7 @@ describe('resume routes', function() {
     //post all required fields (right now assuming just firstName and lastName)
     var resumeData = {firstName: 'Hannah', lastName: 'Montana'}
     chai.request('localhost:3000')
-      .post('/api/resume')
+      .post('/api/resumes')
       .send(resumeData)
       .end(function(err, res) {
         expect(err).to.eql(null);
@@ -28,13 +28,13 @@ describe('resume routes', function() {
         done();
       });
   });
-  it('should return a json that contains the resume info for a given id', function(done) {
+  it('should return a json that contains all the resume ', function(done) {
     chai.request('localhost:3000')
-    .get('/api/resume/:id')
+    .get('/api/resumes')
     .end(function(err, res) {
       expect(err).to.eql(null);
       expect(res).to.have.status(200);
-      expect(req).to.be.json;
+      expect(res).to.be.json;
       done();
     });
   });
@@ -49,23 +49,21 @@ describe('resume routes', function() {
     });
     it('should be able to modify a resume', function(done) {
       chai.request('localhost:3000')
-        .put('/api/resume/' + this.resume._id)
+        .put('/api/resumes/' + this.resume._id)
         .send({firstName: 'Captain'})
         .end(function(err, res) {
           expect(err).to.eql(null);
-          // string = whatever message is sent back for successful put request
-          expect(res.body.msg).to.eql('update success!');
+          expect(res.body.msg).to.eql('Update successful!');
           done();
         });
     });
 
     it('should be able to remove a resume', function(done) {
       chai.request('localhost:3000')
-        .delete('/api/resume/' + this.resume._id)
+        .delete('/api/resumes/' + this.resume._id)
         .end(function(err, res) {
           expect(err).to.eql(null);
-          // string = whatever message is sent back for successful delete request
-          expect(res.body.msg).to.eql('delete success!');
+          expect(res.body.msg).to.eql('Delete successful!');
           done();
         });
     });

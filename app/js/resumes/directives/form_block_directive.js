@@ -9,6 +9,6 @@ module.exports = function(app) {
         headerText: '@',
         formClass: '@'
       }
-    }
-  })
-}
+    };
+  });
+};
