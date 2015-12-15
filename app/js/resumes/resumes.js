@@ -2,4 +2,5 @@
 module.exports = function(app) {
   require('./controllers/resumes_controller')(app);
   require('./directives/form_block_directive')(app);
+  require('./directives/bullet_point_form_directive')(app);
 };
