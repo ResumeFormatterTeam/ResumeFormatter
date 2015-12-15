@@ -2,7 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var Resume = require(__dirname + '/../models/resume');
 var handleError = require(__dirname + '/../lib/handleError');
-
 var resumesRouter = module.exports = exports = express.Router();
 
 //get
