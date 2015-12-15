@@ -1,0 +1,10 @@
+.collapse {
+    padding: .4em;
+    margin: 0;
+    margin-bottom: 1em;
+    font-size: small;
+    border: none;
+    box-shadow: 3px 3px 1px darken($primary2, 7%);
+    color: $primary1;
+    background-color: $background;
+}

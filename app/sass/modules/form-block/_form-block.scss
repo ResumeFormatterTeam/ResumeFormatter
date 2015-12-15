@@ -1,0 +1,51 @@
+.form-block {
+  margin: 1.5em auto;
+  background-color: $background;
+  max-width: 960px;
+  font-weight: 600;
+  color: $primary1;
+
+  .form-block-top {
+    font-family: Lato;
+    padding: 1em;
+    padding-bottom: 0;
+    color: $light-background;
+    background-color: $primary2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .transcluded-flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .justify-right-flex {
+    display:flex;
+    justify-content:flex-end;
+    margin: 0 1em 0 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .justify-center-flex {
+    display:flex;
+    justify-content:center;
+    margin:-2.5em 0 -.5em;
+  }
+
+  .bullet-point-inputs {
+    input {
+      width: 85%;
+    }
+  }
+
+  input, textarea {
+    border: none;
+    padding: .5em;
+    margin: .5em 0;
+  }
+
+}

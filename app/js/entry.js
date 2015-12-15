@@ -1,7 +1,7 @@
 require('angular/angular');
 var angular = window.angular;
 
-var resumeApp = angular.module('ResumeApp', []);
+var resumeApp = angular.module('resumeApp', []);
 
 //require in all services, controllers, directives, etc.
-require('')(resumeApp);
+require('./resumes/resumes')(resumeApp);

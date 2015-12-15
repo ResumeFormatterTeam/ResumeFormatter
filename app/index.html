@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="application.css">
+  <title>The Amazing Resume Formatter</title>
+</head>
+<body data-ng-app="resumeApp" data-ng-controller="ResumesController">
+<header>
+  <h1 class="logo">The Amazing Resume Formatter!</h1>
+</header>
+<main>
+  <div data-form-block-directive
+  header-text="Personal Info"
+  form-class="personal-info-form">
+    <div class="form-half-width">
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="firstName" placeholder="First">
+    <input type="text" id="lastName" placeholder="Last">
+    <label for="jobTitle">Job Title:</label>
+    <input type="text" id="jobTitle" placeholder="Bear Wrangler">
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" placeholder="555-555-5555" id="phoneNumber">
+  </div>
+  <div class="form-half-width">
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="bearwrangler@example.com">
+    <label for="website">Website:</label>
+    <input type="url" id="website" placeholder="http://www.thebearwranglerlife.com">
+    <label for="linkedIn">LinkedIn:</label>
+    <input type="url" id="linkedIn" placeholder="https://www.linkedin.com/in/bearwrangler">
+  </div>
+  <div class="form-full-width">
+    <label for="personalSummary">Personal Summary:</label>
+    <textarea id="personalSummary" placeholder="I've been a bear wrangler for 25 years. I know how to wrangle all kinds of bears--polar bears, grizzly bears, black, brown, panda, even koala bears. You name it, I can wrangle it."></textarea>
+  </div>
+</div>
+  <section class="form-block">
+    <section class="form-block-top">
+        <h2>Skills</h2>
+        <button class="collapse" type="button">Collapse</button>
+    </section>
+    <form class="form-flex">
+      <div class="form-full-width">
+        <label for="proficientSkills">Proficient Skils (Comma Separated)</label>
+        <input type="text" id="proficientSkills" placeholder="Mountaineering, Trapping Bears, Wrangling Bears">
+      </div>
+      <div class="form-full-width">
+        <label for="growingSkills">Growing Skills (Comma Separated)</label>
+        <input type="growingSkills" placeholder="Space Travel, Hyena Wrangling, Underwater Lion Taming">
+      </div>
+     <div class="justify-right-flex">
+      <button class="save-info-button" type="submit">Save Info</button>
+    </div>
+    </form>
+  </section>
+  <section class="form-block">
+    <section class="form-block-top">
+        <h2>Projects</h2>
+        <button class="collapse" type="button">Collapse</button>
+    </section>
+    <form class="form-flex">
+      <div class="form-half-width">
+        <label for="projectName">Project Name:</label>
+        <input type="text" id="projectName" placeholder="Bear Wranglers Without Borders">
+        <label for="projectUrl">Project Url:</label>
+        <input type="text" id="projectUrl" placeholder="http://www.bearwranglerswithoutborders.com">
+      </div>
+      <div class="form-half-width">
+        <label for="projectCity">City:</label>
+        <input type="text" id="projectCity" placeholder="Billings, MT">
+        <label for="projectDate">Date of Project:</label>
+        <input type="date">
+      </div>
+      <div class="form-full-width">
+        <strong>Bullet Points:</strong>
+        <ul class="bullet-point-inputs">
+          <li>
+            <input type="projectBulletPoint">
+            <button type="button">Remove</button>
+          </li>
+          <li>
+            <input type="projectBulletPoint">
+            <button type="button">Remove</button>
+          </li>
+          <li>
+            <button class="add-line-button" type="button">Add Another Line &nbsp; &nbsp; &#x25BA;</button>
+          </li>
+        </ul>
+      </div>
+    <div class="form-full-width">
+    <div class="justify-right-flex">
+      <button class="save-info-button" type="submit">Save Info</button>
+    </div>
+    <div class="justify-center-flex">
+      <button type="button" class="expand-below-button">&#x25BC; Add Another Project &#x25BC;</button>
+    </div>
+    </div>
+    </form>
+  </section>
+  <section class="form-block">
+    <section class="form-block-top">
+        <h2>Experience</h2>
+        <button class="collapse" type="button">Collapse</button>
+    </section>
+    <form class="form-flex">
+      <div class="form-half-width">
+        <label for="jobName">Company Name:</label>
+        <input type="text" id="jobName" placeholder="Bear Wranglers International">
+        <label for="jobTitle">Job Title:</label>
+        <input type="text" id="jobName" placeholder="VP of Bear Wrangling">
+        <label for="companyUrl">Company Url:</label>
+        <input type="text" id="companyUrl" placeholder="http://www.bearwranglersinternational.com">
+      </div>
+      <div class="form-half-width">
+        <label for="jobCity">City:</label>
+        <input type="text" id="companyCity" placeholder="Billings, MT">
+        <label for="startDate">Start Date:</label>
+        <input type="text">
+        <label for="endDate">End Date:</label>
+        <input type="text">
+      </div>
+      <div class="form-full-width">
+        <strong>Bullet Points:</strong>
+        <ul class="bullet-point-inputs">
+          <li>
+            <input type="projectBulletPoint">
+            <button type="button">Remove</button>
+          </li>
+          <li>
+            <input type="projectBulletPoint">
+            <button type="button">Remove</button>
+          </li>
+          <li>
+            <button class="add-line-button" type="button">Add Another Line &nbsp; &nbsp; &#x25BA;</button>
+          </li>
+        </ul>
+      </div>
+      <div class="form-full-width">
+      <div class="justify-right-flex">
+        <button class="save-info-button" type="submit">Save Info</button>
+      </div>
+      <div class="justify-center-flex">
+        <button type="button" class="expand-below-button">&#x25BC; Add Another Job &#x25BC;</button>
+      </div>
+      </div>
+    </form>
+  </section>
+  <section class="form-block">
+    <section class="form-block-top">
+        <h2>Education</h2>
+        <button class="collapse" type="button">Collapse</button>
+    </section>
+    <form class="form-flex">
+      <div class="form-half-width">
+        <label for="institutionName">Institution Name:</label>
+        <input type="text" id="institutionName" placeholder="Western Wrangler University">
+        <label for="degree">Degree:</label>
+        <input type="text" id="degree" placeholder="B.S.">
+        <label for="major">Major:</label>
+        <input type="text" id="major" placeholder="Bear Wrangling">
+      </div>
+      <div class="form-half-width">
+        <label for="minor">Minor:</label>
+        <input type="text" id="major" placeholder="Underwater Lion Taming">
+        <label for="startDate">Start Date:</label>
+        <input type="text">
+        <label for="endDate">End Date:</label>
+        <input type="text">
+      </div>
+      <div class="form-full-width">
+      <div class="justify-right-flex">
+        <button class="save-info-button" type="submit">Save Info</button>
+      </div>
+      <div class="justify-center-flex">
+        <button type="button" class="expand-below-button">&#x25BC; Add Another Institution &#x25BC;</button>
+      </div>
+      </div>
+    </form>
+  </section>
+</main>
+<footer>
+  Copyright 2015: The Amazing Resume Formatter Team.
+</footer>
+<script src="bundle.js"></script>
+</body>
+</html>
