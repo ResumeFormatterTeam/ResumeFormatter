@@ -1,10 +1,11 @@
 require('angular/angular');
+require('angular-animate');
 require('angular-route');
 require('angular-cookies');
 require('angular-base64');
 var angular = window.angular;
 
-var resumeApp = angular.module('resumeApp', ['ngRoute', 'ngCookies', 'base64']);
+var resumeApp = angular.module('resumeApp', ['ngAnimate', 'ngRoute', 'ngCookies', 'base64']);
 
 require('./resumes/resumes')(resumeApp);
 require('./users/users')(resumeApp);
