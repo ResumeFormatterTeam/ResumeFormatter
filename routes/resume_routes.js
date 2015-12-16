@@ -25,6 +25,7 @@ resumesRouter.get('/resumes/:id', function(req, res) {
 //create
 resumesRouter.post('/resumes', bodyParser.json(), function(req, res) {
   var newResume = new Resume(req.body);
+  console.log(newResume);
   newResume.save(function(err, data) {
     if (err) return handleError(err, res);
     res.json(data);

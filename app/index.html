@@ -6,13 +6,16 @@
   <link rel="stylesheet" href="application.css">
   <title>The Amazing Resume Formatter</title>
 </head>
-<body data-ng-app="resumeApp" data-ng-controller="ResumesController">
+<body data-ng-app="resumeApp" data-ng-controller="ResumeController" data-ng-init="getAll()">
 <header>
   <h1 class="logo">The Amazing Resume Formatter!</h1>
 </header>
 <main>
 
   <div data-form-block-directive
+  data-form-name="newPersonalForm"
+  data-resume="newResume"
+  data-save="create(resume)"
   header-text="Personal Info"
   form-class="personal-info-form"
   expand-class="hidden">

@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  app.controller('ResumesController', ['$scope', '$http', 'crudResource', function($scope, $http, crudResource){
+  app.controller('ResumeController', ['$scope', '$http', 'crudResource', function($scope, $http, crudResource){
     $scope.resumes = [];
     $scope.errors = [];
     // $scope.savedResume = {};
@@ -22,6 +22,7 @@ module.exports = function(app) {
       resumeResource.create(resumes, function (err, data) {
         if (err) return err;
 
+        console.log(resumes);
         $scope.resumes.push(data);
         $scope.newResume = angular.copy(defaults);
       });
