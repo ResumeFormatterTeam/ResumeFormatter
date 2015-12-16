@@ -3,15 +3,15 @@
       <h2>{{headerText}}</h2>
       <button class="collapse" type="button">Collapse</button>
     </section>
-    <form class="form-flex {{formClass}}">
-      <div ng-transclude class="transcluded-flex-wrap">
+    <form class="{{formClass}}">
+      <div ng-transclude>
      </div>
      <div class="form-full-width">
-     <div class="justify-right-flex">
+    <div class="justify-right-flex">
       <button class="save-info-button" type="submit">Save Info</button>
     </div>
-    <div class="justify-center-flex">
-      <button type="button" class="expand-below-button">&#x25BC; Add Another Institution &#x25BC;</button>
+    <div class="{{expandClass}}">
+      <button type="button" class="expand-below-button">&#x25BC; Add Another {{formType}} &#x25BC;</button>
     </div>
   </div>
   </form>
