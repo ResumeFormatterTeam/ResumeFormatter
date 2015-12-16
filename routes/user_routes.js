@@ -2,6 +2,7 @@ var express = require('express');
 var jsonParser = require('body-parser').json();
 var handleError = require(__dirname + '/../lib/handleError');
 var basicHttp = require(__dirname + '/../lib/basic_http_auth');
+var eatAuth = require(__dirname + '/../lib/eat_auth');
 var User = require(__dirname + '/../models/user');
 var usersRouter = module.exports = exports = express.Router();
 
@@ -14,8 +15,11 @@ usersRouter.post('/signup', jsonParser, function(req, res) {
   user.save(function(err, data) {
     if (err) return handleError(err, res);
 
-    user.generateToken(function(err, token) {
-      if (err) return handleError(err, res);
+    // user.generateToken(function(err, token) {
+    //   if (err) return handleError(err, res);
+    //   res.json({token: token});
+    // });
+    data.generateToken(function(err, token) {
       res.json({token: token});
     });
   });
@@ -43,4 +47,8 @@ usersRouter.get('/signin', basicHttp, function(req, res) {
       res.json({token: token});
     });
   });
+});
+
+usersRouter.get('/users', eatAuth, function(req, res) {
+  res.json({username: req.user.username});
 });

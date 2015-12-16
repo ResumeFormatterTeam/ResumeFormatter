@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var resumeSchema = new mongoose.Schema({
+  userId: String,
   firstName: String,
   lastName: String,
   jobTitle: String,
