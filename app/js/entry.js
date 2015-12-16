@@ -11,7 +11,7 @@ require('./users/users')(resumeApp);
 resumeApp.config(['$routeProvider', function($route) {
   $route
   .when('/resumes', {
-    templateUrl: 'templates/personal_info_form_template.html', //but also need to add in all of the other templates.
+    templateUrl: 'templates/personal_info_form_template.html', //but also need to load in all of the other resume templates
     controller: 'ResumesController'
   })
   .when('/signup', {

@@ -10,7 +10,10 @@
 <header>
   <h1 class="logo">The Amazing Resume Formatter!</h1>
 </header>
-<main>
+  <div data-ng-controller="AuthController" data-ng-init="getUser()">
+    <a data-ng-if="currentUser" href data-ng-click="logOut()">Log Out of {{currentUser}}</a>
+
+<main data-ng-view>
   <div data-form-block-directive
   header-text="Personal Info"
   form-class="personal-info-form"
@@ -60,6 +63,7 @@
 </div>
 
 </main>
+</div>
 <footer>
   Copyright 2015: The Amazing Resume Formatter Team.
 </footer>
