@@ -1,40 +1,7 @@
 var mongoose = require('mongoose');
 
-// var proficientSkillsSchema = new mongoose.Schema({
-//   proficientSkills: String,
-// });
-
-// var growingSkillsSchema = new mongoose.Schema({
-//   growingSkills: String,
-// });
-
-// var projectsSchema = new mongoose.Schema({
-//   projectName: String,
-//   projectUrl: String,
-//   projectCity: String,
-//   projectDate: String,
-//   projectBulletPoint: String,
-// });
-
-// var experienceSchema = new mongoose.Schema({
-//   companyName: String,
-//   jobTitle: String,
-//   companyUrl: String,
-//   companyCity: String,
-//   startDate: String,
-//   endDate: String,
-//   jobBulletPoint: String,
-// });
-
-// var educationSchema = new mongoose.Schema({
-//   institutionName: String,
-//   degree: String,
-//   major: String,
-//   minor: String,
-//   date: String,
-// });
-
 var resumeSchema = new mongoose.Schema({
+  userId: String,
   firstName: String,
   lastName: String,
   jobTitle: String,
