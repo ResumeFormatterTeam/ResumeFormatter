@@ -1,3 +1,4 @@
+
 .form-block {
   margin: 1.5em auto;
   background-color: $background;
@@ -19,13 +20,13 @@
   .form-block-bottom.ng-hide-add, .form-block-bottom.ng-hide-remove {
   /* this is required as of 1.3x to properly
      apply all styling in a show/hide animation */
-  transition: 0s linear all !important;
+  transition: 0s linear all;
 }
 
   .form-block-bottom.ng-hide-add-active,
   .form-block-bottom.ng-hide-remove-active {
   /* the transition is defined in the active class */
-  transition: 1s linear all !important;
+  transition: .4s linear all;
 }
 
   .transcluded-flex-wrap {
