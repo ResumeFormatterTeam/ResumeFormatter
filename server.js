@@ -12,6 +12,8 @@ app.use(express.static(__dirname + '/build/'));
 app.use('/api', resumesRouter);
 // app.use('/api', usersRouter);
 
-app.listen(3000, function() {
-  console.log('Server up & running!');
+var port = process.env.PORT || 3000;
+
+app.listen(port, function() {
+  console.log('Server up & running on port: ' + port +"!!");
 });
