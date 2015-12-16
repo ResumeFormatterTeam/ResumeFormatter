@@ -16,6 +16,18 @@
     align-items: center;
   }
 
+  .form-block-bottom.ng-hide-add, .form-block-bottom.ng-hide-remove {
+  /* this is required as of 1.3x to properly
+     apply all styling in a show/hide animation */
+  transition: 0s linear all !important;
+}
+
+  .form-block-bottom.ng-hide-add-active,
+  .form-block-bottom.ng-hide-remove-active {
+  /* the transition is defined in the active class */
+  transition: 1s linear all !important;
+}
+
   .transcluded-flex-wrap {
     display: flex;
     flex-wrap: wrap;
@@ -34,6 +46,10 @@
     display:flex;
     justify-content:center;
     margin:-2.5em 0 -.5em;
+  }
+
+  .hidden {
+    display: none;
   }
 
   .bullet-point-inputs {
