@@ -7,6 +7,6 @@ module.exports = function(app) {
       scope: {
         bulletPointType: '@'
       }
-    }
-  })
-}
+    };
+  });
+};
