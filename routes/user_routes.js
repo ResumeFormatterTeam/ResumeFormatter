@@ -22,7 +22,6 @@ usersRouter.post('/signup', jsonParser, function(req, res) {
 });
 
 usersRouter.get('/signin', basicHttp, function(req, res) {
-
   User.findOne({'basic.username': req.auth.username}, function(err, user) {
     if (err) {
       console.log('Error');
