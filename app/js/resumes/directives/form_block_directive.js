@@ -7,7 +7,9 @@ module.exports = function(app) {
       templateUrl: '/templates/form_block_template.html',
       scope: {
         headerText: '@',
-        formClass: '@'
+        formClass: '@',
+        expandClass: '@', //.hidden or .justify-center-flex
+        formType: '@' //Institution, Job, or Project
       }
     };
   });
