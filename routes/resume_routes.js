@@ -13,6 +13,15 @@ resumesRouter.get('/resumes', function(req, res) {
   });
 });
 
+//get request to specific resume by id
+resumesRouter.get('/resumes/:id', function(req, res) {
+  Resume.find({_id: req.params.id}, function(err, data) {
+    if(err) return handleError(err, res);
+
+    res.json(data)
+  });
+});
+
 //create
 resumesRouter.post('/resumes', bodyParser.json(), function(req, res) {
   var newResume = new Resume(req.body);
