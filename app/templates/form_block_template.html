@@ -1,9 +1,9 @@
   <section class="form-block">
     <section class="form-block-top">
       <h2>{{headerText}}</h2>
-      <button class="collapse" type="button" ng-model="collapsed" ng-click="collapsed=!collapsed">Collapse</button>
+      <button class="collapse" type="button" data-ng-model="collapsed" data-ng-click="collapsed=!collapsed">Collapse</button>
     </section>
-    <form class="{{formClass}} form-block-bottom" ng-hide="collapsed">
+    <form data-ng-animate="'animate'" class="{{formClass}} form-block-bottom animate-show" ng-hide="collapsed">
       <div ng-transclude>
      </div>
      <div class="form-full-width">
