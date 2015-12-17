@@ -13,12 +13,12 @@ usersRouter.post('/signup', jsonParser, function(req, res) {
   user.hashPW(req.body.password);
 
   user.save(function(err, data) {
-    if (err) return handleError(err, res);
+    if (err) {
+      console.log('The username "' + user.basic.username + '" already exists.');
+      // swal("Oops...", "The username already exists!", "error");
+      return handleError(err, res);
+    }
 
-    // user.generateToken(function(err, token) {
-    //   if (err) return handleError(err, res);
-    //   res.json({token: token});
-    // });
     data.generateToken(function(err, token) {
       res.json({token: token});
     });
@@ -34,11 +34,13 @@ usersRouter.get('/signin', basicHttp, function(req, res) {
 
     if (!user) {
       console.log('Incorrect username and/or password');
+      // swal("Oops...", "Incorrect username and/or password!", "error");
       return res.status(401).json({msg: 'Access denied: Incorrect username and/or password.'});
     }
 
     if (!user.checkPW(req.auth.password)) {
       console.log('Incorrect username and/or password');
+      // swal("Oops...", "Incorrect username and/or password!", "error");
       return res.status(401).json({msg: 'Access denied: Incorrect username and/or password.'});
     }
 
