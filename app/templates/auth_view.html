@@ -1,5 +1,7 @@
 <section>
   <h1>{{headingText}}</h1>
+  <button type="button" data-ng-click="changePlaces()">Switch</button>
+
   <form name="authForm" data-ng-submit="authenticate(user)">
     <label for="username">Username:</label>
     <input type="text" id="username" required data-ng-model="user.username">
@@ -7,5 +9,5 @@
     <input type="password" id="password" required data-ng-model="user.password">
     <button type="submit" data-ng-disabled="authForm.$invalid">{{buttonText}}</button>
   </form>
-  <button type="button" data-ng-click="changePlaces()">Switch</button>
+
 </section>
