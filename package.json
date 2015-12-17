@@ -2,7 +2,7 @@
   "name": "resume_formatter",
   "version": "1.0.0",
   "description": "A Tool To Help Create Clean and Reader Friendly Resumes",
-  "main": "entry.js",
+  "main": "server.js",
   "directories": {
     "test": "test"
   },
