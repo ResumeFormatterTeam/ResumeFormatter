@@ -1,12 +1,24 @@
 body {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  min-height: 100vh;
+
 
   -webkit-transition: all 0.10s ease-in-out 0s;
   -moz-transition: all 0.10s ease-in-out 0s;
   -o-transition: all 0.10s ease-in-out 0s;
   transition: all 0.10s ease-in-out 0s;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form-blocks {
+    display: flex;
+    flex-direction: column;
 }
 
 .ng-enter, .ng-leave, .ng-hide, .ng-show {

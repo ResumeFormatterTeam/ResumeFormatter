@@ -6,18 +6,27 @@
   <link rel="stylesheet" href="application.css">
   <title>The Amazing Resume Formatter</title>
 </head>
-<body data-ng-app="resumeApp" data-ng-controller="ResumeController" data-ng-init="getAll()">
+<body data-ng-app="resumeApp" data-ng-controller="ResumeController" data-ng-init="formAndResume=true; adjustLayoutWidth()">
 <header>
   <h1 class="logo">The Amazing Resume Formatter!</h1>
 </header>
+<section class="top-interface-buttons">
+  <h3>Display:</h3>
+  <button type="button" data-ng-click="formOnly=true;resumeOnly=false;formAndResume=false; adjustLayoutWidth()">Form Only</button>
+  <button type="button" data-ng-click="formOnly=false;resumeOnly=true;formAndResume=false; adjustLayoutWidth()">Resume Only</button>
+  <button type="button" data-ng-click="formOnly=false;resumeOnly=false;formAndResume=true; adjustLayoutWidth()">Form & Resume</button>
+  <button class="save-info-button" type="submit">Save Resume!</button>
+  Start typing in the fields and watch your resume come to life!
+</section>
 <main>
 
+<section class="form-blocks" data-ng-if="formOnly===true || formAndResume===true">
   <div data-form-block-directive
   data-form-name="newPersonalForm"
   data-resume="newResume"
   data-save="create(resume)"
   header-text="Personal Info"
-  form-class="personal-info-form"
+  form-class="{{layoutWidth}}"
   expand-class="hidden">
     <div class="form-flex-wrap" ng-include src="'templates/personal_info_form_template.html'">
       <!-- ng-include directive includes personal info form template -->
@@ -26,7 +35,7 @@
 
   <div data-form-block-directive
   header-text="Skills"
-  form-class="skills-form"
+  form-class="{{layoutWidth}}"
   expand-class="hidden">
   <div class="form-flex-wrap" ng-include src="'templates/skills_form_template.html'">
       <!-- ng-include directive includes skills form template -->
@@ -35,7 +44,7 @@
 
 <div  data-form-block-directive
   header-text="Projects"
-  form-class="projects-form"
+  form-class="{{layoutWidth}}"
   expand-class="justify-center-flex"
   form-type="Project">
   <div class="form-flex-wrap" ng-include src="'templates/projects_form_template.html'">
@@ -45,7 +54,7 @@
 
 <div  data-form-block-directive
   header-text="Experience"
-  form-class="experience-form"
+  form-class="{{layoutWidth}}"
   expand-class="justify-center-flex"
   form-type="Job">
   <div class="form-flex-wrap" ng-include src="'templates/experience_form_template.html'">
@@ -55,14 +64,15 @@
 
 <div  data-form-block-directive
   header-text="Education"
-  form-class="education-form"
+  form-class="{{layoutWidth}}"
   expand-class="justify-center-flex"
   form-type="Institution">
   <div class="form-flex-wrap" ng-include src="'templates/education_form_template.html'">
       <!-- ng-include directive includes education form template -->
   </div>
 </div>
-
+</section>
+<div class="formatted-resume" data-ng-if="resumeOnly===true || formAndResume===true" ng-include src="'templates/formatted_resume_template.html'"></div>
 </main>
 <footer>
   Copyright 2015: The Amazing Resume Formatter Team.

@@ -1,9 +1,17 @@
 module.exports = function(app) {
-  app.controller('ResumeController', ['$scope', '$http', 'crudResource', function($scope, $http, crudResource){
+  app.controller('ResumeController', ['$scope', '$http', 'crudResource', 'currentResume', function($scope, $http, crudResource, currentResume){
     $scope.resumes = [];
     $scope.errors = [];
+    $scope.resume = currentResume();
     // $scope.savedResume = {};
     //need to set default fields?
+    $scope.adjustLayoutWidth = function() {
+    if ($scope.formAndResume){
+      $scope.layoutWidth = 'form-and-resume-layout';
+    } else {
+      $scope.layoutWidth = 'full-width-centered-layout';
+    }
+  }
     var defaults = {};
     $scope.newResume = angular.copy($scope.defaults);
     var resumeResource = crudResource('resumes');
