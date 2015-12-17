@@ -44,7 +44,6 @@
     "webpack-stream": "^3.0.1"
   },
   "scripts": {
-    "postinstall": "gulp default",
     "start": "node server.js"
   },
   "repository": {
