@@ -16,7 +16,7 @@ resumeApp.config(['$routeProvider', function($route) {
   $route
   .when('/resumes', {
     templateUrl: 'templates/main_template.html',
-    controller: 'ResumesController'
+    controller: 'ResumeController'
   })
   .when('/signup', {
     templateUrl: '/templates/auth_view.html',
