@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A Tool To Help Create Clean and Reader Friendly Resumes",
   "main": "server.js",
+  "version": {
+    "node": "0.12.5"
+  },
   "directories": {
     "test": "test"
   },
