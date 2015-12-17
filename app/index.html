@@ -5,8 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="application.css">
+
+  <!-- sweetalert
+  <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="node_modules.sweetalert/dist/sweetalert.css">
+ -->
   <title>The Amazing Resume Formatter</title>
 </head>
+
 <body data-ng-app="resumeApp" data-ng-controller="ResumeController">
 <header>
   <h1 class="logo">The Amazing Resume Formatter!</h1>
@@ -16,9 +22,12 @@
 
     <main data-ng-view></main>
   </div>
-<footer>
-  Copyright 2015: The Amazing Resume Formatter Team.
-</footer>
-<script src="bundle.js"></script>
+
+  <footer>
+    Copyright 2015: The Amazing Resume Formatter Team.
+  </footer>
+
+  <script src="bundle.js"></script>
 </body>
+
 </html>
