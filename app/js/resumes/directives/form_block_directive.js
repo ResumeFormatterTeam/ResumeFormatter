@@ -9,7 +9,10 @@ module.exports = function(app) {
         headerText: '@',
         formClass: '@',
         expandClass: '@', //.hidden or .justify-center-flex
-        formType: '@' //Institution, Job, or Project
+        formType: '@', //Institution, Job, or Project
+        fromName: '@',
+        resume: '=',
+        save: '&'
       }
     };
   });
