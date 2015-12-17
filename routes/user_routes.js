@@ -13,12 +13,11 @@ usersRouter.post('/signup', jsonParser, function(req, res) {
   user.hashPW(req.body.password);
 
   user.save(function(err, data) {
-    if (err) return handleError(err, res);
+    if (err) {
+      console.log('Username already exists.');
+      return handleError(err, res);
+    }
 
-    // user.generateToken(function(err, token) {
-    //   if (err) return handleError(err, res);
-    //   res.json({token: token});
-    // });
     data.generateToken(function(err, token) {
       res.json({token: token});
     });

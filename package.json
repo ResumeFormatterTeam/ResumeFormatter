@@ -11,13 +11,14 @@
     "body-parser": "^1.14.1",
     "eat": "^0.1.1",
     "express": "^4.13.3",
-    "mongoose": "^4.3.1"
+    "mongoose": "^4.3.1",
+    "mongoose-unique-validator": "^0.6.2"
   },
   "devDependencies": {
     "angular": "^1.4.8",
+    "angular-animate": "^1.4.8",
     "angular-base64": "^2.0.5",
     "angular-cookies": "^1.4.8",
-    "angular-animate": "^1.4.8",
     "angular-mocks": "^1.4.8",
     "angular-route": "^1.4.8",
     "chai": "^3.4.1",
