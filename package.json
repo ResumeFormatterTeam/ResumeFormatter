@@ -12,14 +12,6 @@
     "eat": "^0.1.1",
     "express": "^4.13.3",
     "gulp": "^3.9.0",
-    "gulp-jshint": "^2.0.0",
-    "gulp-minify-css": "^1.2.2",
-    "gulp-mocha": "^2.2.0",
-    "gulp-sass": "^2.1.1",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-watch": "^4.3.5",
-    "jshint": "^2.8.0",
-    "mocha": "^2.3.4",
     "mongoose": "^4.3.1",
     "mongoose-unique-validator": "^0.6.2",
     "webpack-stream": "^3.1.0"
@@ -52,7 +44,7 @@
     "webpack-stream": "^3.0.1"
   },
   "scripts": {
-    "install": "gulp default",
+    "postinstall": "gulp default",
     "start": "node server.js"
   },
   "repository": {
