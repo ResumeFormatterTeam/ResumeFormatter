@@ -30,7 +30,8 @@ module.exports = function(app) {
       resumeResource.create(resumes, function (err, data) {
         if (err) return err;
 
-        console.log(resumes);
+        console.log(data);
+        console.log(resumes)
         $scope.resumes.push(data);
         $scope.newResume = angular.copy(defaults);
       });
