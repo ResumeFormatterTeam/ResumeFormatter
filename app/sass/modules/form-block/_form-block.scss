@@ -1,10 +1,19 @@
 
 .form-block {
-  margin: 1.5em auto;
+  margin: 1em;
   background-color: $background;
-  max-width: 960px;
   font-weight: 600;
   color: $primary1;
+
+  .form-and-resume-layout{
+  width: 100%;
+  max-width: 24.375em;
+  }
+
+  .full-width-centered-layout {
+  width: 100%;
+  max-width: 48.750em;
+  }
 
   .form-block-top {
     font-family: Lato;

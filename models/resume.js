@@ -5,7 +5,7 @@ var resumeSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   jobTitle: String,
-  phoneNumber: Number,
+  phoneNumber: String,
   email: String,
   website: String,
   linkedIn: String,

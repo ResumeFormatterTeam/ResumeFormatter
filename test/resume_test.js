@@ -47,6 +47,16 @@ describe('resume routes', function() {
         done();
       }.bind(this));
     });
+    it('should be able to get an specific resume', function(done) {
+      chai.request('localhost:3000')
+        .get('/api/resumes/' + this.resume._id)
+        .end(function(err, res) {
+          expect(err).to.eql(null);
+          expect(res).to.have.status(200);
+          expect(res).to.be.json;
+          done();
+        });
+    });
     it('should be able to modify a resume', function(done) {
       chai.request('localhost:3000')
         .put('/api/resumes/' + this.resume._id)
