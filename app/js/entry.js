@@ -13,21 +13,21 @@ require('./services/services')(resumeApp);
 require('./resumes/resumes')(resumeApp);
 require('./users/users')(resumeApp);
 
-resumeApp.config(['$routeProvider', function($route) {
-  $route
-  .when('/resumes', {
-    templateUrl: 'templates/main_template.html',
-    controller: 'ResumeController'
-  })
-  .when('/signup', {
-    templateUrl: '/templates/auth_view.html',
-    controller: 'SignupController'
-  })
-  .when('/signin', {
-    templateUrl: '/templates/auth_view.html',
-    controller: 'SigninController'
-  })
-  .otherwise({
-    redirectTo: '/signup'
-  })
-}]);
+// resumeApp.config(['$routeProvider', function($route) {
+//   $route
+//   .when('/resumes', {
+//     templateUrl: 'templates/main_template.html',
+//     controller: 'ResumeController'
+//   })
+//   .when('/signup', {
+//     templateUrl: '/templates/auth_view.html',
+//     controller: 'SignupController'
+//   })
+//   .when('/signin', {
+//     templateUrl: '/templates/auth_view.html',
+//     controller: 'SigninController'
+//   })
+//   .otherwise({
+//     redirectTo: '/signup'
+//   })
+// }]);
