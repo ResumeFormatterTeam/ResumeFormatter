@@ -3,6 +3,7 @@ require('angular-animate');
 require('angular-route');
 require('angular-cookies');
 require('angular-base64');
+// require('sweetalert');
 var angular = window.angular;
 
 var resumeApp = angular.module('resumeApp', ['ngAnimate', 'ngRoute', 'ngCookies', 'base64']);

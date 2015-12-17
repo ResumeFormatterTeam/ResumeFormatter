@@ -11,7 +11,7 @@ var userSchema = new mongoose.Schema({
   }
 });
 
-userSchema.plugin(uniqueValidator)
+userSchema.plugin(uniqueValidator);
 
 userSchema.methods.hashPW = function(password) {
   var hash = this.basic.password = bcrypt.hashSync(password, 8);
