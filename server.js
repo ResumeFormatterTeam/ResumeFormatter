@@ -6,7 +6,7 @@ var resumesRouter = require(__dirname + '/routes/resume_routes');
 var usersRouter = require(__dirname + '/routes/user_routes');
 
 process.env.APP_SECRET = process.env.APP_SECRET || 'somethingelse';
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://heroku_8j4lqmhv:6artmsqdrr9uamguvdepgrpij4@ds033135.mongolab.com:33135/heroku_8j4lqmhv');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/resume_app');
 
 app.use(express.static(__dirname + '/build/'));
 app.use('/api', resumesRouter);
