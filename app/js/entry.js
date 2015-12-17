@@ -7,6 +7,8 @@ var angular = window.angular;
 
 var resumeApp = angular.module('resumeApp', ['ngAnimate', 'ngRoute', 'ngCookies', 'base64']);
 
+//require in all services, controllers, directives, etc.
+require('./services/services')(resumeApp);
 require('./resumes/resumes')(resumeApp);
 require('./users/users')(resumeApp);
 
@@ -14,7 +16,7 @@ resumeApp.config(['$routeProvider', function($route) {
   $route
   .when('/resumes', {
     templateUrl: 'templates/main_template.html',
-    controller: 'ResumesController'
+    controller: 'ResumeController'
   })
   .when('/signup', {
     templateUrl: '/templates/auth_view.html',
