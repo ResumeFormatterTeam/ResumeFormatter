@@ -37,7 +37,7 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "mocha": "^2.3.4",
     "phantomjs": "^1.9.19",
-    "webpack-stream": "^3.0.1"
+    "webpack-stream": "^3.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
