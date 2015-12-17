@@ -8,7 +8,7 @@ var usersRouter = require(__dirname + '/routes/user_routes');
 process.env.APP_SECRET = process.env.APP_SECRET || 'somethingelse';
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/resume_app');
 
-app.use("/", express.static(__dirname + '/build/'));
+app.use(express.static(__dirname + '/build/'));
 app.use('/api', resumesRouter);
 app.use('/api', usersRouter);
 
