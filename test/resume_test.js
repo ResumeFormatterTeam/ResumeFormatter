@@ -69,7 +69,7 @@ describe('All routes on the resume app', function() {
       });
   });
   describe('to modify the resume database', function() {
-    beforeEach(function(done) {
+    before(function(done) {
       //populate new resume with required fields
       (new User({username:'TylerMorgan', password:'foobar1234'})).save(function(err, data) {
         debugger;
