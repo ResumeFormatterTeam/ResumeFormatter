@@ -8,12 +8,24 @@
   .form-and-resume-layout{
   width: 100%;
   max-width: 24.375em;
+ .justify-right-flex {
+    justify-content: center;
+    margin-bottom: 2.5em;
+  }
+  }
+  @media (max-width: 1400px) {
+  .form-and-resume-layout{
+  width: 100%;
+  max-width: 48.75em;
+  }
   }
 
   .full-width-centered-layout {
   width: 100%;
   max-width: 48.750em;
   }
+
+
 
   .form-block-top {
     font-family: Lato;
@@ -50,6 +62,13 @@
     margin: 0 1em 0 0;
     padding: 0;
     width: 100%;
+  }
+
+  @media (max-width: 670px) {
+  .justify-right-flex {
+    justify-content: center;
+    margin-bottom: 2.5em;
+  }
   }
 
   .justify-center-flex {

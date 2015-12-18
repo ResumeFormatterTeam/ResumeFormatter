@@ -5,30 +5,12 @@
   color: #002940;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 40.750em;
+  width: 90%;
+  max-width: 21cm;
+  //max-height: 29.7cm;
   border: 1px solid #ccc;
   padding: 2cm;
   box-shadow: 5px 5px 2px #bbb;
-h1,
-h2,
-h3 {
-font-family: Arial;
-color: #0C3D7F;
-}
-
-h2 {
-  color: #002940;
-}
-
-a {
-  color: #007BBF;
-}
-
-a:hover {
-  color: #0C3D7F;
-  text-decoration: underline;
-}
 
 time {
   font-style: italic;
@@ -63,12 +45,9 @@ a:hover.company-website {
   color: #007BBF;
   text-decoration: underline;
 }
-  h1,
-  h2,
-  h3 {
-    margin: 1.414em 0 0.5em;
-  }
+
   h2 {
+    font-weight: bold;
     padding-left: .5em;
     margin-top: .4em;
     margin-bottom: 0.3em;
@@ -120,4 +99,5 @@ ul.contact-info {
   text-indent: -1em;
 
 }
+
 }

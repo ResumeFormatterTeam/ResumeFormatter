@@ -1,0 +1,42 @@
+.formatted-resume {
+  html {font-size: 1em;}
+
+  body {
+    background-color: white;
+    font-family: Georgia;
+    font-weight: 400;
+    line-height: 1.45;
+  }
+
+  p {margin-bottom: 1.3em;}
+
+  h1, h2, h3, h4 {
+    margin: 1.414em 0 0.5em;
+    font-weight: inherit;
+    line-height: 1.2;
+    color: #0C3D7F;
+    font-weight: bold;
+}
+  h1 {
+    font-family: Arial;
+    margin-top: 0;
+    font-size: 1.602em;
+    font-weight: bold;
+  }
+
+  h2 {font-size: 1.424em; color: #002940;}
+
+  h3 {font-size: 1.266em;}
+
+  h4 {font-size: 1.125em;}
+  a {
+    color: #007BBF;
+  }
+
+  a:hover {
+    color: #0C3D7F;
+    text-decoration: underline;
+  }
+
+  small, .font_small {font-size: 0.889em;}
+}
