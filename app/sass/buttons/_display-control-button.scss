@@ -1,0 +1,11 @@
+.display-control-button {
+  font-family: Lato;
+  font-weight:bold;
+  background-color: $background;
+  color: $primary1;
+  border: none;
+  box-shadow: 3px 3px 1px darken($background, 10%);
+  padding: .7em;
+  margin: 1em;
+  width: 12em
+}

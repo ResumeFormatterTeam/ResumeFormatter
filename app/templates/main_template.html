@@ -1,10 +1,10 @@
 <section class="top-interface-buttons">
-  <h3>Display:</h3>
-  <button type="button" data-ng-click="formOnly=true;resumeOnly=false;formAndResume=false; adjustLayoutWidth()">Form Only</button>
-  <button type="button" data-ng-click="formOnly=false;resumeOnly=true;formAndResume=false; adjustLayoutWidth()">Resume Only</button>
-  <button type="button" data-ng-click="formOnly=false;resumeOnly=false;formAndResume=true; adjustLayoutWidth()">Form & Resume</button>
-  <button class="save-info-button" type="submit">Save Resume!</button>
-  Start typing in the fields and watch your resume come to life!
+  <strong class="display-options-header">Display Options</strong>
+  <div class="display-button-container">
+  <button class="display-control-button" type="button" data-ng-click="formOnly=true;resumeOnly=false;formAndResume=false; adjustLayoutWidth()">Form Only</button>
+  <button class="display-control-button" type="button" data-ng-click="formOnly=false;resumeOnly=true;formAndResume=false; adjustLayoutWidth()">Resume Only</button>
+  <button class="display-control-button" type="button" data-ng-click="formOnly=false;resumeOnly=false;formAndResume=true; adjustLayoutWidth()">Form & Resume</button>
+  </div>
 </section>
 <div class="main-content">
 <section class="form-blocks" data-ng-if="formOnly===true || formAndResume===true">
