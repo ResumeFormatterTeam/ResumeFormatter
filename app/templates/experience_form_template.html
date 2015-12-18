@@ -19,7 +19,20 @@
 </div>
 
 <!-- bullet points don't work -->
-<div data-bullet-point-form-directive
-bulletPointType="project" data-ng-model="job.jobBulletPoint"></div>
+<!-- <div data-bullet-point-form-directive
+bulletPointType="job"></div> -->
+
+<div class="form-full-width">
+  <strong>Bullet Points:</strong>
+  <ul class="bullet-point-inputs">
+    <li>
+      <input type="text" id="jobBulletPoint" data-ng-model="job.jobBulletPoint">
+      <button type="button">Remove</button>
+    </li>
+    <li>
+      <button class="add-line-button" type="button">Add Another Line &nbsp; &nbsp; &#x25BA;</button>
+    </li>
+  </ul>
+</div>
 
 </section>
