@@ -54,11 +54,10 @@ module.exports = function(app) {
       });
     };
 
-
-
-
-
-
-
+    //right now this works if you click the save button but(should work when "Add Another Institution is clicked")
+    $scope.addAnotherEdu = function() {
+      var another = $scope.resume.education;
+      $scope.resume.education.push({another});
+    };
   }]);
 };

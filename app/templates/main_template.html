@@ -53,7 +53,9 @@
   header-text="Education"
   form-class="{{layoutWidth}}"
   expand-class="justify-center-flex"
-  form-type="Institution">
+  form-type="Institution"
+  data-ng-repeat="edu in resume.education"
+  data-ng-submit="addAnotherEdu()">
   <div class="form-flex-wrap" ng-include src="'templates/education_form_template.html'">
       <!-- ng-include directive includes education form template -->
   </div>
