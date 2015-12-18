@@ -71,6 +71,7 @@
   },
   "scripts": {
     "postinstall": "gulp default",
+    "test": "mocha",
     "start": "node server.js"
   },
   "repository": {
