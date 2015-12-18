@@ -1,18 +1,38 @@
+<section class="job-fields" data-ng-repeat="job in resume.experience">
+
 <div class="form-half-width">
     <label for="companyName">Company Name:</label>
-    <input type="text" id="companyName" placeholder="Bear Wranglers International">
+    <input type="text" id="companyName" placeholder="Bear Wranglers International" data-ng-model="job.companyName">
     <label for="jobTitle">Job Title:</label>
-    <input type="text" id="jobTitle" placeholder="VP of Bear Wrangling">
+    <input type="text" id="jobTitle" placeholder="VP of Bear Wrangling" data-ng-model="job.jobTitle">
     <label for="companyUrl">Company Url:</label>
-    <input type="text" id="companyUrl" placeholder="http://www.bearwranglersinternational.com">
+    <input type="text" id="companyUrl" placeholder="http://www.bearwranglersinternational.com" data-ng-model="job.companyUrl">
 </div>
+
 <div class="form-half-width">
     <label for="companyCity">City:</label>
-    <input type="text" id="companyCity" placeholder="Billings, MT">
+    <input type="text" id="companyCity" placeholder="Billings, MT" data-ng-model="job.companyCity">
     <label for="startDate">Start Date:</label>
-    <input type="text">
+    <input type="text" data-ng-model="job.startDate">
     <label for="endDate">End Date:</label>
-    <input type="text">
+    <input type="text" data-ng-model="job.endDate">
 </div>
-<div data-bullet-point-form-directive
-bulletPointType="project"></div>
+
+<!-- bullet points don't work -->
+<!-- <div data-bullet-point-form-directive
+bulletPointType="job"></div> -->
+
+<div class="form-full-width">
+  <strong>Bullet Points:</strong>
+  <ul class="bullet-point-inputs">
+    <li>
+      <input type="text" id="jobBulletPoint" data-ng-model="job.jobBulletPoint">
+      <button type="button">Remove</button>
+    </li>
+    <li>
+      <button class="add-line-button" type="button">Add Another Line &nbsp; &nbsp; &#x25BA;</button>
+    </li>
+  </ul>
+</div>
+
+</section>

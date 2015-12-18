@@ -31,123 +31,46 @@
 <section class="skills">
   <ul>
     <li>
-      <strong>Proficient:</strong> JavaScript, Node/Express.js, MongoDB API Design, JSON, HTML, CSS, Git, SEO
+      <strong>Proficient:</strong> {{resume.proficientSkills}}
     </li>
     <li>
-      <strong>Developing:</strong> jQuery, Angular.js, Responsive Web Design, Test Driven Development.
+      <strong>Developing:</strong> {{resume.growingSkills}}
     </li>
   </ul>
 </section>
 
 <h2>Projects</h2>
-<section class="projects">
+<section class="projects" data-ng-repeat="project in resume.projects">
   <section class="project-headline">
-    <h3>Lingo Lemur</h3>
-    <a href="https://github.com/timcmiller/nlp_project">https://github.com/timcmiller/nlp_project</a><strong>Seattle, WA</strong>
-    <time datetime="2015-11">November 2015</time>
+    <h3>{{project.projectName}}</h3>
+    <a href="{resume.projects.projectUrl}}">{{project.projectUrl}}</a>
+    <strong>{{project.projectCity}}</strong>
+    <time datetime="2015-11">{{project.projectDate}}</time>
   </section>
-<ul class="responsibilities">
-  <li><a href="https://www.lingolemur.com">Lingo Lemur</a> is a Node.js app that searches any block of text for words with positive or negative sentiment and returns an overall sentiment score.
-  </li>
-  <li>
-    Built as part of a team of 4 using MongoDB, Express, jQuery, and Twitter's API.
-  </li>
-  <li>
-    Contributed to Express routes and designed the MongoDB database schemas to save a list of analyzed texts.  Example: <a href="https://www.lingolemur.com/lists/564e5aaade05fd0300174bc2">https://www.lingolemur.com/lists/564e5aaade05fd0300174bc2</a>
-  </li>
-</ul>
+  <ul class="responsibilities">
+    <li>{{project.projectBulletPoint}}</li>
+  </ul>
 </section>
 
-  <h2>Experience</h2>
-  <section class="experience">
+<h2>Experience</h2>
+<section class="experience" data-ng-repeat="job in resume.experience">
   <section class="employer" itemscope itemtype="https://schema.org/Corporation">
     <section class="employer-headline">
-    <h3 itemprop="name"><a class="company-website" itemprop="url" href="http://mockingbird.marketing/">Mockingbird Marketing</a></h3>
-    <h4>Search Account Executive</h4>
-    <strong>Seattle, WA</strong>
-    <section class="job-duration">
-    <time datetime="2014-05">May 2014</time> - <time datetime="2015-10">Oct 2015</time>
+      <h3 itemprop="name"><a class="company-website" itemprop="url" href="{{job.companyUrl}}">{{job.companyName}}</a></h3>
+      <h4>{{job.jobTitle}}</h4>
+      <strong>{{job.companyCity}}</strong>
+      <section class="job-duration">
+      <time>{{job.startDate}}</time> - <time>{{job.endDate}}</time>
+      </section>
     </section>
-
-    </section>
-    <p><span itemprop="description">Mockingbird Marketing is a startup digital marketing agency specializing in law firms.</span> In aspanition to account and project management, I was engaged in improving agency processes for link building and content marketing.</p>
     <ul class="responsibilities">
-      <li>Engaged in training new marketing managers and educating them about SEO best practices.</li>
-      <li>Developed link building and content marketing strategies and processes for clients that were later used company wide</li>
-      <li>Ran comprehensive technical SEO audits for client websites. This included checks on site speed, XML sitemaps, duplicate content, .htaccess file redirects, backlink profile quality, robots.txt implementation, and content quality.</li>
-      <li>Helped clients recover from Google Algorithmic penalities.</li>
-      <li>Created processes for migrating client websites from legacy CMS platforms to Wordpress.</li>
-      <li>Automated repetitive tasks like contact information research and data cleanup using Amazon's Mechanical Turk.</li>
-      <li><a href="http://mockingbird.marketing/author/kenji/">Wrote for the company's blog</a>.</li>
+      <li>{{job.jobBulletPoint}}</li>
     </ul>
   </section>
-
-  <section class="employer" itemscope itemtype="https://schema.org/Corporation">
-    <section class="employer-headline">
-    <h3 itemprop="name"><a class="company-website" itemprop="url" href="http://www.cdkglobal.com/">CDK Global</a></h3>
-            <h4>Power SEO Specialist</h4>
-    <strong>Seattle, WA</strong>
-    <section class="job-duration">
-    <time datetime="2013-07">July 2013</time> - <time datetime="2014-05">May 2014</time></section>
-  </section>
-    <p>
-      <span itemprop="description">Formerly called ADP Dealer Services, CDK Global provides automotive marketing and technology solutions to automotive dealerships and OEMs.</span> As a member of the Power SEO team, I devloped content and  Optimized clients websites to increase quality, targeted, organic traffic.
-    </p>
-   <ul class="responsibilities">
-      <li>Worked with GM, Cadillic, Hyundai, Maserati, and KIA dealerships to improve their web presence positioning over the competition.</li>
-      <li>Coordinated across teams to ensure that SEO implementation was inline with the client's overall business strategy.</li>
-      <li>On page SEO: Optimization of page titles, meta tags, structured data markup and internal links.</li>
-      <li>Implemented homepage A/B tests using <a href="https://developers.google.com/analytics/solutions/experiments-feature-reference">Google Content Experiments</a> to improve site conversions.</li>
-      <li>Lead quarterly SEO reporting calls for clients, providing detailed reports on website issues and performance.</li>
-    </ul>
-  </section>
-
-  <section class="employer">
-    <section class="employer-headline">
-    <h3>SEO and Online Marketing Consultant</h3>
-    <strong>Seattle, WA</strong>
-    <section class="job-duration">
-    <time datetime="2010-11">September 2010</time> - <time datetime="2013-07">July 2013</time>
-  </section>
-  </section>
-    <p>
-      Helped web startups receive more traffic and build web presence through content marketing and SEO strategy. Over the course of my work as inbound marketing consultant I have:
-    </p>
-
-    <ul class="responsibilities">
-      <li>Managed a "Featured Blogger Program" which created 700+ backlinks for <a href="https://en.wikipedia.org/wiki/Teachstreet">TeachStreet</a> (acquired by Amazon).</li>
-      <li> As acting Web Marketing Manager at <a href="http://evenues.com/">eVenues</a>, increased organic traffic to website from 80-100 daily visits to nearly 2000 daily visits since joining the team.</li>
-      <li>Designed HTML emails and newsletters for all eVenues mailing campaigns with open rates ranging from 20.9% to 21.6% and click rates from 2.6% to 3.4%.</li>
-      <li>Published several high profile blog posts for clients resulting in 100+ tweets and/or 10,000+ pageviews.</li>
-    </ul>
-  </section>
-
-<section class="employer" itemscope itemtype="https://schema.org/Corporation">
-  <section class="employer-headline">
-    <h3 itemprop="name"><a class="company-website" itemprop="url" href="http://www.ewc.co.jp/en">East West Consulting Co., Ltd.</a></h3>
-    <h4>Recruiter</h4>
-    <strong>Tokyo, Japan</strong>
-    <section class="job-duration">
-    <time datetime="2007-02">Feb 2007</time> - <time datetime="2009-03">Mar 2009</time>
-    </section>
-  </section>
 </section>
 
-<section class="employer" itemscope itemtype="https://schema.org/Corporation">
-  <section class="employer-headline">
-    <h3 itemprop="name">English Teacher</a></h3>
-    <strong>Tokyo, Japan</strong>
-    <section class="job-duration">
-   <time datetime="2003-10">Oct 2003</time> - <time datetime="2006-11">Sep 2006</time>
-    </section>
-  </section>
-</section>
+<h2>Education</h2>
+<section class="education" data-ng-repeat="edu in resume.education">
+  <span itemscope itemtype="https://schema.org/CollegeOrUniversity" itemprop="name"><span itemprop="name">{{edu.institutionName}}</span>, {{edu.degree}}, {{edu.major}}, {{edu.minor}} (<time>{{edu.startDate}}</time> - <time>{{edu.endDate}}</time>)</span>
 </section>
 
-
-  <h2>Education:</h2>
-  <section class="education">
-  <span itemscope itemtype="https://schema.org/CollegeOrUniversity" itemprop="name"><span itemprop="name">University of Washington</span>, B.A. in English (<time datetime="2003-10">2003</time>); Minor in Japanese Linguistics.
-  Graduated with distinction from the University of Washington Honors Program.</span>
-</section>
-</div>
