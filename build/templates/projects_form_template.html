@@ -1,22 +1,21 @@
+<section class="project-fields" data-ng-repeat="project in resume.projects">
+
 <div class="form-half-width">
   <label for="projectName">Project Name:</label>
-  <input type="text" id="projectName" placeholder="Bear Wranglers Without Borders">
+  <input type="text" id="projectName" placeholder="Bear Wranglers Without Borders" data-ng-model="project.projectName">
   <label for="projectUrl">Project Url:</label>
-  <input type="text" id="projectUrl"  placeholder="http://www.bearwranglerswithoutborders.com">
+  <input type="text" id="projectUrl"  placeholder="http://www.bearwranglerswithoutborders.com" data-ng-model="project.projectUrl">
 </div>
 
 <div class="form-half-width">
   <label for="projectCity">City:</label>
-  <input type="text" id="projectCity" placeholder="Billings, MT">
+  <input type="text" id="projectCity" placeholder="Billings, MT" data-ng-model="project.projectCity">
   <label for="projectDate">Date of Project:</label>
-  <input type="date" >
+  <input type="text" data-ng-model="project.projectDate">
 </div>
 
+<!-- bullet points do not work -->
 <div data-bullet-point-form-directive
-bulletPointType="project" ></div>
+bulletPointType="project" data-ng-model="project.projectBulletPoint"></div>
 
-<!-- data-ng-model="newResume.projects.projectName" -->
-<!-- data-ng-model="newResume.projects.projectUrl" -->
-<!-- data-ng-model="resumes.projects.projectCity" -->
-<!-- data-ng-model="newResume.projects.projectDate" -->
-<!-- data-ng-model="resumes.projects.projectBulletPoint" -->
+</section>
