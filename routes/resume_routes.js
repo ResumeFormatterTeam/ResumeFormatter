@@ -6,9 +6,30 @@ var eatAuth = require(__dirname + '/../lib/eat_auth');
 var resumesRouter = module.exports = exports = express.Router();
 resumesRouter.use(bodyParser.json());
 
+
+//get request to get all Resumes
+resumesRouter.get('/resumes/', function(req, res) {
+  Resume.find({}, function(err, data) {
+    if (err) return handleError(err, res);
+
+    res.json(data);
+  });
+});
+
+
 //get
-resumesRouter.get('/resumes', eatAuth, function(req, res) {
-  Resume.find({userId: req.user._id}, function(err, data) {
+// resumesRouter.get('/resumes', function(req, res) {
+//   Resume.find({userId: req.user._id}, function(err, data) {
+//     if (err) return handleError(err, res);
+
+//     console.log(data);
+//     res.json(data);
+//   });
+// });
+
+//get user's resume
+resumesRouter.get('/resumes/:userId', function(req, res) {
+  Resume.find({userId: req.params.userId}, function(err, data) {
     if (err) return handleError(err, res);
     res.json(data);
   });
@@ -26,10 +47,10 @@ resumesRouter.post('/resumes', eatAuth, function(req, res) {
 });
 
 //update
-resumesRouter.put('/resumes/:id', eatAuth, function(req, res) {
+resumesRouter.put('/resumes/:userId', eatAuth, function(req, res) {
   var resumeData = req.body;
-  delete resumeData._id;
-  Resume.update({_id: req.params.id}, resumeData, function(err) {
+  delete resumeData.userId;
+  Resume.update({userId: req.params.userId}, resumeData, function(err) {
     if (err) return handleError(err, res);
     res.json({msg:'Update successful!'});
   });
@@ -42,3 +63,7 @@ resumesRouter.delete('/resumes/:id', eatAuth, function(req, res) {
     res.json({msg:'Delete successful!'});
   });
 });
+
+
+
+

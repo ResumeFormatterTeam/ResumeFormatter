@@ -1,29 +1,56 @@
+
 module.exports = function(app) {
   app.controller('ResumeController', ['$scope', '$http', 'crudResource', 'currentResume', function($scope, $http, crudResource, currentResume){
+
     $scope.resumes = [];
     $scope.errors = [];
     $scope.resume = currentResume();
     // $scope.savedResume = {};
     //need to set default fields?
-    $scope.adjustLayoutWidth = function() {
-    if ($scope.formAndResume){
-      $scope.layoutWidth = 'form-and-resume-layout';
-    } else {
-      $scope.layoutWidth = 'full-width-centered-layout';
-    }
-  }
     var defaults = {};
     $scope.newResume = angular.copy($scope.defaults);
     var resumeResource = crudResource('resumes');
 
-    // displays all resumes in database
-    $scope.getAll = function() {
-      resumeResource.getAll(function (err, data) {
-        if (err) return err;
 
-        $scope.resumes = data;
-      })
+    $scope.getAll = function() {
+      $http.get('/api/resumes')
+        .then(function(res) {
+          $scope.resumes = res.data;
+        }, function(res) {
+          console.log(res);
+        });
     };
+    //to get all resumes by user ID
+    // $scope.getAllId = function() {
+    //   $http.get('/api/resumes/' + userID)
+    //     .then(function(res) {
+    //       $scope.resumes = res.data;
+    //     }, function(res) {
+    //       console.log(res);
+    //     });
+    // };
+
+    // // displays all resumes in database
+    // $scope.getAll = function(resumes) {
+    //   resumeResource.getAll(resumes, function (err, data) {
+    //     if (err) return err;
+
+    //     console.log(resumes);
+    //     console.log(data);
+    //     $scope.resumes = data;
+    //   })
+    // };
+
+
+    $scope.adjustLayoutWidth = function() {
+      if ($scope.formAndResume){
+        $scope.layoutWidth = 'form-and-resume-layout';
+      } else {
+        $scope.layoutWidth = 'full-width-centered-layout';
+      }
+    }
+
+
 
     //adds new resume to database
     $scope.create = function(resumes) {

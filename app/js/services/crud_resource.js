@@ -14,10 +14,17 @@ module.exports = function(app) {
   app.factory('crudResource', ['$http', function($http) {
     return function(resourceName) {
       var resource = {}
+
       resource.getAll =  function(callback) {
         $http.get('/api/' + resourceName)
           .then(handleSuccess(callback), handleFail(callback));
       };
+
+      resource.getAllUser =  function(callback) {
+        $http.get('/api/' + resourceName + '/' + data._id)
+          .then(handleSuccess(callback), handleFail(callback));
+      };
+
 
       resource.create = function(data, callback) {
         $http.post('/api/' + resourceName, data)
@@ -25,7 +32,7 @@ module.exports = function(app) {
       };
 
       resource.update = function(data, callback) {
-        $http.put('/api/' + resourceName + '/' + data._id, data)
+        $http.put('/api/' + resourceName + '/' + data.userId, data)
           .then(handleSuccess(callback), handleFail(callback));
       };
 

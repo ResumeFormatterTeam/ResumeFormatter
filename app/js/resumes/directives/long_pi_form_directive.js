@@ -1,10 +1,10 @@
 module.exports = function(app) {
-  app.directive('formBlockDirective', function() {
+  app.directive('longPiFormDirective', function() {
     return {
       restrict: 'AC',
       replace: true,
       transclude: true,
-      templateUrl: '/templates/form_block_template.html',
+      templateUrl: '/templates/long_pi_form_template.html',
       scope: {
         headerText: '@',
         formClass: '@',
