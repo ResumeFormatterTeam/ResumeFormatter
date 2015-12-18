@@ -1,0 +1,10 @@
+.remove-bullet-button {
+  border:none;
+  background-color: $background;
+  font-size: 1.424em;
+  color: $primary1;
+
+  &:hover {
+    color: $primary2;
+  }
+}
