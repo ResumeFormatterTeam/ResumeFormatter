@@ -1,5 +1,17 @@
 .top-interface-buttons {
   width:100%;
   max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   margin:auto;
+  .display-button-container {
+    display: flex;
+    justify-content: center;
+  }
+  .display-options-header {
+    font-family: Lato, sans-serif;
+    font-size: 1.25em;
+    color: $primary1;
+  }
 }
