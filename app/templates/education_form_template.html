@@ -1,16 +1,21 @@
+<section class="edu-fields form-flex-wrap">
+
 <div class="form-half-width">
-    <label for="institutionName">Institution Name:</label>
-    <input type="text" id="institutionName" placeholder="Western Wrangler University">
-    <label for="degree">Degree:</label>
-    <input type="text" id="degree" placeholder="B.S.">
-    <label for="major">Major:</label>
-    <input type="text" id="major" placeholder="Bear Wrangling">
+  <label for="institutionName">Institution Name:</label>
+  <input type="text" id="institutionName" placeholder="Western Wrangler University" data-ng-model="edu.institutionName">
+  <label for="degree">Degree:</label>
+  <input type="text" id="degree" placeholder="B.S." data-ng-model="edu.degree">
+  <label for="major">Major:</label>
+  <input type="text" id="major" placeholder="Bear Wrangling" data-ng-model="edu.major">
 </div>
+
 <div class="form-half-width">
-    <label for="minor">Minor:</label>
-    <input type="text" id="major" placeholder="Underwater Lion Taming">
-    <label for="startDate">Start Date:</label>
-    <input type="text">
-    <label for="endDate">End Date:</label>
-    <input type="text">
+  <label for="minor">Minor:</label>
+  <input type="text" id="minor" placeholder="Underwater Lion Taming" data-ng-model="edu.minor">
+  <label for="startDate">Start Date:</label>
+  <input type="text" data-ng-model="edu.startDate">
+  <label for="endDate">End Date:</label>
+  <input type="text" data-ng-model="edu.endDate">
 </div>
+
+</section>

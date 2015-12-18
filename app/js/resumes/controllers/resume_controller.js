@@ -82,11 +82,22 @@ module.exports = function(app) {
       });
     };
 
+    //issue: also adds another when save button is clicked.
+    $scope.addAnotherProject = function() {
+      var another = $scope.resume.projects;
+      $scope.resume.projects.push({another});
+    };
 
+    //issue: also adds another when save button is clicked.
+    $scope.addAnotherJob = function() {
+      var another = $scope.resume.experience;
+      $scope.resume.experience.push({another});
+    };
 
-
-
-
-
+    //issue: also adds another when save button is clicked.
+    $scope.addAnotherInstitution = function() {
+      var another = $scope.resume.education;
+      $scope.resume.education.push({another});
+    };
   }]);
 };
