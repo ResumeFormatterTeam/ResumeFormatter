@@ -55,21 +55,25 @@ module.exports = function(app) {
     };
 
     //issue: also adds another when save button is clicked.
+    //not an issue when save button is commented out.
     $scope.addAnotherProject = function() {
       var another = $scope.resume.projects;
       $scope.resume.projects.push({another});
     };
 
     //issue: also adds another when save button is clicked.
+    //not an issue when save button is commented out.
     $scope.addAnotherJob = function() {
       var another = $scope.resume.experience;
       $scope.resume.experience.push({another});
     };
 
     //issue: also adds another when save button is clicked.
+    //not an issue when save button is commented out.
     $scope.addAnotherInstitution = function() {
       var another = $scope.resume.education;
       $scope.resume.education.push({another});
     };
+
   }]);
 };
