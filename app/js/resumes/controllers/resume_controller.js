@@ -54,8 +54,14 @@ module.exports = function(app) {
       });
     };
 
-
-
+    $scope.isEmpty = function(arrayOfObjects) {
+      for(i = 0; i < arrayOfObjects.length; i++) {
+        for(key in arrayOfObjects[i]){
+          if (arrayOfObjects[i][key]) return false;
+        }
+      }
+      return true;
+    }
 
 
 
