@@ -6,13 +6,47 @@ module.exports = function(app) {
     // $scope.savedResume = {};
 
     //need to set default fields?
+
     $scope.adjustLayoutWidth = function() {
-      if ($scope.formAndResume){
-        $scope.layoutWidth = 'form-and-resume-layout';
-      } else {
-        $scope.layoutWidth = 'full-width-centered-layout';
+    if ($scope.formAndResume) {
+      $scope.layoutWidth = 'form-and-resume-layout';
+    } else {
+      $scope.layoutWidth = 'full-width-centered-layout';
       }
     }
+
+    $scope.flexOrder = {
+      skills: {number: 0, class: 'flex-order-first'},
+      projects: {number: 1, class: 'flex-order-second'},
+      experience: {number: 2, class: 'flex-order-third'},
+      education: {number: 3, class: 'flex-order-fourth'}
+    }
+
+    $scope.moveSectionDown = function(formBlock) {
+      var currentBlockObject = $scope.flexOrder[formBlock];
+      for(block in $scope.flexOrder){
+        if ($scope.flexOrder[block].number === currentBlockObject.number + 1){
+          $scope.flexOrder[formBlock] = $scope.flexOrder[block];
+          $scope.flexOrder[block] = currentBlockObject;
+          return
+        }
+      }
+    }
+    $scope.moveSectionUp = function(formBlock) {
+      var currentBlockObject = $scope.flexOrder[formBlock];
+      for(block in $scope.flexOrder){
+        if ($scope.flexOrder[block].number === currentBlockObject.number - 1){
+          $scope.flexOrder[formBlock] = $scope.flexOrder[block];
+          $scope.flexOrder[block] = currentBlockObject;
+          return
+        }
+      }
+    }
+
+      // skills: 'flex-order-first',
+      // projects: 'flex-order-second',
+      // experience: 'flex-order-third',
+      // education: 'flex-order-fourth'
 
     var defaults = {};
     $scope.newResume = angular.copy($scope.defaults);

@@ -1,5 +1,6 @@
-<section class="job-fields form-flex-wrap">
-  <div class="form-half-width">
+<section class="job-fields form-flex-wrap" data-ng-repeat="job in resume.experience">
+ <div class="move-section-up-down"><button class="updown-button" type="button" data-ng-click="moveSectionUp('experience')">Move Section Up</button> &nbsp; <button class="updown-button" type="button" data-ng-click="moveSectionDown('experience')">Move Section Down</button></div>
+<div class="form-half-width">
     <label for="companyName">Company Name:</label>
     <input type="text" id="companyName" placeholder="Bear Wranglers International" data-ng-model="job.companyName">
     <label for="jobTitle">Job Title:</label>
