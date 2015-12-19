@@ -27,8 +27,8 @@
   <p><strong>Summary:</strong> {{resume.personalSummary}}</p>
 </section>
 
-<h2>Skills</h2>
-<section class="skills">
+<h2 class="{{flexOrder.skills.class}}">Skills</h2>
+<section class="skills {{flexOrder.skills.class}}">
   <ul>
     <li>
       <strong>Proficient:</strong> {{resume.proficientSkills}}
@@ -39,8 +39,8 @@
   </ul>
 </section>
 
-<h2>Projects</h2>
-<section class="projects" data-ng-repeat="project in resume.projects">
+<h2 class="{{flexOrder.projects.class}}">Projects</h2>
+<section class="projects {{flexOrder.projects.class}}" data-ng-repeat="project in resume.projects">
   <section class="project-headline">
     <h3>{{project.projectName}}</h3>
     <a href="{resume.projects.projectUrl}}">{{project.projectUrl}}</a>
@@ -52,8 +52,8 @@
   </ul>
 </section>
 
-<h2>Experience</h2>
-<section class="experience" data-ng-repeat="job in resume.experience">
+<h2 class="{{flexOrder.experience.class}}">Experience</h2>
+<section class="experience {{flexOrder.experience.class}}" data-ng-repeat="job in resume.experience">
   <section class="employer" itemscope itemtype="https://schema.org/Corporation">
     <section class="employer-headline">
       <h3 itemprop="name"><a class="company-website" itemprop="url" href="{{job.companyUrl}}">{{job.companyName}}</a></h3>
@@ -69,8 +69,8 @@
   </section>
 </section>
 
-<h2>Education</h2>
-<section class="education" data-ng-repeat="edu in resume.education">
+<h2 class="{{flexOrder.education.class}}">Education</h2>
+<section class="education {{flexOrder.education.class}}" data-ng-repeat="edu in resume.education">
   <span itemscope itemtype="https://schema.org/CollegeOrUniversity" itemprop="name"><span itemprop="name">{{edu.institutionName}}</span>, {{edu.degree}}, {{edu.major}}, {{edu.minor}} (<time>{{edu.startDate}}</time> - <time>{{edu.endDate}}</time>)</span>
 </section>
 

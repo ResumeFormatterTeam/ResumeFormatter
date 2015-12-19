@@ -1,5 +1,5 @@
 <section class="edu-fields form-flex-wrap" data-ng-repeat="edu in resume.education">
-
+ <div class="move-section-up-down"><button class="updown-button" type="button" data-ng-click="moveSectionUp('education')">Move Section Up</button> &nbsp; <button class="updown-button" type="button" data-ng-click="moveSectionDown('education')">Move Section Down</button></div>
 <div class="form-half-width">
     <label for="institutionName">Institution Name:</label>
     <input type="text" id="institutionName" placeholder="Western Wrangler University" data-ng-model="edu.institutionName">
