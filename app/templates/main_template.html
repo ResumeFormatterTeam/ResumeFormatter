@@ -8,6 +8,7 @@
 </section>
 <div class="main-content">
 <section class="form-blocks" data-ng-if="formOnly===true || formAndResume===true">
+
   <div data-form-block-directive
   data-form-name="newPersonalForm"
   data-resume="newResume"
@@ -20,7 +21,7 @@
     </div>
   </div>
 
-  <div data-form-block-directive
+  <div class="{{flexOrder.skills.class}}" data-form-block-directive
   header-text="Skills"
   form-class="{{layoutWidth}}"
   expand-class="hidden">
@@ -29,7 +30,7 @@
   </div>
 </div>
 
-<div  data-form-block-directive
+<div class="{{flexOrder.projects.class}}" data-form-block-directive
   header-text="Projects"
   form-class="{{layoutWidth}}"
   expand-class="justify-center-flex"
@@ -39,7 +40,7 @@
   </div>
 </div>
 
-<div  data-form-block-directive
+<div class="{{flexOrder.experience.class}}" data-form-block-directive
   header-text="Experience"
   form-class="{{layoutWidth}}"
   expand-class="justify-center-flex"
@@ -49,7 +50,7 @@
   </div>
 </div>
 
-<div  data-form-block-directive
+<div class="{{flexOrder.education.class}}" data-form-block-directive
   header-text="Education"
   form-class="{{layoutWidth}}"
   expand-class="justify-center-flex"
