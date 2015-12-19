@@ -1,6 +1,6 @@
 
 module.exports = function(app) {
-  app.controller('ResumeController', ['$scope', '$http', 'crudResource', 'currentResume', function($scope, $http, crudResource, currentResume){
+  app.controller('ResumeController', ['$scope', '$http', '$cookies', 'crudResource', 'currentResume', function($scope, $http, $cookies, crudResource, currentResume ){
 
     $scope.resumes = [];
     $scope.errors = [];
@@ -13,21 +13,36 @@ module.exports = function(app) {
 
 
     $scope.getAll = function() {
-      $http.get('/api/resumes')
+      $http.get('/api/users')
         .then(function(res) {
-          $scope.resumes = res.data;
-        }, function(res) {
-          console.log(res);
+          console.log('token = ' + $scope.token);
+          console.log('data id = ' + res.data.username);
+
+          var userName = res.data.username;
+
+          $http.get('/api/resumes/' + userName)
+            .then(function(res) {
+              console.log(res.data)
+              $scope.resumes = res.data;
+
+            }, function(err) {
+              console.log(err);
+            });
+
+        }, function(err) {
+          console.log(err);
         });
     };
+
+  // $http.get('/api/users/me')
+  //   .then(function(result) {
+  //   $scope.userId = result.data._id;
+  //   // Do whatever you need to do with the userId here.
+
+  // });
+
     //to get all resumes by user ID
     // $scope.getAllId = function() {
-    //   $http.get('/api/resumes/' + userID)
-    //     .then(function(res) {
-    //       $scope.resumes = res.data;
-    //     }, function(res) {
-    //       console.log(res);
-    //     });
     // };
 
     // // displays all resumes in database

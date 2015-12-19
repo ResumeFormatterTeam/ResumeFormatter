@@ -32,7 +32,7 @@ module.exports = function(app) {
       };
 
       resource.update = function(data, callback) {
-        $http.put('/api/' + resourceName + '/' + data.userId, data)
+        $http.put('/api/' + resourceName + '/' + data._id, data)
           .then(handleSuccess(callback), handleFail(callback));
       };
 

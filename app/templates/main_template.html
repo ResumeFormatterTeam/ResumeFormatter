@@ -14,36 +14,36 @@
 
     <section data-ng-controller="ResumeController" data-ng-init="getAll()">
 
-<section data-ng-repeat="resume in resumes track by resume.userId">
+  <section data-ng-repeat="resume in resumes">
+
+<!-- <section data-ng-repeat="resume in resumes track by resume.userId"> -->
+
 <!-- <section ng-repeat="(firstName, jimmy) in resume"> -->
 {{resume.userId}}
 
-<form name="resumeName{{resume.userId}}" data-ng-animate="'animate'" class="{{layoutWidth}} form-block-bottom animate-show" ng-hide="collapsed" data-ng-submit="create (newResume)">
+<!-- <form name="edit{{resume.userId}}" data-ng-animate="'animate'" class="{{layoutWidth}} form-block-bottom animate-show" ng-hide="collapsed" data-ng-submit="create(resume)">
 
     <div class="form-half-width">
-      <label for="fullName">Full Name:</label>
-      <input type="text" id="firstName" placeholder="First" data-ng-model="$scope.resume.firstName">
-        stuff {{resume.userId}}
-      </input>
-
-      <input type="text" id="lastName" placeholder="Last" data-ng-model="$scope.resume.lastName">
-      <label for="jobTitle">Job Title:</label>
-      <input type="text" id="jobTitle" placeholder="Bear Wrangler" data-ng-model="$scope.resume.jobTitle">
-      <label for="phoneNumber">Phone Number:</label>
-      <input type="text" placeholder="555-555-5555" id="phoneNumber" data-ng-model="$scope.resume.phoneNumber">
+      <label for="fullName{{resume.userId}}">Full Name:</label>
+      <input type="text" id="firstName{{resume.userId}}" placeholder="First" data-ng-model="resume.firstName">
+      <input type="text" id="lastName{{resume.userId}}" placeholder="Last" data-ng-model="resume.lastName">
+      <label for="jobTitle{{resume.userId}}">Job Title:</label>
+      <input type="text" id="jobTitle" placeholder="Bear Wrangler" data-ng-model="resume.jobTitle">
+      <label for="phoneNumber{{resume.userId}}">Phone Number:</label>
+      <input type="text" placeholder="555-555-5555" id="phoneNumber" data-ng-model="resume.phoneNumber">
     </div>
 
     <div class="form-half-width">
-      <label for="email">Email:</label>
-      <input type="text" id="email" placeholder="bearwrangler@example.com" data-ng-model="$scope.resume.email">
-      <label for="website">Website:</label>
-      <input type="text" id="website" placeholder="http://www.thebearwranglerlife.com" data-ng-model="$scope.resume.website">
-      <label for="linkedIn">LinkedIn:</label>
-      <input type="text" id="linkedIn" placeholder="https://www.linkedin.com/in/bearwrangler" data-ng-model="$scope.resume.linkedIn">
+      <label for="email{{resume.userId}}">Email:</label>
+      <input type="text" id="email" placeholder="bearwrangler@example.com" data-ng-model="resume.email">
+      <label for="website{{resume.userId}}">Website:</label>
+      <input type="text" id="website" placeholder="http://www.thebearwranglerlife.com" data-ng-model="resume.website">
+      <label for="linkedIn{{resume.userId}}">LinkedIn:</label>
+      <input type="text" id="linkedIn" placeholder="https://www.linkedin.com/in/bearwrangler" data-ng-model="resume.linkedIn">
     </div>
     <div class="form-full-width">
-      <label for="personalSummary">Personal Summary:</label>
-      <textarea id="personalSummary" placeholder="I've been a bear wrangler for 25 years. I know how to wrangle all kinds of bears--polar bears, grizzly bears, black, brown, panda, even koala bears. You name it, I can wrangle it." data-ng-model="$scope.resume.personalSummary"></textarea>
+      <label for="personalSummary{{resume.userId}}">Personal Summary:</label>
+      <textarea id="personalSummary" placeholder="I've been a bear wrangler for 25 years. I know how to wrangle all kinds of bears--polar bears, grizzly bears, black, brown, panda, even koala bears. You name it, I can wrangle it." data-ng-model="resume.personalSummary"></textarea>
     </div>
 
 
@@ -57,24 +57,24 @@
     </div>
   </form>
 </section>
-</section>
+</section> -->
 
 
 
 
 
 
-<!--     <div long-pi-form-directive
+    <div long-pi-form-directive
       data-form-name="newPersonalForm"
       data-resume="resume"
       data-save="create(resume)"
       header-text="Personal Info"
       form-class="{{layoutWidth}}"
-      expand-class="hidden"> -->
-<!--       <div class="form-flex-wrap" ng-include src="'templates/long_pi_form_template.html'">
-      </div> -->
+      expand-class="hidden">
+      <div class="form-flex-wrap" ng-include src="'templates/long_pi_form_template.html'">
+      </div>
         <!-- ng-include directive includes personal info form template -->
-    <!-- </div> -->
+    </div>
 
     <div data-form-block-directive
     header-text="Skills"

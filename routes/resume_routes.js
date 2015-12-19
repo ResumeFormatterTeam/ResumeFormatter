@@ -26,8 +26,8 @@ resumesRouter.get('/resumes/', function(req, res) {
 
 
 //get user's resume
-resumesRouter.get('/resumes/:userId', function(req, res) {
-  Resume.find({userId: req.params.userId}, function(err, data) {
+resumesRouter.get('/resumes/:userName', function(req, res) {
+  Resume.find({userName: req.params.userName}, function(err, data) {
     if (err) return handleError(err, res);
     res.json(data);
   });
@@ -37,6 +37,7 @@ resumesRouter.get('/resumes/:userId', function(req, res) {
 resumesRouter.post('/resumes', eatAuth, function(req, res) {
   var newResume = new Resume(req.body);
   newResume.userId = req.user._id;
+  newResume.userName = req.user.username;
   newResume.user = req.user.username;
   newResume.save(function(err, data) {
     if (err) return handleError(err, res);
