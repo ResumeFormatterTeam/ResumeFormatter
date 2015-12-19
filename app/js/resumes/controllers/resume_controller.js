@@ -5,8 +5,9 @@ module.exports = function(app) {
     $scope.resume = currentResume();
     // $scope.savedResume = {};
     //need to set default fields?
+
     $scope.adjustLayoutWidth = function() {
-    if ($scope.formAndResume){
+    if ($scope.formAndResume) {
       $scope.layoutWidth = 'form-and-resume-layout';
     } else {
       $scope.layoutWidth = 'full-width-centered-layout';
@@ -30,7 +31,7 @@ module.exports = function(app) {
         }
       }
     }
-  $scope.moveSectionUp = function(formBlock) {
+    $scope.moveSectionUp = function(formBlock) {
       var currentBlockObject = $scope.flexOrder[formBlock];
       for(block in $scope.flexOrder){
         if ($scope.flexOrder[block].number === currentBlockObject.number - 1){
@@ -41,7 +42,6 @@ module.exports = function(app) {
       }
     }
 
-
       // skills: 'flex-order-first',
       // projects: 'flex-order-second',
       // experience: 'flex-order-third',
@@ -50,7 +50,6 @@ module.exports = function(app) {
     var defaults = {};
     $scope.newResume = angular.copy($scope.defaults);
     var resumeResource = crudResource('resumes');
-
 
     // displays all resumes in database
     $scope.getAll = function() {
@@ -89,12 +88,6 @@ module.exports = function(app) {
         console.log('resumes has been removed');
       });
     };
-
-
-
-
-
-
 
   }]);
 };
