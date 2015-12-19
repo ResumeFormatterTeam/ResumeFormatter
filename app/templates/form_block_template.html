@@ -1,4 +1,4 @@
- <section class="form-block">
+<section class="form-block">
   <section class="form-block-top">
     <h2>{{headerText}}</h2>
     <button class="collapse" type="button" data-ng-model="collapsed" data-ng-click="collapsed=!collapsed">{{(collapsed) ? "Expand" : "Collapse"}}</button>
@@ -7,13 +7,13 @@
 <!--   took this out of the end of <form> tag: data-ng-submit="save({resume: resume})" -->
   <form data-ng-animate="'animate'" class="{{formClass}} form-block-bottom animate-show" ng-hide="collapsed">
     <div ng-transclude></div>
-    <div class="form-full-width">
-<!--       <div class="justify-right-flex">
+    <!-- <div class="form-full-width">
+      <div class="justify-right-flex">
         <button class="save-info-button" type="submit">Save Info</button>
-      </div> -->
-<!--       <div class="{{expandClass}}">
+      </div>
+      <div class="{{expandClass}}">
         <button type="button" class="expand-below-button">&#x25BC; Add Another {{formType}} &#x25BC;</button>
-      </div> -->
-    </div>
+      </div>
+    </div> -->
   </form>
 </section>

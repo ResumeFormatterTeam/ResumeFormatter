@@ -4,14 +4,16 @@ module.exports = function(app) {
     $scope.errors = [];
     $scope.resume = currentResume();
     // $scope.savedResume = {};
+
     //need to set default fields?
     $scope.adjustLayoutWidth = function() {
-    if ($scope.formAndResume){
-      $scope.layoutWidth = 'form-and-resume-layout';
-    } else {
-      $scope.layoutWidth = 'full-width-centered-layout';
+      if ($scope.formAndResume){
+        $scope.layoutWidth = 'form-and-resume-layout';
+      } else {
+        $scope.layoutWidth = 'full-width-centered-layout';
+      }
     }
-  }
+
     var defaults = {};
     $scope.newResume = angular.copy($scope.defaults);
     var resumeResource = crudResource('resumes');
@@ -54,6 +56,7 @@ module.exports = function(app) {
       });
     };
 
+    //adds another Project, Job or Institution block to form
     $scope.addAnotherProject = function() {
       $scope.resume.projects.push({});
     };
@@ -65,29 +68,6 @@ module.exports = function(app) {
     $scope.addAnotherInstitution = function() {
       $scope.resume.education.push({});
     };
-
-    // the following 4 functions don't work
-    $scope.addProjectBP = function() {
-      $scope.resume.projects.project.projectBulletPoint.push({
-        projectBulletPoint: ""
-      });
-    }
-    $scope.removeProjectBP = function() {
-      $scope.resume.projects.project.projectBulletPoint.push({
-        projectBulletPoint: ""
-      });
-    }
-
-    $scope.addJobBP = function() {
-      $scope.resume.experience.job.jobBulletPoint.push({
-        jobBulletPoint: ""
-      });
-    }
-    $scope.removeJobBP = function() {
-      $scope.resume.experience.job.jobBulletPoint.push({
-        jobBulletPoint: ""
-      });
-    }
 
   }]);
 };

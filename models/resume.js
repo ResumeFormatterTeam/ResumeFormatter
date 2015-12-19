@@ -17,7 +17,7 @@ var resumeSchema = new mongoose.Schema({
     projectUrl: String,
     projectCity: String,
     projectDate: String,
-    projectBulletPoint: String,
+    projectBulletPoint: Array,
   }],
   experience: [{
     companyName: String,
