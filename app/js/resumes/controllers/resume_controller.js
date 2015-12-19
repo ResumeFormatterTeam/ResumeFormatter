@@ -54,26 +54,40 @@ module.exports = function(app) {
       });
     };
 
-    //issue: also adds another when save button is clicked.
-    //not an issue when save button is commented out.
     $scope.addAnotherProject = function() {
-      var another = $scope.resume.projects;
-      $scope.resume.projects.push({another});
+      $scope.resume.projects.push({});
     };
 
-    //issue: also adds another when save button is clicked.
-    //not an issue when save button is commented out.
     $scope.addAnotherJob = function() {
-      var another = $scope.resume.experience;
-      $scope.resume.experience.push({another});
+      $scope.resume.experience.push({});
     };
 
-    //issue: also adds another when save button is clicked.
-    //not an issue when save button is commented out.
     $scope.addAnotherInstitution = function() {
-      var another = $scope.resume.education;
-      $scope.resume.education.push({another});
+      $scope.resume.education.push({});
     };
+
+    // the following 4 functions don't work
+    $scope.addProjectBP = function() {
+      $scope.resume.projects.project.projectBulletPoint.push({
+        projectBulletPoint: ""
+      });
+    }
+    $scope.removeProjectBP = function() {
+      $scope.resume.projects.project.projectBulletPoint.push({
+        projectBulletPoint: ""
+      });
+    }
+
+    $scope.addJobBP = function() {
+      $scope.resume.experience.job.jobBulletPoint.push({
+        jobBulletPoint: ""
+      });
+    }
+    $scope.removeJobBP = function() {
+      $scope.resume.experience.job.jobBulletPoint.push({
+        jobBulletPoint: ""
+      });
+    }
 
   }]);
 };

@@ -14,7 +14,6 @@
   <input type="text" data-ng-model="project.projectDate">
 </div>
 
-<!-- bullet point directive doesnt work -->
 <!-- <div data-bullet-point-form-directive
 bulletPointType="project" data-ng-model="project.projectBulletPoint"></div> -->
 
@@ -23,10 +22,16 @@ bulletPointType="project" data-ng-model="project.projectBulletPoint"></div> -->
   <ul class="bullet-point-inputs">
     <li>
       <input type="text" id="projectBulletPoint" data-ng-model="project.projectBulletPoint">
-      <button class="remove-bullet-button" type="button"><i class="fa fa-minus-circle"></i></button>
+      <!-- remove bullet point button -->
+      <button class="remove-bullet-button" type="button" data-ng-click="removeProjectBP()"><i class="fa fa-minus-circle"></i></button>
     </li>
     <li>
-      <button class="add-line-button" type="submit" data-ng-click="addProjectBP()">Add Another Line &nbsp; &nbsp; &#x25BA;</button>
+      <!-- add bullet point button -->
+      <button class="add-line-button" type="button" data-ng-click="addProjectBP()">Add Bullet Point &nbsp; &nbsp; &#x25BA;</button>
+    </li>
+    <li>
+    <!-- add another project button -->
+    <button type="button" class="expand-below-button" data-ng-click="addAnotherProject()">&#x25BC; Add Another &#x25BC;</button>
     </li>
   </ul>
 </div>

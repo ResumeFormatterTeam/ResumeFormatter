@@ -18,8 +18,8 @@
     <input type="text" data-ng-model="job.endDate">
 </div>
 
-<!-- bullet points don't work -->
-<!-- <div data-bullet-point-form-directive
+<!-- not using data-bullet-point-form directive
+<div data-bullet-point-form-directive
 bulletPointType="job"></div> -->
 
 <div class="form-full-width">
@@ -27,10 +27,16 @@ bulletPointType="job"></div> -->
   <ul class="bullet-point-inputs">
     <li>
       <input type="text" id="jobBulletPoint" data-ng-model="job.jobBulletPoint">
-      <button class="remove-bullet-button" type="button"><i class="fa fa-minus-circle"></i></button>
+      <!-- remove bullet point button -->
+      <button class="remove-bullet-button" type="button" data-ng-click="removeProjectBP()"><i class="fa fa-minus-circle"></i></button>
     </li>
     <li>
-      <button class="add-line-button" type="button">Add Another Line &nbsp; &nbsp; &#x25BA;</button>
+      <!-- add bullet point button -->
+      <button class="add-line-button" type="button" data-ng-click="addProjectBP()">Add Another Line &nbsp; &nbsp; &#x25BA;</button>
+    </li>
+    <li>
+    <!-- add another job button -->
+      <button type="button" class="expand-below-button" data-ng-click="addAnotherJob()">&#x25BC; Add Another &#x25BC;</button>
     </li>
   </ul>
 </div>
