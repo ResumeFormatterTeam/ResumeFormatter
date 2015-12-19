@@ -1,12 +1,10 @@
-
 module.exports = function(app) {
-  app.controller('ResumeController', ['$scope', '$http', '$cookies', 'crudResource', 'currentResume', function($scope, $http, $cookies, crudResource, currentResume ){
+  app.controller('ResumeController', ['$scope', '$http', 'crudResource', 'currentResume', function($scope, $http, crudResource, currentResume ){
 
     $scope.resumes = [];
     $scope.errors = [];
     $scope.resume = currentResume();
-    // $scope.savedResume = {};
-    //need to set default fields?
+
     var defaults = {};
     $scope.newResume = angular.copy($scope.defaults);
     var resumeResource = crudResource('resumes');
@@ -56,17 +54,6 @@ module.exports = function(app) {
     //   })
     // };
 
-
-    $scope.adjustLayoutWidth = function() {
-      if ($scope.formAndResume){
-        $scope.layoutWidth = 'form-and-resume-layout';
-      } else {
-        $scope.layoutWidth = 'full-width-centered-layout';
-      }
-    }
-
-
-
     //adds new resume to database
     $scope.create = function(resumes) {
       resumeResource.create(resumes, function (err, data) {
@@ -97,6 +84,48 @@ module.exports = function(app) {
       });
     };
 
+
+    $scope.adjustLayoutWidth = function() {
+    if ($scope.formAndResume) {
+      $scope.layoutWidth = 'form-and-resume-layout';
+    } else {
+      $scope.layoutWidth = 'full-width-centered-layout';
+      }
+    }
+
+    $scope.flexOrder = {
+      skills: {number: 0, class: 'flex-order-first'},
+      projects: {number: 1, class: 'flex-order-second'},
+      experience: {number: 2, class: 'flex-order-third'},
+      education: {number: 3, class: 'flex-order-fourth'}
+    }
+
+    $scope.moveSectionDown = function(formBlock) {
+      var currentBlockObject = $scope.flexOrder[formBlock];
+      for(block in $scope.flexOrder){
+        if ($scope.flexOrder[block].number === currentBlockObject.number + 1){
+          $scope.flexOrder[formBlock] = $scope.flexOrder[block];
+          $scope.flexOrder[block] = currentBlockObject;
+          return
+        }
+      }
+    }
+    $scope.moveSectionUp = function(formBlock) {
+      var currentBlockObject = $scope.flexOrder[formBlock];
+      for(block in $scope.flexOrder){
+        if ($scope.flexOrder[block].number === currentBlockObject.number - 1){
+          $scope.flexOrder[formBlock] = $scope.flexOrder[block];
+          $scope.flexOrder[block] = currentBlockObject;
+          return
+        }
+      }
+    }
+
+      // skills: 'flex-order-first',
+      // projects: 'flex-order-second',
+      // experience: 'flex-order-third',
+      // education: 'flex-order-fourth'
+
     //issue: also adds another when save button is clicked.
     $scope.addAnotherProject = function() {
       var another = $scope.resume.projects;
@@ -114,5 +143,6 @@ module.exports = function(app) {
       var another = $scope.resume.education;
       $scope.resume.education.push({another});
     };
+
   }]);
 };

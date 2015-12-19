@@ -23,6 +23,19 @@ main {
     display: flex;
     flex-direction: column;
 }
+//Order of the form blocks
+.flex-order-first {
+  order: 0;
+}
+.flex-order-second {
+  order: 1;
+}
+.flex-order-third {
+  order: 2;
+}
+.flex-order-fourth {
+  order: 3;
+}
 
 .ng-enter, .ng-leave, .ng-hide, .ng-show {
   opacity: 0;

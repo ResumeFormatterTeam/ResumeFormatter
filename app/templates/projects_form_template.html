@@ -1,34 +1,34 @@
-<section class="project-fields form-flex-wrap">
+<section class="project-fields form-flex-wrap" data-ng-repeat="project in resume.projects">
+  <div class="move-section-up-down"><button class="updown-button" type="button" data-ng-click="moveSectionUp('projects')">Move Section Up</button> &nbsp; <button class="updown-button" type="button" data-ng-click="moveSectionDown('projects')">Move Section Down</button></div>
+  <div class="form-half-width">
+    <label for="projectName">Project Name:</label>
+    <input type="text" id="projectName" placeholder="Bear Wranglers Without Borders" data-ng-model="project.projectName">
+    <label for="projectUrl">Project Url:</label>
+    <input type="text" id="projectUrl"  placeholder="http://www.bearwranglerswithoutborders.com" data-ng-model="project.projectUrl">
+  </div>
 
-<div class="form-half-width">
-  <label for="projectName">Project Name:</label>
-  <input type="text" id="projectName" placeholder="Bear Wranglers Without Borders" data-ng-model="project.projectName">
-  <label for="projectUrl">Project Url:</label>
-  <input type="text" id="projectUrl"  placeholder="http://www.bearwranglerswithoutborders.com" data-ng-model="project.projectUrl">
-</div>
-
-<div class="form-half-width">
-  <label for="projectCity">City:</label>
-  <input type="text" id="projectCity" placeholder="Billings, MT" data-ng-model="project.projectCity">
-  <label for="projectDate">Date of Project:</label>
-  <input type="text" data-ng-model="project.projectDate">
-</div>
+  <div class="form-half-width">
+    <label for="projectCity">City:</label>
+    <input type="text" id="projectCity" placeholder="Billings, MT" data-ng-model="project.projectCity">
+    <label for="projectDate">Date of Project:</label>
+    <input type="text" data-ng-model="project.projectDate">
+  </div>
 
 <!-- bullet point directive doesnt work -->
 <!-- <div data-bullet-point-form-directive
 bulletPointType="project" data-ng-model="project.projectBulletPoint"></div> -->
 
-<div class="form-full-width">
-  <strong>Bullet Points:</strong>
-  <ul class="bullet-point-inputs">
-    <li>
-      <input type="text" id="projectBulletPoint" data-ng-model="project.projectBulletPoint">
-      <button type="button">Remove</button>
-    </li>
-    <li>
-      <button class="add-line-button" type="button">Add Another Line &nbsp; &nbsp; &#x25BA;</button>
-    </li>
-  </ul>
-</div>
+  <div class="form-full-width">
+    <strong>Bullet Points:</strong>
+    <ul class="bullet-point-inputs">
+      <li>
+        <input type="text" id="projectBulletPoint" data-ng-model="project.projectBulletPoint">
+        <button class="remove-bullet-button" type="button"><i class="fa fa-minus-circle"></i></button>
+      </li>
+      <li>
+        <button class="add-line-button" type="button">Add Another Line &nbsp; &nbsp; &#x25BA;</button>
+      </li>
+    </ul>
+  </div>
 
 </section>
