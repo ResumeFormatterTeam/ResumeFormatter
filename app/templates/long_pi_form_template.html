@@ -1,15 +1,11 @@
-<article class="form-block" >
-
-
+<section class="form-block">
   <section class="form-block-top">
     <h2>{{headerText}}</h2>
     <button class="collapse" type="button" data-ng-model="collapsed" data-ng-click="collapsed=!collapsed">{{(collapsed) ? "Expand" : "Collapse"}}</button>
   </section>
 
 
-
-  <form data-ng-animate="'animate'" class="{{formClass}} form-block-bottom animate-show" ng-hide="collapsed" data-ng-submit="save({resume: resume})">
-
+  <form name="resumeName{{resume.userId}}" data-ng-animate="'animate'" class="{{layoutWidth}} form-block-bottom animate-show" ng-hide="collapsed" data-ng-submit="create (newResume)">
 
     <div class="form-half-width">
       <label for="fullName">Full Name:</label>
@@ -38,15 +34,14 @@
     </div>
 
 
-   <div class="form-full-width">
+    <div class="form-full-width">
       <div class="justify-right-flex">
         <button class="save-info-button" type="submit">Save Info</button>
       </div>
       <div class="{{expandClass}}">
-        <button type="button" class="expand-below-button">&#x25BC; Add Another {{formType}} &#x25BC;</button>
+        <button class="expand-below-button">&#x25BC; Add Another {{formType}} &#x25BC;</button>
       </div>
     </div>
-
-    </form>
-</article>
+  </form>
+</section>
 

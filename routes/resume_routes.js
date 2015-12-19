@@ -6,7 +6,6 @@ var eatAuth = require(__dirname + '/../lib/eat_auth');
 var resumesRouter = module.exports = exports = express.Router();
 resumesRouter.use(bodyParser.json());
 
-
 //get request to get all Resumes
 resumesRouter.get('/resumes/', function(req, res) {
   Resume.find({}, function(err, data) {
@@ -17,15 +16,14 @@ resumesRouter.get('/resumes/', function(req, res) {
 });
 
 
-//get
-// resumesRouter.get('/resumes', function(req, res) {
+// //get
+// resumesRouter.get('/resumes', eatAuth, function(req, res) {
 //   Resume.find({userId: req.user._id}, function(err, data) {
 //     if (err) return handleError(err, res);
-
-//     console.log(data);
 //     res.json(data);
 //   });
 // });
+
 
 //get user's resume
 resumesRouter.get('/resumes/:userId', function(req, res) {
