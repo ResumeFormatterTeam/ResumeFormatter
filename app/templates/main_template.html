@@ -34,7 +34,8 @@
   header-text="Projects"
   form-class="{{layoutWidth}}"
   expand-class="justify-center-flex"
-  form-type="Project">
+  form-type="Project"
+  data-ng-repeat="project in resume.projects">
   <div ng-include src="'templates/projects_form_template.html'">
       <!-- ng-include directive includes project form template -->
   </div>
@@ -44,7 +45,8 @@
   header-text="Experience"
   form-class="{{layoutWidth}}"
   expand-class="justify-center-flex"
-  form-type="Job">
+  form-type="Job"
+  data-ng-repeat="job in resume.experience">
   <div ng-include src="'templates/experience_form_template.html'">
       <!-- ng-include directive includes experience form template -->
   </div>
@@ -54,8 +56,9 @@
   header-text="Education"
   form-class="{{layoutWidth}}"
   expand-class="justify-center-flex"
-  form-type="Institution">
-  <div ng-include src="'templates/education_form_template.html'">
+  form-type="Institution"
+  data-ng-repeat="edu in resume.education">
+  <div class="form-flex-wrap" ng-include src="'templates/education_form_template.html'">
       <!-- ng-include directive includes education form template -->
   </div>
 </div>

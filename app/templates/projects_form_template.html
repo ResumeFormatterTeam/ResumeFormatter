@@ -18,17 +18,19 @@
 <!-- <div data-bullet-point-form-directive
 bulletPointType="project" data-ng-model="project.projectBulletPoint"></div> -->
 
-<div class="form-full-width">
-  <strong>Bullet Points:</strong>
-  <ul class="bullet-point-inputs">
-    <li>
-      <input type="text" id="projectBulletPoint" data-ng-model="project.projectBulletPoint">
-      <button class="remove-bullet-button" type="button"><i class="fa fa-minus-circle"></i></button>
-    </li>
-    <li>
-      <button class="add-line-button" type="button">Add Another Line &nbsp; &nbsp; &#x25BA;</button>
-    </li>
-  </ul>
-</div>
-
+  <div class="form-full-width">
+    <strong>Bullet Points:</strong>
+    <ul class="bullet-point-inputs">
+      <li>
+        <input type="text" id="projectBulletPoint" data-ng-model="project.projectBulletPoint[0]">
+      </li>
+      <li>
+        <input type="text" id="projectBulletPoint" data-ng-model="project.projectBulletPoint[1]">
+      </li>
+      <li>
+        <input type="text" id="projectBulletPoint" data-ng-model="project.projectBulletPoint[2]">
+      </li>
+    </ul>
+    <button type="button" class="expand-below-button" data-ng-click="addAnotherProject()">&#x25BC; Add Another Project &#x25BC;</button>
+  </div>
 </section>

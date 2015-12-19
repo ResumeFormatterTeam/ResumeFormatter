@@ -4,6 +4,7 @@ module.exports = function(app) {
     $scope.errors = [];
     $scope.resume = currentResume();
     // $scope.savedResume = {};
+
     //need to set default fields?
 
     $scope.adjustLayoutWidth = function() {
@@ -87,6 +88,19 @@ module.exports = function(app) {
 
         console.log('resumes has been removed');
       });
+    };
+
+    //adds another Project, Job or Institution block to form
+    $scope.addAnotherProject = function() {
+      $scope.resume.projects.push({});
+    };
+
+    $scope.addAnotherJob = function() {
+      $scope.resume.experience.push({});
+    };
+
+    $scope.addAnotherInstitution = function() {
+      $scope.resume.education.push({});
     };
 
   }]);
