@@ -1,18 +1,20 @@
-<section class="project-fields form-flex-wrap" data-ng-repeat="project in resume.projects">
+<section class="project-fields form-flex-wrap"
+data-ng-repeat="project in resume.projects track by $index"
+data-ng-init="$projectIndex = $index">
  <div class="move-section-up-down"><button class="updown-button" type="button" data-ng-click="moveSectionUp('projects')">Move Section Up</button> &nbsp; <button class="updown-button" type="button" data-ng-click="moveSectionDown('projects')">Move Section Down</button></div>
-<div class="form-half-width">
-  <label for="projectName">Project Name:</label>
-  <input type="text" id="projectName" placeholder="Bear Wranglers Without Borders" data-ng-model="project.projectName">
-  <label for="projectUrl">Project Url:</label>
-  <input type="text" id="projectUrl"  placeholder="http://www.bearwranglerswithoutborders.com" data-ng-model="project.projectUrl">
-</div>
+  <div class="form-half-width">
+    <label for="projectName">Project Name:</label>
+    <input type="text" id="projectName{{$projectIndex}}" placeholder="Bear Wranglers Without Borders" data-ng-model="resume.projects[$projectIndex].projectName">
+    <label for="projectUrl{{$projectIndex}}">Project Url:</label>
+    <input type="text" id="projectUrl{{$projectIndex}}"  placeholder="http://www.bearwranglerswithoutborders.com" data-ng-model="resume.projects[$projectIndex].projectUrl">
+  </div>
 
-<div class="form-half-width">
-  <label for="projectCity">City:</label>
-  <input type="text" id="projectCity" placeholder="Billings, MT" data-ng-model="project.projectCity">
-  <label for="projectDate">Date of Project:</label>
-  <input type="text" data-ng-model="project.projectDate">
-</div>
+  <div class="form-half-width">
+    <label for="projectCity{{$projectIndex}}">City:</label>
+    <input type="text" id="projectCity{{$projectIndex}}" placeholder="Billings, MT" data-ng-model="resume.projects[$projectIndex].projectCity">
+    <label for="projectDate{{$projectIndex}}">Date of Project:</label>
+    <input type="text" data-ng-model="resume.projects[$projectIndex].projectDate">
+  </div>
 
 <!-- bullet point directive doesnt work -->
 <!-- <div data-bullet-point-form-directive
@@ -21,15 +23,13 @@ bulletPointType="project" data-ng-model="project.projectBulletPoint"></div> -->
   <div class="form-full-width">
     <strong>Bullet Points:</strong>
     <ul class="bullet-point-inputs">
-      <li>
-        <input type="text" id="projectBulletPoint" data-ng-model="project.projectBulletPoint[0]">
+      <li data-ng-repeat="bullet in resume.projects[$projectIndex].projectBulletPoint track by $index">
+        <input type="text" id="projectBulletPoint{{$index}}" data-ng-model="resume.projects[$projectIndex].projectBulletPoint[$index]">
+        <button class="remove-bullet-button" type="button" data-ng-click="removeBullet(resume.projects[$projectIndex].projectBulletPoint, bullet)"><i class="fa fa-minus-circle"></i></button>
       </li>
       <li>
-        <input type="text" id="projectBulletPoint" data-ng-model="project.projectBulletPoint[1]">
-      </li>
-      <li>
-        <input type="text" id="projectBulletPoint" data-ng-model="project.projectBulletPoint[2]">
-      </li>
+      <button class="add-line-button" type="button" data-ng-click="addProjectBullet(resume.projects[$projectIndex])">Add Another Line &nbsp; &nbsp; &#x25BA;</button>
+    </li>
     </ul>
     <button type="button" class="expand-below-button" data-ng-click="addAnotherProject()">&#x25BC; Add Another Project &#x25BC;</button>
   </div>

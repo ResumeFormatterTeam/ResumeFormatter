@@ -43,11 +43,6 @@ module.exports = function(app) {
       }
     }
 
-      // skills: 'flex-order-first',
-      // projects: 'flex-order-second',
-      // experience: 'flex-order-third',
-      // education: 'flex-order-fourth'
-
     var defaults = {};
     $scope.newResume = angular.copy($scope.defaults);
     var resumeResource = crudResource('resumes');
@@ -92,12 +87,34 @@ module.exports = function(app) {
 
     //adds another Project, Job or Institution block to form
     $scope.addAnotherProject = function() {
-      $scope.resume.projects.push({});
+      $scope.resume.projects.push({
+          projectName: '',
+          projectUrl: '',
+          projectCity: '',
+          projectDate:'',
+          projectBulletPoint: ['']
+      });
     };
-
-    $scope.addAnotherJob = function() {
-      $scope.resume.experience.push({});
+        $scope.addAnotherJob = function() {
+      $scope.resume.experience.push({
+          companyName: '',
+          jobTitle: '',
+          companyUrl: '',
+          companyCity: '',
+          startDate: '',
+          endDate: '',
+          jobBulletPoint: ['']
+      });
     };
+    $scope.addProjectBullet = function(project) {
+      project.projectBulletPoint.push("");
+    }
+    $scope.addJobBullet = function(job) {
+      job.jobBulletPoint.push("");
+    }
+    $scope.removeBullet = function(bulletPointList, bullet) {
+      bulletPointList.splice(bulletPointList.indexOf(bullet), 1);
+    }
 
     $scope.addAnotherInstitution = function() {
       $scope.resume.education.push({});
