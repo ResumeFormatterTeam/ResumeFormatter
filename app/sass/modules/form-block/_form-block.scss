@@ -8,12 +8,24 @@
   .form-and-resume-layout{
   width: 100%;
   max-width: 24.375em;
+ .justify-right-flex {
+    justify-content: center;
+    margin-bottom: 2.5em;
+  }
+  }
+  @media (max-width: 1400px) {
+  .form-and-resume-layout{
+  width: 100%;
+  max-width: 48.75em;
+  }
   }
 
   .full-width-centered-layout {
   width: 100%;
   max-width: 48.750em;
   }
+
+
 
   .form-block-top {
     font-family: Lato;
@@ -38,6 +50,10 @@
   transition: .4s linear all;
 }
 
+  .move-section-up-down {
+    text-align: center;
+  }
+
   .transcluded-flex-wrap {
     display: flex;
     flex-wrap: wrap;
@@ -52,6 +68,13 @@
     width: 100%;
   }
 
+  @media (max-width: 670px) {
+  .justify-right-flex {
+    justify-content: center;
+    margin-bottom: 2.5em;
+  }
+  }
+
   .justify-center-flex {
     display:flex;
     justify-content:center;
@@ -60,12 +83,6 @@
 
   .hidden {
     display: none;
-  }
-
-  .bullet-point-inputs {
-    input {
-      width: 85%;
-    }
   }
 
   input, textarea {

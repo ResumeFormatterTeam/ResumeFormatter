@@ -69,9 +69,10 @@ describe('All routes on the resume app', function() {
       });
   });
   describe('to modify the resume database', function() {
-    beforeEach(function(done) {
+    before(function(done) {
       //populate new resume with required fields
-      (new User({username:'TylerMorgan', password:'foobar123'})).save(function(err, data) {
+      (new User({username:'TylerMorgan', password:'foobar1234'})).save(function(err, data) {
+        debugger;
         expect(err).to.eql(null);
         this.user = data;
         (new Resume({firstName: 'Tyler', lastName: 'Morgan', userId: this.user.id})).save(function(err, data) {
@@ -79,7 +80,7 @@ describe('All routes on the resume app', function() {
           this.resume = data;
           chai.request('http://localhost:3000')
           .get('/signin')
-          .auth('JimmyMontana', 'foobar123')
+          .auth('TylerMorgan', 'foobar1234')
           .end(function(err, res){
             expect(err).to.eql(null);
             expect(token).to.not.eql("");

@@ -1,16 +1,22 @@
+<section class="edu-fields form-flex-wrap" data-ng-repeat="edu in resume.education">
+ <div class="move-section-up-down"><button class="updown-button" type="button" data-ng-click="moveSectionUp('education')">Move Section Up</button> &nbsp; <button class="updown-button" type="button" data-ng-click="moveSectionDown('education')">Move Section Down</button></div>
 <div class="form-half-width">
     <label for="institutionName">Institution Name:</label>
-    <input type="text" id="institutionName" placeholder="Western Wrangler University">
+    <input type="text" id="institutionName" placeholder="Western Wrangler University" data-ng-model="edu.institutionName">
     <label for="degree">Degree:</label>
-    <input type="text" id="degree" placeholder="B.S.">
+    <input type="text" id="degree" placeholder="B.S." data-ng-model="edu.degree">
     <label for="major">Major:</label>
-    <input type="text" id="major" placeholder="Bear Wrangling">
-</div>
-<div class="form-half-width">
+    <input type="text" id="major" placeholder="Bear Wrangling" data-ng-model="edu.major">
+  </div>
+
+  <div class="form-half-width">
     <label for="minor">Minor:</label>
-    <input type="text" id="major" placeholder="Underwater Lion Taming">
+    <input type="text" id="minor" placeholder="Underwater Lion Taming" data-ng-model="edu.minor">
     <label for="startDate">Start Date:</label>
-    <input type="text">
+    <input type="text" data-ng-model="edu.startDate">
     <label for="endDate">End Date:</label>
-    <input type="text">
-</div>
+    <input type="text" data-ng-model="edu.endDate">
+  </div>
+
+  <button type="button" class="expand-below-button" data-ng-click="addAnotherInstitution()">&#x25BC; Add Another Institution &#x25BC;</button>
+</section>

@@ -23,5 +23,6 @@ module.exports = function(app) {
     $scope.changePlaces = function() {
       $location.path('/signup');
     };
+
   }]);
 };

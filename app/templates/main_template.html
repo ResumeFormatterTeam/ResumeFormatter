@@ -1,13 +1,17 @@
 <section class="top-interface-buttons">
-  <h3>Display:</h3>
-  <button type="button" data-ng-click="formOnly=true;resumeOnly=false;formAndResume=false; adjustLayoutWidth()">Form Only</button>
-  <button type="button" data-ng-click="formOnly=false;resumeOnly=true;formAndResume=false; adjustLayoutWidth()">Resume Only</button>
-  <button type="button" data-ng-click="formOnly=false;resumeOnly=false;formAndResume=true; adjustLayoutWidth()">Form & Resume</button>
-  <button class="save-info-button" type="submit">Save Resume!</button>
-  Start typing in the fields and watch your resume come to life!
+  <strong class="display-options-header">Display Options</strong>
+  <div class="display-button-container">
+    <button class="display-control-button" type="button" data-ng-click="formOnly=true;resumeOnly=false;formAndResume=false; adjustLayoutWidth()">Form Only</button>
+    <button class="display-control-button" type="button" data-ng-click="formOnly=false;resumeOnly=true;formAndResume=false; adjustLayoutWidth()">Resume Only</button>
+    <button class="display-control-button" type="button" data-ng-click="formOnly=false;resumeOnly=false;formAndResume=true; adjustLayoutWidth()">Form & Resume</button>
+    <button class="save-info-button" type="submit">Save Resume!</button>
+  </div>
+  <button data-ng-if="resumeOnly===true" ng-click="printResume('printable');">Print Resume!</button>
 </section>
-<div class="main-content">
+
+<div class="main-content" id="printable">
 <section class="form-blocks" data-ng-if="formOnly===true || formAndResume===true">
+
   <div data-form-block-directive
   data-form-name="newPersonalForm"
   data-resume="newResume"
@@ -20,7 +24,7 @@
     </div>
   </div>
 
-  <div data-form-block-directive
+  <div class="{{flexOrder.skills.class}}" data-form-block-directive
   header-text="Skills"
   form-class="{{layoutWidth}}"
   expand-class="hidden">
@@ -29,35 +33,37 @@
   </div>
 </div>
 
-<div  data-form-block-directive
+<div class="{{flexOrder.projects.class}}" data-form-block-directive
   header-text="Projects"
   form-class="{{layoutWidth}}"
   expand-class="justify-center-flex"
   form-type="Project">
-  <div class="form-flex-wrap" ng-include src="'templates/projects_form_template.html'">
+  <div ng-include src="'templates/projects_form_template.html'">
       <!-- ng-include directive includes project form template -->
   </div>
 </div>
 
-<div  data-form-block-directive
+<div class="{{flexOrder.experience.class}}" data-form-block-directive
   header-text="Experience"
   form-class="{{layoutWidth}}"
   expand-class="justify-center-flex"
-  form-type="Job">
-  <div class="form-flex-wrap" ng-include src="'templates/experience_form_template.html'">
+  form-type="Job"
+  data-ng-repeat="job in resume.experience">
+  <div ng-include src="'templates/experience_form_template.html'">
       <!-- ng-include directive includes experience form template -->
   </div>
 </div>
 
-<div  data-form-block-directive
+<div class="{{flexOrder.education.class}}" data-form-block-directive
   header-text="Education"
   form-class="{{layoutWidth}}"
   expand-class="justify-center-flex"
-  form-type="Institution">
+  form-type="Institution"
+  data-ng-repeat="edu in resume.education">
   <div class="form-flex-wrap" ng-include src="'templates/education_form_template.html'">
       <!-- ng-include directive includes education form template -->
   </div>
 </div>
 </section>
-<div class="formatted-resume" data-ng-if="resumeOnly===true || formAndResume===true" ng-include src="'templates/formatted_resume_template.html'"></div>
+<div data-ng-if="resumeOnly===true || formAndResume===true" ng-include src="'templates/formatted_resume_template.html'"></div>
 </div>

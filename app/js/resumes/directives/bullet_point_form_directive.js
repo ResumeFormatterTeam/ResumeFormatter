@@ -1,3 +1,4 @@
+//this directive (and corresponding template) is not being used
 module.exports = function(app) {
   app.directive('bulletPointFormDirective', function(){
     return {

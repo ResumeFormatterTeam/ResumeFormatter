@@ -1,18 +1,35 @@
+<section class="job-fields form-flex-wrap" data-ng-repeat="job in resume.experience track by $index"
+data-ng-init="$jobIndex = $index">
+ <div class="move-section-up-down"><button class="updown-button" type="button" data-ng-click="moveSectionUp('experience')">Move Section Up</button> &nbsp; <button class="updown-button" type="button" data-ng-click="moveSectionDown('experience')">Move Section Down</button></div>
 <div class="form-half-width">
     <label for="companyName">Company Name:</label>
-    <input type="text" id="companyName" placeholder="Bear Wranglers International">
+    <input type="text" id="companyName" placeholder="Bear Wranglers International" data-ng-model="resume.experience[$jobIndex].companyName">
     <label for="jobTitle">Job Title:</label>
-    <input type="text" id="jobTitle" placeholder="VP of Bear Wrangling">
+    <input type="text" id="jobTitle" placeholder="VP of Bear Wrangling" data-ng-model="resume.experience[$jobIndex].jobTitle">
     <label for="companyUrl">Company Url:</label>
-    <input type="text" id="companyUrl" placeholder="http://www.bearwranglersinternational.com">
-</div>
-<div class="form-half-width">
+    <input type="text" id="companyUrl" placeholder="http://www.bearwranglersinternational.com" data-ng-model="resume.experience[$jobIndex].companyUrl">
+  </div>
+
+  <div class="form-half-width">
     <label for="companyCity">City:</label>
-    <input type="text" id="companyCity" placeholder="Billings, MT">
+    <input type="text" id="companyCity" placeholder="Billings, MT" data-ng-model="resume.experience[$jobIndex].companyCity">
     <label for="startDate">Start Date:</label>
-    <input type="text">
+    <input type="text" data-ng-model="resume.experience[$jobIndex].startDate">
     <label for="endDate">End Date:</label>
-    <input type="text">
-</div>
-<div data-bullet-point-form-directive
-bulletPointType="project"></div>
+    <input type="text" data-ng-model="resume.experience[$jobIndex].endDate">
+  </div>
+
+  <div class="form-full-width">
+    <strong>Bullet Points:</strong>
+    <ul class="bullet-point-inputs">
+      <li data-ng-repeat="bullet in resume.experience[$jobIndex].jobBulletPoint track by $index">
+        <input type="text" id="projectBulletPoint{{$index}}" data-ng-model="resume.experience[$jobIndex].jobBulletPoint[$index]">
+        <button class="remove-bullet-button" type="button" data-ng-click="removeBullet(resume.experience[$jobIndex].jobBulletPoint, bullet)"><i class="fa fa-minus-circle"></i></button>
+      </li>
+      <li>
+      <button class="add-line-button" type="button" data-ng-click="addJobBullet(resume.experience[$jobIndex])">Add Another Line &nbsp; &nbsp; &#x25BA;</button>
+      </li>
+    </ul>
+    <button type="button" class="expand-below-button" data-ng-click="addAnotherJob()">&#x25BC; Add Another Job &#x25BC;</button>
+  </div>
+</section>

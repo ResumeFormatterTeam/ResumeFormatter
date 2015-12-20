@@ -10,14 +10,14 @@ var resumeSchema = new mongoose.Schema({
   website: String,
   linkedIn: String,
   personalSummary: String,
-  proficientSkills: [{type: String}],
-  growingSkills: [{type: String}],
+  proficientSkills: String,
+  growingSkills: String,
   projects: [{
     projectName: String,
     projectUrl: String,
     projectCity: String,
     projectDate: String,
-    projectBulletPoint: String,
+    projectBulletPoint: Array,
   }],
   experience: [{
     companyName: String,
@@ -26,14 +26,15 @@ var resumeSchema = new mongoose.Schema({
     companyCity: String,
     startDate: String,
     endDate: String,
-    jobBulletPoint: String,
+    jobBulletPoint: Array,
   }],
   education: [{
     institutionName: String,
     degree: String,
     major: String,
     minor: String,
-    date: String,
+    startDate: String,
+    endDate: String
   }]
 });
 

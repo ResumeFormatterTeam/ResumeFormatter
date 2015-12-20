@@ -39,8 +39,7 @@
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",
     "mocha": "^2.3.4",
-    "phantomjs": "^1.9.19",
-    "sweetalert": "^1.1.3"
+    "phantomjs": "^1.9.19"
   },
   "devDependencies": {
     "angular": "^1.4.8",
@@ -66,11 +65,11 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "mocha": "^2.3.4",
     "phantomjs": "^1.9.19",
-    "sweetalert": "^1.1.3",
     "webpack-stream": "^3.0.1"
   },
   "scripts": {
     "postinstall": "gulp default",
+    "test": "mocha",
     "start": "node server.js"
   },
   "repository": {
