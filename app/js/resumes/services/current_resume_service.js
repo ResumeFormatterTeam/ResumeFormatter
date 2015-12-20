@@ -12,8 +12,22 @@ module.exports = function(app) {
         personalSummary:'',
         proficient: [''],
         developing: [''],
-        projects:[{}],
-        experience:[{}],
+        projects:[{
+          projectName: '',
+          projectUrl: '',
+          projectCity: '',
+          projectDate:'',
+          projectBulletPoint: ['']
+        }],
+        experience:[{
+          companyName: '',
+          jobTitle: '',
+          companyUrl: '',
+          companyCity: '',
+          startDate: '',
+          endDate: '',
+          jobBulletPoint: ['']
+        }],
         education:[{}]
       }
       return resume;
