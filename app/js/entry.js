@@ -6,6 +6,9 @@ require('angular-base64');
 // require('sweetalert');
 var angular = window.angular;
 
+// var ngResource = require('ng-resource');
+
+
 var resumeApp = angular.module('resumeApp', ['ngAnimate', 'ngRoute', 'ngCookies', 'base64']);
 
 //require in all services, controllers, directives, etc.

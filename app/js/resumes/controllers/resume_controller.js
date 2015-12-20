@@ -1,5 +1,7 @@
 module.exports = function(app) {
   app.controller('ResumeController', ['$scope', '$http', 'crudResource', 'currentResume', function($scope, $http, crudResource, currentResume ){
+    //controller with $resource
+  // app.controller('ResumeController', ['$scope', '$http', '$resource', 'crudResource', 'currentResume', function($scope, $http, $resource, crudResource, currentResume ){
 
     $scope.resumes = [];
     $scope.errors = [];
@@ -9,6 +11,33 @@ module.exports = function(app) {
     $scope.newResume = angular.copy($scope.defaults);
     var resumeResource = crudResource('resumes');
 
+    // var resumes = $resource('api/resumes/:id', null, {
+    //   'update': { method:'PUT' }
+    // });
+
+    // resumes.prototype.$save = function() {
+    //   if (this.id) {
+    //     return this.$update();
+    //   } else {
+    //     return this.$create();
+    //   }
+    // };
+
+    // $scope.saveEntry = function() {
+    //   var resourceResume = $resource('/api/resumes/:id', {id: '@id'});
+    //   var defaults = {
+    //     update: { method: 'PUT', isArray: false },
+    //     create: { method: 'POST' }
+    //   };
+    //   console.log($scope.resumes.id);
+    //   resourceResume.get($scope.resumes.id)
+    //   console.log($scope.resume);
+    //   resume.save($scope.resume);
+
+
+
+
+    // }
 
     $scope.getAll = function() {
       $http.get('/api/users')
@@ -32,27 +61,7 @@ module.exports = function(app) {
         });
     };
 
-  // $http.get('/api/users/me')
-  //   .then(function(result) {
-  //   $scope.userId = result.data._id;
-  //   // Do whatever you need to do with the userId here.
 
-  // });
-
-    //to get all resumes by user ID
-    // $scope.getAllId = function() {
-    // };
-
-    // // displays all resumes in database
-    // $scope.getAll = function(resumes) {
-    //   resumeResource.getAll(resumes, function (err, data) {
-    //     if (err) return err;
-
-    //     console.log(resumes);
-    //     console.log(data);
-    //     $scope.resumes = data;
-    //   })
-    // };
 
     //adds new resume to database
     $scope.create = function(resumes) {
@@ -68,11 +77,21 @@ module.exports = function(app) {
 
     //updates existing resume in database
     $scope.update = function(resumes) {
-      resumes.editing = false;
-      resumeResource.update(resumes, function (err, data) {
-        if (err) return err;
-      });
+      $http.put('/api/resumes/' + resumes._id, resumes)
+        .then(function(res) {
+          console.log('update resume' + res);
+        }, function(err) {
+          $scope.errors.push('could not get resume: ' + resumes.userName);
+          console.log(err.data);
+        });
     };
+
+
+
+    //   resumeResource.update(resumes, function (err, data) {
+    //     if (err) return err;
+    //   });
+    // };
 
     //removes existing resume from database
     $scope.remove = function(resumes) {
@@ -146,3 +165,5 @@ module.exports = function(app) {
 
   }]);
 };
+
+
