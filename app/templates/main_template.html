@@ -7,11 +7,11 @@
   </div>
 </section>
 <div class="main-content">
-  <section data-ng-controller="ResumeController" class="form-blocks" data-ng-if="formOnly===true || formAndResume===true" data-ng-init="getAll()">
-<!-- <section data-ng-controller="ResumeController" > -->
+  <section data-ng-controller="ResumeController" data-ng-init="getAll()" class="form-blocks" data-ng-if="formOnly===true || formAndResume===true">
+    <!-- <section data-ng-controller="ResumeController" data-ng-init="getAll()"> -->
 
 <!-- data-ng-init="getAll()" -->
-    <section data-ng-repeat="resume in resumes">
+      <section data-ng-repeat="resume in resumes">
 
       <!-- <section data-ng-repeat="resume in resumes track by resume.userId"> -->
 
@@ -19,6 +19,7 @@
       {{resume.userId}}
 
 
+    <!-- to post, use the create (resume) -->
     <div long-pi-form-directive
       data-form-name="newPersonalForm"
       data-resume="resume"
@@ -30,6 +31,7 @@
       </div>
     </div>
     </section>
+  <!-- </section> -->
 
 <!--     <div data-form-block-directive
       data-form-name="newPersonalForm"
