@@ -8,6 +8,9 @@
     <label for="password">Password:</label>
     <input type="password" id="password" required data-ng-model="user.password">
     <button type="submit" data-ng-disabled="authForm.$invalid">{{buttonText}}</button>
-  </form>
 
+    <div data-ng-if="!user.username">Please enter username.</div>
+    <div data-ng-if="!user.password">Please enter a password.</div>
+
+  </form>
 </section>
