@@ -1,12 +1,15 @@
 <section class="top-interface-buttons">
   <strong class="display-options-header">Display Options</strong>
   <div class="display-button-container">
-  <button class="display-control-button" type="button" data-ng-click="formOnly=true;resumeOnly=false;formAndResume=false; adjustLayoutWidth()">Form Only</button>
-  <button class="display-control-button" type="button" data-ng-click="formOnly=false;resumeOnly=true;formAndResume=false; adjustLayoutWidth()">Resume Only</button>
-  <button class="display-control-button" type="button" data-ng-click="formOnly=false;resumeOnly=false;formAndResume=true; adjustLayoutWidth()">Form & Resume</button>
+    <button class="display-control-button" type="button" data-ng-click="formOnly=true;resumeOnly=false;formAndResume=false; adjustLayoutWidth()">Form Only</button>
+    <button class="display-control-button" type="button" data-ng-click="formOnly=false;resumeOnly=true;formAndResume=false; adjustLayoutWidth()">Resume Only</button>
+    <button class="display-control-button" type="button" data-ng-click="formOnly=false;resumeOnly=false;formAndResume=true; adjustLayoutWidth()">Form & Resume</button>
+    <button class="save-info-button" type="submit">Save Resume!</button>
   </div>
+  <button data-ng-if="resumeOnly===true" ng-click="printResume('printable');">Print Resume!</button>
 </section>
-<div class="main-content">
+
+<div class="main-content" id="printable">
 <section class="form-blocks" data-ng-if="formOnly===true || formAndResume===true">
 
   <div data-form-block-directive
