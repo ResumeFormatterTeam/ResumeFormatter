@@ -103,5 +103,13 @@ module.exports = function(app) {
       $scope.resume.education.push({});
     };
 
+    $scope.printResume = function(divId) {
+      var printContent = document.getElementById(divId).innerHTML;
+      var popup = window.open('', '_myResume', 'top=100,left=100,width=960,height=400');
+      popup.document.open()
+      popup.document.write('<html><head><link rel="stylesheet" type="text/css" href="application.css" /></head><body onload="window.print()">' + printContent + '<script src="bundle.js"></script></html>');
+      popup.document.close();
+    }
+
   }]);
 };

@@ -77,3 +77,4 @@
 <section data-ng-show="resume.education[0].institutionName || resume.education[0].degree || resume.education[0].major || resume.education[0].minor || resume.education[0].startDate || resume.education[0].endDate" class="education {{flexOrder.education.class}}" data-ng-repeat="edu in resume.education">
   <span itemscope itemtype="https://schema.org/CollegeOrUniversity" itemprop="name"><span itemprop="name">{{edu.institutionName}}</span><span data-ng-show="edu.institutionName">,</span> {{edu.degree}}<span data-ng-show="edu.degree">,</span> {{edu.major}}<span data-ng-show="edu.major">,</span> {{edu.minor}} <span data-ng-show="edu.startDate || edu.endDate">(<time>{{edu.startDate}}</time> - <time>{{edu.endDate}}</time>)</span></span>
 </section>
+</div>
