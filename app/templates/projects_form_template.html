@@ -1,5 +1,5 @@
 <section class="project-fields form-flex-wrap" data-ng-repeat="project in resume.projects">
-  <div class="move-section-up-down"><button class="updown-button" type="button" data-ng-click="moveSectionUp('projects')">Move Section Up</button> &nbsp; <button class="updown-button" type="button" data-ng-click="moveSectionDown('projects')">Move Section Down</button></div>
+   <div class="move-section-up-down"><button class="updown-button" type="button" data-ng-click="moveSectionUp('projects')">Move Section Up</button> &nbsp; <button class="updown-button" type="button" data-ng-click="moveSectionDown('projects')">Move Section Down</button></div>
   <div class="form-half-width">
     <label for="projectName">Project Name:</label>
     <input type="text" id="projectName" placeholder="Bear Wranglers Without Borders" data-ng-model="project.projectName">
@@ -22,13 +22,15 @@ bulletPointType="project" data-ng-model="project.projectBulletPoint"></div> -->
     <strong>Bullet Points:</strong>
     <ul class="bullet-point-inputs">
       <li>
-        <input type="text" id="projectBulletPoint" data-ng-model="project.projectBulletPoint">
-        <button class="remove-bullet-button" type="button"><i class="fa fa-minus-circle"></i></button>
+        <input type="text" id="projectBulletPoint" data-ng-model="project.projectBulletPoint[0]">
       </li>
       <li>
-        <button class="add-line-button" type="button">Add Another Line &nbsp; &nbsp; &#x25BA;</button>
+        <input type="text" id="projectBulletPoint" data-ng-model="project.projectBulletPoint[1]">
+      </li>
+      <li>
+        <input type="text" id="projectBulletPoint" data-ng-model="project.projectBulletPoint[2]">
       </li>
     </ul>
+    <button type="button" class="expand-below-button" data-ng-click="addAnotherProject()">&#x25BC; Add Another Project &#x25BC;</button>
   </div>
-
 </section>

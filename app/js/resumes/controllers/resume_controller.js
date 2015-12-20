@@ -87,7 +87,8 @@ module.exports = function(app) {
     };
 
 
-
+    // //updates existing resume in database
+    // $scope.update = function(resumes) {
     //   resumeResource.update(resumes, function (err, data) {
     //     if (err) return err;
     //   });
@@ -102,7 +103,6 @@ module.exports = function(app) {
         console.log('resumes has been removed');
       });
     };
-
 
     $scope.adjustLayoutWidth = function() {
     if ($scope.formAndResume) {
@@ -139,28 +139,22 @@ module.exports = function(app) {
         }
       }
     }
-
       // skills: 'flex-order-first',
       // projects: 'flex-order-second',
       // experience: 'flex-order-third',
       // education: 'flex-order-fourth'
 
-    //issue: also adds another when save button is clicked.
+    //adds another Project, Job or Institution block to form
     $scope.addAnotherProject = function() {
-      var another = $scope.resume.projects;
-      $scope.resume.projects.push({another});
+      $scope.resume.projects.push({});
     };
 
-    //issue: also adds another when save button is clicked.
     $scope.addAnotherJob = function() {
-      var another = $scope.resume.experience;
-      $scope.resume.experience.push({another});
+      $scope.resume.experience.push({});
     };
 
-    //issue: also adds another when save button is clicked.
     $scope.addAnotherInstitution = function() {
-      var another = $scope.resume.education;
-      $scope.resume.education.push({another});
+      $scope.resume.education.push({});
     };
 
   }]);

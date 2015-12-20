@@ -48,7 +48,9 @@
     <time data-ng-show="project.projectDate" datetime="2015-11">{{project.projectDate}}</time>
   </section>
   <ul class="responsibilities">
-    <li data-ng-show="project.projectBulletPoint">{{project.projectBulletPoint}}</li>
+    <li>{{project.projectBulletPoint[0]}}</li>
+    <li>{{project.projectBulletPoint[1]}}</li>
+    <li>{{project.projectBulletPoint[2]}}</li>
   </ul>
 </section>
 
@@ -63,8 +65,10 @@
       <time>{{job.startDate}}</time> - <time>{{job.endDate}}</time>
       </section>
     </section>
-    <ul data-ng-show="job.jobBulletPoint" class="responsibilities">
-      <li>{{job.jobBulletPoint}}</li>
+    <ul class="responsibilities">
+      <li>{{job.jobBulletPoint[0]}}</li>
+      <li>{{job.jobBulletPoint[1]}}</li>
+      <li>{{job.jobBulletPoint[2]}}</li>
     </ul>
   </section>
 </section>
