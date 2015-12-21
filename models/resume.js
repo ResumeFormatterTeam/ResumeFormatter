@@ -35,7 +35,11 @@ var resumeSchema = new mongoose.Schema({
     minor: String,
     startDate: String,
     endDate: String
-  }]
+  }],
+  skillOrder: {type: Number, default: 0},
+  projectsOrder: {type: Number, default: 1},
+  experienceOrder: {type: Number, default: 2},
+  educationOrder: {type: Number, default: 3}
 });
 
 module.exports = mongoose.model('Resume', resumeSchema);
