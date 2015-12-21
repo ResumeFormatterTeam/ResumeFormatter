@@ -1,7 +1,7 @@
 <section class="project-fields form-flex-wrap"
-data-ng-repeat="project in resume.projects track by $index"
-data-ng-init="$projectIndex = $index">
- <div class="move-section-up-down"><button class="updown-button" type="button" data-ng-click="moveSectionUp('projects')">Move Section Up</button> &nbsp; <button class="updown-button" type="button" data-ng-click="moveSectionDown('projects')">Move Section Down</button></div>
+  data-ng-repeat="project in resume.projects track by $index"
+  data-ng-init="$projectIndex = $index">
+  <div class="move-section-up-down"><button class="updown-button" type="button" data-ng-click="moveSectionUp('projects')">Move Section Up</button> &nbsp; <button class="updown-button" type="button" data-ng-click="moveSectionDown('projects')">Move Section Down</button></div>
   <div class="form-half-width">
     <label for="projectName">Project Name:</label>
     <input type="text" id="projectName{{$projectIndex}}" placeholder="Bear Wranglers Without Borders" data-ng-model="resume.projects[$projectIndex].projectName">
