@@ -8,6 +8,7 @@ module.exports = function(app) {
         $scope.currentUser = res.data.username;
       }, function(err) {
         console.log(err);
+        $location.path('/signin');
       });
     };
 
