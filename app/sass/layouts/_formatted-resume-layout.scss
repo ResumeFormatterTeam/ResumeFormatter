@@ -11,92 +11,103 @@
   padding: 2cm;
   box-shadow: 5px 5px 2px #bbb;
 
-time {
-  font-style: italic;
-  color: #00527F;
-}
-
-.skills ul li {
-  list-style-type: none;
-}
-ul.contact-info {
-  font-family: Arial;
-  text-align: right;
-  list-style-type: none;
-}
-ul.contact-info b {
-  font-weight: 600;
-  color: #00527F;
-}
-ul.contact-info a {
-  font-size: .925em;
-  text-decoration: none;
-}
-ul.contact-info a:hover {
-  font-size: .925em;
-  text-decoration: underline;
-}
-a.company-website {
-  color: #0C3D7F;
-  text-decoration: none;
-}
-a:hover.company-website {
-  color: #007BBF;
-  text-decoration: underline;
-}
-
-  h2 {
-    font-weight: bold;
-    padding-left: .5em;
-    margin-top: .4em;
-    margin-bottom: 0.3em;
-    background-color: #eee;
+  time {
+    font-style: italic;
+    color: #00527F;
   }
-  .personal-info h1 {
-    margin-top: 0;
+
+  .skills ul li {
+    list-style-type: none;
   }
-.skills ul {
-  margin-top: .3em;
-  margin-bottom: .3em;
+  ul.contact-info {
+    font-family: Arial;
+    text-align: right;
+    list-style-type: none;
+  }
+  ul.contact-info b {
+    font-weight: 600;
+    color: #00527F;
+  }
+  ul.contact-info a {
+    font-size: .925em;
+    text-decoration: none;
+  }
+  ul.contact-info a:hover {
+    font-size: .925em;
+    text-decoration: underline;
+  }
+  a.company-website {
+    color: #0C3D7F;
+    text-decoration: none;
+  }
+  a:hover.company-website {
+    color: #007BBF;
+    text-decoration: underline;
+  }
+
+    h2 {
+      font-weight: bold;
+      padding-left: .5em;
+      margin-top: .4em;
+      margin-bottom: 0.3em;
+      background-color: #eee;
+    }
+    .personal-info h1 {
+      margin-top: 0;
+    }
+  .skills ul {
+    margin-top: .3em;
+    margin-bottom: .3em;
+  }
+
+  .projects,
+  .experience,
+  .education {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .personal-info {
+    margin-top: .5em;
+    display: flex;
+    justify-content: space-between;
+    height: 7em;
+  }
+
+  .project-headline,
+  .employer-headline {
+    display: flex;
+  }
+  .project-headline *,
+  .employer-headline * {
+    height: 28px;
+    line-height: 28px;
+    margin: 0;
+  }
+  .project-headline > *:nth-child(n+2),
+  .employer-headline > *:nth-child(n+2) {
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 1px solid #002940;
+
+  }
+
+  ul.contact-info {
+    margin-top: 0.5em;
+    margin-left: 0;
+    padding-left: 1em;
+    text-indent: -1em;
+
+  }
+
 }
 
-.projects,
-.experience,
-.education {
-  padding-left: 1em;
-  padding-right: 1em;
-}
-.personal-info {
-  margin-top: .5em;
-  display: flex;
-  justify-content: space-between;
-  height: 7em;
-}
-
-.project-headline,
-.employer-headline {
-  display: flex;
-}
-.project-headline *,
-.employer-headline * {
-  height: 28px;
-  line-height: 28px;
-  margin: 0;
-}
-.project-headline > *:nth-child(n+2),
-.employer-headline > *:nth-child(n+2) {
-  margin-left: 1em;
-  padding-left: 1em;
-  border-left: 1px solid #002940;
-
-}
-
-ul.contact-info {
-  margin-top: 0.5em;
-  margin-left: 0;
-  padding-left: 1em;
-  text-indent: -1em;
-
-}
-
+// for removing page borders in printing
+@media print {
+  .formatted-resume {
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 1cm;
+    min-height: 0;
+  }
 }
