@@ -3,9 +3,9 @@ module.exports = function(app) {
     $scope.resumes = [];
     $scope.errors = [];
     $scope.resume = currentResume();
-    // $scope.savedResume = {};
-
-    //need to set default fields?
+    var defaults = {};
+    $scope.newResume = angular.copy($scope.defaults);
+    var resumeResource = crudResource('resumes');
 
     $scope.adjustLayoutWidth = function() {
     if ($scope.formAndResume) {
@@ -14,11 +14,6 @@ module.exports = function(app) {
       $scope.layoutWidth = 'full-width-centered-layout';
       }
     }
-
-
-    var defaults = {};
-    $scope.newResume = angular.copy($scope.defaults);
-    var resumeResource = crudResource('resumes');
 
     // displays all resumes in database
     $scope.getAll = function() {
@@ -99,7 +94,8 @@ module.exports = function(app) {
           projectBulletPoint: ['']
       });
     };
-        $scope.addAnotherJob = function() {
+
+    $scope.addAnotherJob = function() {
       $scope.resume.experience.push({
           companyName: '',
           jobTitle: '',
@@ -110,19 +106,23 @@ module.exports = function(app) {
           jobBulletPoint: ['']
       });
     };
-    $scope.addProjectBullet = function(project) {
-      project.projectBulletPoint.push("");
-    }
-    $scope.addJobBullet = function(job) {
-      job.jobBulletPoint.push("");
-    }
-    $scope.removeBullet = function(bulletPointList, bullet) {
-      bulletPointList.splice(bulletPointList.indexOf(bullet), 1);
-    }
 
     $scope.addAnotherInstitution = function() {
       $scope.resume.education.push({});
     };
+
+    $scope.addProjectBullet = function(project) {
+      project.projectBulletPoint.push("");
+    }
+
+    $scope.addJobBullet = function(job) {
+      job.jobBulletPoint.push("");
+    }
+
+    $scope.removeBullet = function(bulletPointList, bullet) {
+      bulletPointList.splice(bulletPointList.indexOf(bullet), 1);
+    }
+
 
     $scope.printResume = function(divId) {
       var printContent = document.getElementById(divId).innerHTML;

@@ -1,10 +1,14 @@
- <div class="form-full-width">
-  <div class="move-section-up-down"><button class="updown-button" type="button" data-ng-click="moveSectionUp('skills')">Move Section Up</button> &nbsp; <button class="updown-button" type="button" data-ng-click="moveSectionDown('skills')">Move Section Down</button></div>
-        <label for="proficientSkills">Proficient Skils (Comma Separated)</label>
-        <input type="text" id="proficientSkills" placeholder="Mountaineering, Trapping Bears, Wrangling Bears" data-ng-model="resume.proficientSkills">
-      </div>
-      <div class="form-full-width">
-        <label for="growingSkills">Growing Skills (Comma Separated)</label>
-        <input type="growingSkills"  placeholder="Space Travel, Hyena Wrangling, Underwater Lion Taming" data-ng-model="resume.growingSkills">
-      </div>
-  </div>
+<article class="form-full-width">
+  <section class="move-section-up-down">
+    <button class="updown-button" type="button" data-ng-click="moveSectionUp('skills')">Move Section Up</button> &nbsp;
+    <button class="updown-button" type="button" data-ng-click="moveSectionDown('skills')">Move Section Down</button>
+  </section>
+  <section class="form-full-width">
+    <label for="proficientSkills">Proficient Skils (Comma Separated)</label>
+    <input type="text" id="proficientSkills" placeholder="Mountaineering, Trapping Bears, Wrangling Bears" data-ng-model="resume.proficientSkills">
+  </section>
+  <section class="form-full-width">
+    <label for="growingSkills">Growing Skills (Comma Separated)</label>
+    <input type="growingSkills"  placeholder="Space Travel, Hyena Wrangling, Underwater Lion Taming" data-ng-model="resume.growingSkills">
+  </section>
+</article>
