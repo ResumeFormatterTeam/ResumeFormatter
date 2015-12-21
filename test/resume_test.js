@@ -35,13 +35,24 @@ describe('All routes on the resume app', function() {
   });
   describe('authorization routes', function(done){
 
-    it('should have created a user with a the post request above', function(done){
+    it('should have created a user with a post request', function(done){
         User.findOne({'basic.username': 'JimmyMontana'}, function(err, user){
           expect(user).to.not.eql(null);
           expect(user.username).to.eql('JimmyMontana');
           done();
         });
     });
+    it('should have created a new blank resume for a new user', function(done) {
+       User.findOne({'basic.username': 'JimmyMontana'}, function(err, user){
+          expect(user).to.not.eql(null);
+          expect(user.username).to.eql('JimmyMontana');
+          Resume.findOne({'userId': user._id}, function(err, resume){
+            expect(resume).to.not.eql(null);
+            expect(resume.userId).to.eql(user._id.toString());
+             done();
+          })
+        });
+    })
   });
   it('should be able to log in with an existing username', function(done){
       chai.request('http://localhost:3000')

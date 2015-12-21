@@ -4,6 +4,7 @@ var handleError = require(__dirname + '/../lib/handleError');
 var basicHttp = require(__dirname + '/../lib/basic_http_auth');
 var eatAuth = require(__dirname + '/../lib/eat_auth');
 var User = require(__dirname + '/../models/user');
+var Resume = require(__dirname + '/../models/resume');
 var usersRouter = module.exports = exports = express.Router();
 
 usersRouter.post('/signup', jsonParser, function(req, res) {
@@ -17,6 +18,12 @@ usersRouter.post('/signup', jsonParser, function(req, res) {
       console.log('The username "' + user.basic.username + '" already exists.');
       return handleError(err, res);
     }
+
+    var newResume = new Resume();
+    newResume.userId = data._id;
+    newResume.save(function(err, data) {
+      if (err) return handleError(err, res);
+    });
 
     data.generateToken(function(err, token) {
       res.json({token: token});
