@@ -26,7 +26,7 @@ data-ng-init="$jobIndex = $index">
       <li data-ng-repeat="bullet in resume.experience[$jobIndex].jobBulletPoint track by $index">
         <input type="text" id="projectBulletPoint{{$index}}" data-ng-model="resume.experience[$jobIndex].jobBulletPoint[$index]">
         <button class="remove-bullet-button" type="button" data-ng-click="removeBullet(resume.experience[$jobIndex].jobBulletPoint, bullet)">
-          <i class="fa fa-minus-circle"></i>
+          <em class="fa fa-minus-circle"></em>
         </button>
       </li>
       <li>

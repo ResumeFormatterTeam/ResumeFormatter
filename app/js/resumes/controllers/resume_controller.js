@@ -115,6 +115,10 @@ module.exports = function(app) {
       });
     };
 
+    $scope.addAnotherInstitution = function() {
+      $scope.resume.education.push({});
+    };
+
     $scope.addProjectBullet = function(project) {
       project.projectBulletPoint.push("");
     }
@@ -127,9 +131,6 @@ module.exports = function(app) {
       bulletPointList.splice(bulletPointList.indexOf(bullet), 1);
     }
 
-    $scope.addAnotherInstitution = function() {
-      $scope.resume.education.push({});
-    };
 
     $scope.printResume = function(divId) {
       var printContent = document.getElementById(divId).innerHTML;
