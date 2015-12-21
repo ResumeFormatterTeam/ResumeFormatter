@@ -53,6 +53,16 @@ module.exports = function(app) {
         if (err) return err;
 
         $scope.resumes = data;
+        $scope.resume = data[0];
+        if ($scope.resume.projects.length === 0){
+          $scope.addAnotherProject();
+        }
+        if ($scope.resume.experience.length === 0){
+          $scope.addAnotherJob();
+        }
+        if ($scope.resume.education.length === 0){
+          $scope.addAnotherInstitution();
+        }
       })
     };
 
@@ -127,6 +137,7 @@ module.exports = function(app) {
       popup.document.write('<html><head><link rel="stylesheet" type="text/css" href="application.css" /></head><body onload="window.print()">' + printContent + '<script src="bundle.js"></script></html>');
       popup.document.close();
     }
+    $scope.getAll();
 
   }]);
 };
