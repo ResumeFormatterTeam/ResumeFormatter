@@ -1,5 +1,6 @@
 module.exports = function(app) {
-  require('./../../../../lib/sweetalert.min.js');
+  require('sweetAlert');
+  // require('./../../../../node_modules/sweetalert/dist/sweetalert.min.js');
 
   app.controller('SigninController', ['$scope', '$http', '$location', '$base64', '$cookies', function($scope, $http, $location, $base64, $cookies) {
     $scope.headingText = 'Sign In to Existing User';

@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  require('./../../../../lib/sweetalert.min.js');
+  require('sweetAlert');
 
   app.controller('SignupController', ['$scope', '$http', '$cookies', '$location', function($scope, $http, $cookies, $location) {
     $scope.headingText = 'Create an Account';
