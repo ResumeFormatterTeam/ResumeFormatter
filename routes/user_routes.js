@@ -20,8 +20,7 @@ usersRouter.post('/signup', jsonParser, function(req, res) {
     }
 
     var newResume = new Resume();
-    newResume.user = data._id;
-    newResume.username = data.username;
+    newResume.userId = data._id;
     newResume.save(function(err, data) {
       if (err) return handleError(err, res);
     });
