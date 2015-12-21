@@ -1,76 +1,107 @@
-<div class="formatted-resume">
-<section class="personal-info" itemscope itemtype="http://schema.org/Person">
-  <section class="headline">
-  <h1 itemprop="name">{{resume.firstName}} {{resume.lastName}}</h1>
-  <h3 itemprop="jobTitle">{{resume.jobTitle}}</h3>
-  </section>
-  <ul class="contact-info">
-    <li data-ng-show="resume.phoneNumber">
-      <b>Phone:</b> <a href="{{resume.phoneNumber}}" itemprop="telephone">{{resume.phoneNumber}}</a>
-    </li>
-
-    <li data-ng-show="resume.website">
-      <b>Website:</b> <a href="{{resume.website}}" itemprop="url" title="Personal website">{{resume.website}}</a>
-    </li>
-
-    <li data-ng-show="resume.email">
-      <b>Email:</b> <a href="mailto:{{resume.email}}" itemprop="email" title="Email">{{resume.email}}</a>
-    </li>
-
-    <li data-ng-show="resume.linkedIn"><b>LinkedIn:</b>
-      <a href="{{resume.linkedIn}}" title="LinkedIn profile">{{resume.linkedIn}}</a>
-    </li>
-  </ul>
-</section>
-
-<section class="profile">
-  <p data-ng-show="resume.personalSummary"><strong>Summary:</strong> {{resume.personalSummary}}</p>
-</section>
-
-<h2 class="{{flexOrder.skills.class}}" data-ng-show="resume.proficientSkills || resume.growingSkills">Skills</h2>
-<section class="skills {{flexOrder.skills.class}}" data-ng-show="resume.proficientSkills || resume.growingSkills">
-  <ul>
-    <li data-ng-show="resume.proficientSkills">
-      <strong>Proficient:</strong>{{resume.proficientSkills}}
-    </li>
-    <li data-ng-show="resume.growingSkills">
-      <strong>Developing:</strong> {{resume.growingSkills}}
-    </li>
-  </ul>
-</section>
-
-<h2 class="{{flexOrder.projects.class}}" data-ng-show="resume.projects[0].projectName || resume.projects[0].projectUrl || resume.projects[0].projectCity || resume.projects[0].projectDate || resume.projects[0].projectBulletPoint[0]">Projects</h2>
-<section data-ng-show="resume.projects[0].projectName || resume.projects[0].projectUrl || resume.projects[0].projectCity || resume.projects[0].projectDate || resume.projects[0].projectBulletPoint[0]" class="projects {{flexOrder.projects.class}}" data-ng-repeat="project in resume.projects">
-  <section class="project-headline">
-    <h3 data-ng-show="project.projectName">{{project.projectName}}</h3>
-    <a data-ng-show="project.projectUrl" href="{resume.projects.projectUrl}}">{{project.projectUrl}}</a>
-    <strong data-ng-show="project.projectCity">{{project.projectCity}}</strong>
-    <time data-ng-show="project.projectDate" datetime="2015-11">{{project.projectDate}}</time>
-  </section>
-  <ul class="responsibilities" data-ng-show="resume.projects[0].projectBulletPoint[0]">
-    <li data-ng-show="bullet" data-ng-repeat="bullet in project.projectBulletPoint">{{bullet}}</li>
-  </ul>
-</section>
-
-<h2 class="{{flexOrder.experience.class}}" data-ng-show="resume.experience[0].companyName || resume.experience[0].companyUrl || resume.experience[0].companyCity || resume.experience[0].jobTitle || resume.experience[0].startDate || resume.experience[0].endDate || resume.experience[0].jobBulletPoint[0]">Experience</h2>
-<section data-ng-show="resume.experience[0].companyName || resume.experience[0].companyUrl || resume.experience[0].companyCity || resume.experience[0].jobTitle || resume.experience[0].startDate || resume.experience[0].endDate || resume.experience[0].jobBulletPoint[0]" class="experience {{flexOrder.experience.class}}" data-ng-repeat="job in resume.experience">
-  <section class="employer" itemscope itemtype="https://schema.org/Corporation">
-    <section class="employer-headline">
-      <h3 data-ng-show="job.companyName" itemprop="name"><a class="company-website" itemprop="url" href="{{job.companyUrl}}">{{job.companyName}}</a></h3>
-      <h4 data-ng-show="job.jobTitle">{{job.jobTitle}}</h4>
-      <strong data-ng-show="job.companyCity">{{job.companyCity}}</strong>
-      <section data-ng-show="job.startDate || job.endDate" class="job-duration">
-      <time>{{job.startDate}}</time> - <time>{{job.endDate}}</time>
-      </section>
-    </section>
-    <ul class="responsibilities" data-ng-show="resume.experience[0].jobBulletPoint[0]">
-      <li data-ng-show="bullet" data-ng-repeat="bullet in job.jobBulletPoint">{{bullet}}</li>
+<article class="formatted-resume">
+  <section class="personal-info" itemscope itemtype="http://schema.org/Person">
+    <header class="headline">
+      <h1 itemprop="name">{{resume.firstName}} {{resume.lastName}}</h1>
+      <h3 itemprop="jobTitle">{{resume.jobTitle}}</h3>
+    </header>
+    <ul class="contact-info">
+      <li data-ng-show="resume.phoneNumber">
+        <strong>Phone:</strong>
+        <a href="{{resume.phoneNumber}}" itemprop="telephone">{{resume.phoneNumber}}</a>
+      </li>
+      <li data-ng-show="resume.website">
+        <strong>Website:</strong>
+        <a href="{{resume.website}}" itemprop="url" title="Personal website">{{resume.website}}</a>
+      </li>
+      <li data-ng-show="resume.email">
+        <strong>Email:</strong>
+        <a href="mailto:{{resume.email}}" itemprop="email" title="Email">{{resume.email}}</a>
+      </li>
+      <li data-ng-show="resume.linkedIn">
+        <strong>LinkedIn:</strong>
+        <a href="{{resume.linkedIn}}" title="LinkedIn profile">{{resume.linkedIn}}</a>
+      </li>
     </ul>
   </section>
-</section>
 
-<h2 class="{{flexOrder.education.class}}" data-ng-show="resume.education[0].institutionName || resume.education[0].degree || resume.education[0].major || resume.education[0].minor || resume.education[0].startDate || resume.education[0].endDate">Education</h2>
-<section data-ng-show="resume.education[0].institutionName || resume.education[0].degree || resume.education[0].major || resume.education[0].minor || resume.education[0].startDate || resume.education[0].endDate" class="education {{flexOrder.education.class}}" data-ng-repeat="edu in resume.education">
-  <span itemscope itemtype="https://schema.org/CollegeOrUniversity" itemprop="name"><span itemprop="name">{{edu.institutionName}}</span><span data-ng-show="edu.institutionName">,</span> {{edu.degree}}<span data-ng-show="edu.degree">,</span> {{edu.major}}<span data-ng-show="edu.major">,</span> {{edu.minor}} <span data-ng-show="edu.startDate || edu.endDate">(<time>{{edu.startDate}}</time> - <time>{{edu.endDate}}</time>)</span></span>
-</section>
-</div>
+  <section class="profile">
+    <p data-ng-show="resume.personalSummary">
+      <strong>Summary:</strong>
+      {{resume.personalSummary}}
+    </p>
+  </section>
+
+  <h2 class="{{flexOrder.skills.class}}" data-ng-show="resume.proficientSkills || resume.growingSkills">Skills</h2>
+  <section class="skills {{flexOrder.skills.class}}" data-ng-show="resume.proficientSkills || resume.growingSkills">
+    <ul>
+      <li data-ng-show="resume.proficientSkills">
+        <strong>Proficient:</strong>
+        {{resume.proficientSkills}}
+      </li>
+      <li data-ng-show="resume.growingSkills">
+        <strong>Developing:</strong>
+        {{resume.growingSkills}}
+      </li>
+    </ul>
+  </section>
+
+  <h2 class="{{flexOrder.projects.class}}" data-ng-show="resume.projects[0].projectName || resume.projects[0].projectUrl || resume.projects[0].projectCity || resume.projects[0].projectDate || resume.projects[0].projectBulletPoint[0]">
+    Projects
+  </h2>
+  <section data-ng-show="resume.projects[0].projectName || resume.projects[0].projectUrl || resume.projects[0].projectCity || resume.projects[0].projectDate || resume.projects[0].projectBulletPoint[0]" class="projects {{flexOrder.projects.class}}" data-ng-repeat="project in resume.projects">
+    <section class="project-headline">
+      <h3 data-ng-show="project.projectName">{{project.projectName}}</h3>
+      <a data-ng-show="project.projectUrl" href="{resume.projects.projectUrl}}">{{project.projectUrl}}</a>
+      <strong data-ng-show="project.projectCity">{{project.projectCity}}</strong>
+      <time data-ng-show="project.projectDate" datetime="2015-11">{{project.projectDate}}</time>
+    </section>
+    <ul class="responsibilities" data-ng-show="resume.projects[0].projectBulletPoint[0]">
+      <li data-ng-show="bullet" data-ng-repeat="bullet in project.projectBulletPoint">{{bullet}}</li>
+    </ul>
+  </section>
+
+  <h2 class="{{flexOrder.experience.class}}" data-ng-show="resume.experience[0].companyName || resume.experience[0].companyUrl || resume.experience[0].companyCity || resume.experience[0].jobTitle || resume.experience[0].startDate || resume.experience[0].endDate || resume.experience[0].jobBulletPoint[0]">
+    Experience
+  </h2>
+  <section data-ng-show="resume.experience[0].companyName || resume.experience[0].companyUrl || resume.experience[0].companyCity || resume.experience[0].jobTitle || resume.experience[0].startDate || resume.experience[0].endDate || resume.experience[0].jobBulletPoint[0]" class="experience {{flexOrder.experience.class}}" data-ng-repeat="job in resume.experience">
+    <section class="employer" itemscope itemtype="https://schema.org/Corporation">
+      <section class="employer-headline">
+        <h3 data-ng-show="job.companyName" itemprop="name">
+          <a class="company-website" itemprop="url" href="{{job.companyUrl}}">{{job.companyName}}</a>
+        </h3>
+        <h4 data-ng-show="job.jobTitle">{{job.jobTitle}}</h4>
+        <strong data-ng-show="job.companyCity">{{job.companyCity}}</strong>
+        <section data-ng-show="job.startDate || job.endDate" class="job-duration">
+          <time>{{job.startDate}}</time>
+          -
+          <time>{{job.endDate}}</time>
+        </section>
+      </section>
+      <ul class="responsibilities" data-ng-show="resume.experience[0].jobBulletPoint[0]">
+        <li data-ng-show="bullet" data-ng-repeat="bullet in job.jobBulletPoint">{{bullet}}</li>
+      </ul>
+    </section>
+  </section>
+
+  <h2 class="{{flexOrder.education.class}}" data-ng-show="resume.education[0].institutionName || resume.education[0].degree || resume.education[0].major || resume.education[0].minor || resume.education[0].startDate || resume.education[0].endDate">
+    Education
+  </h2>
+  <section data-ng-show="resume.education[0].institutionName || resume.education[0].degree || resume.education[0].major || resume.education[0].minor || resume.education[0].startDate || resume.education[0].endDate" class="education {{flexOrder.education.class}}" data-ng-repeat="edu in resume.education">
+    <span itemscope itemtype="https://schema.org/CollegeOrUniversity" itemprop="name">
+      <span itemprop="name">{{edu.institutionName}}</span>
+      <span data-ng-show="edu.institutionName">,</span>
+      {{edu.degree}}
+      <span data-ng-show="edu.degree">,</span>
+      {{edu.major}}
+      <span data-ng-show="edu.major">,</span>
+      {{edu.minor}}
+      <span data-ng-show="edu.startDate || edu.endDate">
+        (
+        <time>{{edu.startDate}}</time>
+         -
+        <time>{{edu.endDate}}</time>
+        )
+      </span>
+    </span>
+  </section>
+</article>
