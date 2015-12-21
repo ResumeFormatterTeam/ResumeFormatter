@@ -47,7 +47,7 @@ a:hover.company-website {
 
   h2 {
     font-weight: bold;
-    padding-left: .5em;
+    padding: .2em 0 .3em .5em;
     margin-top: .4em;
     margin-bottom: 0.3em;
     background-color: #eee;
@@ -79,8 +79,8 @@ a:hover.company-website {
 }
 .project-headline *,
 .employer-headline * {
-  height: 28px;
-  line-height: 28px;
+  height: 100%;
+  line-height: 100%;
   margin: 0;
 }
 .project-headline > *:nth-child(n+2),
