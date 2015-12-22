@@ -53,20 +53,18 @@ describe('auth', function() {
       });
   });
 
-  describe('user already in database', function() {
+  describe('with user already in database', function() {
     before(function(done) {
       var user = new User();
       user.username = 'newusertest';
       user.basic.username = 'newusertest';
-      user.hashPW('test1', function(err, res) {
+      user.hashPW('test1');
+      user.save(function(err, data) {
         if (err) throw err;
-        user.save(function(err, data) {
+        user.generateToken(function(err, token) {
           if (err) throw err;
-          user.generateToken(function(err, token) {
-            if (err) throw err;
-            this.token = token;
-            done();
-          }.bind(this));
+          this.token = token;
+          done();
         }.bind(this));
       }.bind(this));
     });
