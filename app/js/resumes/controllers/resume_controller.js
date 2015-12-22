@@ -55,9 +55,13 @@ module.exports = function(app) {
      $scope.screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
       if ($scope.screenWidth < 1401){
         $scope.formAndResume = false;
+        $scope.resumeOnly = false;
+        $scope.formOnly = true;
         $scope.adjustLayoutWidth();
       } else {
         $scope.formAndResume = true;
+        $scope.resumeOnly = false;
+        $scope.formOnly = false;
         $scope.adjustLayoutWidth();
       }
       })
