@@ -11,6 +11,7 @@ module.exports = function(app) {
           $cookies.put('token', res.data.token);
           $scope.getUser();
           $location.path('/resumes');
+          sweetAlert("Yay!", "Account created.", "success");
         }, function(err) {
           sweetAlert("Oops...", "Try again! Username already exists.", "error");
           console.log(err.data);

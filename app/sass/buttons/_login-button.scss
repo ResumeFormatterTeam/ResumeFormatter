@@ -1,0 +1,10 @@
+.login-button {
+    padding: .4em;
+    font-family: Lato;
+    margin: 1em;
+    margin-bottom: 1em;
+    border: none;
+    box-shadow: 3px 3px 1px darken($primary2, 7%);
+    color: $light-background;
+    background-color: $primary2;
+}

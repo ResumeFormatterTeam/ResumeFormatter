@@ -1,4 +1,4 @@
-<header class="top-interface-buttons">
+<section class="top-interface-buttons">
   <strong class="display-options-header">Display Options</strong>
   <section class="display-button-container">
     <button class="display-control-button" type="button" data-ng-click="formOnly=true;resumeOnly=false;formAndResume=false; adjustLayoutWidth()">Form Only</button>
@@ -7,7 +7,7 @@
     <button class="save-info-button" type="submit" data-ng-click="update(resume)">Save Resume!</button>
   </section>
   <button data-ng-if="resumeOnly===true" ng-click="printResume('printable');">Print Resume!</button>
-</header>
+</section>
 
 <main class="main-content" id="printable">
   <article class="form-blocks" data-ng-if="formOnly===true || formAndResume===true">

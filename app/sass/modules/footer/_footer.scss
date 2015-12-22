@@ -1,0 +1,26 @@
+.main-footer {
+  font-family: Lato;
+  color: $light-background;
+  display: flex;
+  justify-content: center;
+  height: 4em;
+  background-color: $primary2;
+  .footer-container{
+  display: flex;
+  flex-direction: column;
+  .copyright {
+    margin-top: .5em;
+  }
+  .github-link {
+    border:none;
+    text-align: center;
+    background-color: $primary2;
+    font-size: 1.424em;
+    color: $primary1;
+
+    &:hover {
+      color: $background;
+    }
+  }
+  }
+}
