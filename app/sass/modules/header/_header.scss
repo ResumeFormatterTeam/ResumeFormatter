@@ -1,6 +1,50 @@
+.main-header {
+   background-color: $primary2;
+   display: flex;
+   justify-content: space-between;
 .logo {
   font-family: 'Permanent Marker', cursive;
-  padding: .5em;
-  background-color: $primary2;
+  margin: 0;
+  padding: .5em 0 .5em .5em;
   color: $primary1;
+  display: inline;
+}
+
+.logout {
+  font-family: 'Lato', sans-serif;
+  color: $light-background;
+  margin: .5em 1em 0 0;
+}
+
+@media (max-width: 436px) {
+.logo  {
+  text-align: center;
+  padding-bottom: 0;
+  margin-bottom: .2em;
+}
+.logout {
+  text-align: center;
+  margin:auto;
+  padding-bottom: .3em;
+}
+}
+
+}
+
+@media (max-width: 915px) {
+.main-header {
+   background-color: $primary2;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+.logo  {
+  text-align: center;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.logout {
+  padding: 0 0 .5em 0;
+  text-align: center;
+}
+}
 }

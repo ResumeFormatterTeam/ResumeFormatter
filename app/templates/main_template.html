@@ -3,7 +3,7 @@
   <section class="display-button-container">
     <button class="display-control-button" type="button" data-ng-click="formOnly=true;resumeOnly=false;formAndResume=false; adjustLayoutWidth()">Form Only</button>
     <button class="display-control-button" type="button" data-ng-click="formOnly=false;resumeOnly=true;formAndResume=false; adjustLayoutWidth()">Resume Only</button>
-    <button class="display-control-button" type="button" data-ng-click="formOnly=false;resumeOnly=false;formAndResume=true; adjustLayoutWidth()">Form & Resume</button>
+    <button class="display-control-button form-and-resume-button" type="button" data-ng-click="formOnly=false;resumeOnly=false;formAndResume=true; adjustLayoutWidth()">Form & Resume</button>
     <button class="save-info-button" type="submit" data-ng-click="update(resume)">Save Resume!</button>
   </section>
   <button data-ng-if="resumeOnly===true" ng-click="printResume('printable');">Print Resume!</button>
