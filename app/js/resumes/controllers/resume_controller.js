@@ -36,39 +36,39 @@ module.exports = function(app) {
         }
 
         //This sets up the flexOrder of the scope, the order of the items in the resume. Do projects come first? Etc.
-       $scope.flexOrder = {
+        $scope.flexOrder = {
         //This method gets the order of the blocks from the DB.
-        skills: {number: $scope.resume.skillOrder},
-        projects: {number: $scope.resume.projectsOrder},
-        experience: {number: $scope.resume.experienceOrder},
-        education: {number: $scope.resume.educationOrder}
-      };
-      for (var block in $scope.flexOrder) {
-        //This assigns a css class for every block in the flex order.
-        if ($scope.flexOrder[block].number === 0) {
-          $scope.flexOrder[block].class = 'flex-order-first';
+          skills: {number: $scope.resume.skillOrder},
+          projects: {number: $scope.resume.projectsOrder},
+          experience: {number: $scope.resume.experienceOrder},
+          education: {number: $scope.resume.educationOrder}
+        };
+        for (var block in $scope.flexOrder) {
+          //This assigns a css class for every block in the flex order.
+          if ($scope.flexOrder[block].number === 0) {
+            $scope.flexOrder[block].class = 'flex-order-first';
+          }
+          if ($scope.flexOrder[block].number === 1) {
+            $scope.flexOrder[block].class = 'flex-order-second';
+          }
+          if ($scope.flexOrder[block].number === 2) {
+             $scope.flexOrder[block].class = 'flex-order-third';
+          }
+          if ($scope.flexOrder[block].number === 3) {
+            $scope.flexOrder[block].class = 'flex-order-fourth';
+          }
         }
-        if ($scope.flexOrder[block].number === 1) {
-          $scope.flexOrder[block].class = 'flex-order-second';
-        }
-        if ($scope.flexOrder[block].number === 2) {
-           $scope.flexOrder[block].class = 'flex-order-third';
-        }
-        if ($scope.flexOrder[block].number === 3) {
-          $scope.flexOrder[block].class = 'flex-order-fourth';
-        }
-      }
 
-      //This method sets the layout for the first time the page loads.
-      //It uses the screenWidth and if it's over 1401 pixles, then we see both the form and resume
-     $scope.screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-      if ($scope.screenWidth < 1401){
-        $scope.formAndResume = false;
-        $scope.adjustLayoutWidth();
-      } else {
-        $scope.formAndResume = true;
-        $scope.adjustLayoutWidth();
-      }
+        //This method sets the layout for the first time the page loads.
+        //It uses the screenWidth and if it's over 1401 pixles, then we see both the form and resume
+        $scope.screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        if ($scope.screenWidth < 1401){
+          $scope.formAndResume = false;
+          $scope.adjustLayoutWidth();
+        } else {
+          $scope.formAndResume = true;
+          $scope.adjustLayoutWidth();
+        }
       });
     };
 
@@ -104,23 +104,23 @@ module.exports = function(app) {
     //adds another Project, Job or Institution block to form
     $scope.addAnotherProject = function() {
       $scope.resume.projects.push({
-          projectName: '',
-          projectUrl: '',
-          projectCity: '',
-          projectDate:'',
-          projectBulletPoint: ['']
+        projectName: '',
+        projectUrl: '',
+        projectCity: '',
+        projectDate:'',
+        projectBulletPoint: ['']
       });
     };
 
     $scope.addAnotherJob = function() {
       $scope.resume.experience.push({
-          companyName: '',
-          jobTitle: '',
-          companyUrl: '',
-          companyCity: '',
-          startDate: '',
-          endDate: '',
-          jobBulletPoint: ['']
+        companyName: '',
+        jobTitle: '',
+        companyUrl: '',
+        companyCity: '',
+        startDate: '',
+        endDate: '',
+        jobBulletPoint: ['']
       });
     };
 
@@ -140,7 +140,6 @@ module.exports = function(app) {
       bulletPointList.splice(bulletPointList.indexOf(bullet), 1);
     };
 
-
     $scope.printResume = function(divId) {
       var printContent = document.getElementById(divId).innerHTML;
       var popup = window.open('', '_myResume', 'top=100,left=100,width=960,height=400');
@@ -151,10 +150,10 @@ module.exports = function(app) {
     $scope.getAll();
 
     $scope.updateFlexOrder = function() {
-        $scope.resume.skillOrder = $scope.flexOrder.skills.number;
-        $scope.resume.projectsOrder = $scope.flexOrder.projects.number;
-        $scope.resume.experienceOrder = $scope.flexOrder.experience.number;
-        $scope.resume.educationOrder = $scope.flexOrder.education.number;
+      $scope.resume.skillOrder = $scope.flexOrder.skills.number;
+      $scope.resume.projectsOrder = $scope.flexOrder.projects.number;
+      $scope.resume.experienceOrder = $scope.flexOrder.experience.number;
+      $scope.resume.educationOrder = $scope.flexOrder.education.number;
     };
 
     $scope.moveSectionDown = function(formBlock) {
@@ -168,6 +167,7 @@ module.exports = function(app) {
         }
       }
     };
+
     $scope.moveSectionUp = function(formBlock) {
       var currentBlockObject = $scope.flexOrder[formBlock];
       for (var block in $scope.flexOrder){
