@@ -17,7 +17,7 @@ describe('Resume Controller', function() {
     var controller = $ControllerConstructor('ResumeController', {$scope:$scope});
     expect(typeof $scope).toBe('object');
     expect(typeof controller).toBe ('object');
-    expect(Array.isArray($scope.resume)).toBe(true);
+    expect(Array.isArray($scope.resumes)).toBe(true);
   });
 
   describe('REST request functions', function() {
@@ -33,7 +33,7 @@ describe('Resume Controller', function() {
     });
 
     it('should make a get request when getAll() is called', function() {
-      $httpBackend.expectGET('/api/resume').respond(200, [{_id: 1, firstName: 'Goldilocks', lastName: '3Bears'}]);
+      $httpBackend.expectGET('/api/resumes').respond(200, [{_id: 1, firstName: 'Goldilocks', lastName: '3Bears'}]);
       $scope.getAll();
       $httpBackend.flush();
       expect($scope.resume[0].firstName).toBe('Goldilocks');
@@ -42,7 +42,7 @@ describe('Resume Controller', function() {
 
     it('should be able to create a new resume', function() {
       //might need full schema when posting
-      $httpBackend.expectPOST('/api/resume', {firstName: 'Teddy', lastName: 'Bear'}).respond(200, {firstName: 'Theodore', lastName: 'Roosevelt'});
+      $httpBackend.expectPOST('/api/resumes', {firstName: 'Teddy', lastName: 'Bear'}).respond(200, {firstName: 'Theodore', lastName: 'Roosevelt'});
       expect($scope.resume.length).toBe(0);
       expect($scope.newResume).toEqual($scope.defaults);
       $scope.newResume.firstName = 'Panda';
@@ -54,7 +54,7 @@ describe('Resume Controller', function() {
 
     it('should be able to update a resume', function() {
       var resume = { firstName: 'Grizz', lastName: 'Bear',_id: 1, editing: true};
-      $httpBackend.expectPUT('/api/resume/1', resume).respond(200);
+      $httpBackend.expectPUT('/api/resumes/1', resume).respond(200);
       $scope.updateResume(resume);
       $httpBackend.flush();
       expect(resume.editing).toBe(false);
@@ -63,7 +63,7 @@ describe('Resume Controller', function() {
     it('should be able to delete a resume', function() {
       var resume = { firstName: 'Polar', lastName: 'Bear',_id: 1, editing: true};
       $scope.resume = [resume];
-      $httpBackend.expectDELETE('/api/resume/1', resume).respond(200);
+      $httpBackend.expectDELETE('/api/resumes/1', resume).respond(200);
       expect($scope.resume.length).toBe(0);
       expect($scope.resume.indexOf(resume)).toBe(-1);
     });
