@@ -32,26 +32,26 @@ module.exports = function(app) {
           $scope.addAnotherInstitution();
         }
 
-       $scope.flexOrder = {
-        skills: {number: $scope.resume.skillOrder},
-        projects: {number: $scope.resume.projectsOrder},
-        experience: {number: $scope.resume.experienceOrder},
-        education: {number: $scope.resume.educationOrder}
-      }
-      for (block in $scope.flexOrder) {
-        if ($scope.flexOrder[block].number === 0) {
-          $scope.flexOrder[block].class = 'flex-order-first';
+        $scope.flexOrder = {
+          skills: {number: $scope.resume.skillOrder},
+          projects: {number: $scope.resume.projectsOrder},
+          experience: {number: $scope.resume.experienceOrder},
+          education: {number: $scope.resume.educationOrder}
         }
-        if ($scope.flexOrder[block].number === 1) {
-          $scope.flexOrder[block].class = 'flex-order-second';
+        for (block in $scope.flexOrder) {
+          if ($scope.flexOrder[block].number === 0) {
+            $scope.flexOrder[block].class = 'flex-order-first';
+          }
+          if ($scope.flexOrder[block].number === 1) {
+            $scope.flexOrder[block].class = 'flex-order-second';
+          }
+          if ($scope.flexOrder[block].number === 2) {
+             $scope.flexOrder[block].class = 'flex-order-third';
+          }
+          if ($scope.flexOrder[block].number === 3) {
+            $scope.flexOrder[block].class = 'flex-order-fourth';
+          }
         }
-        if ($scope.flexOrder[block].number === 2) {
-           $scope.flexOrder[block].class = 'flex-order-third';
-        }
-        if ($scope.flexOrder[block].number === 3) {
-          $scope.flexOrder[block].class = 'flex-order-fourth';
-        }
-      }
       })
     };
 
@@ -87,23 +87,23 @@ module.exports = function(app) {
     //adds another Project, Job or Institution block to form
     $scope.addAnotherProject = function() {
       $scope.resume.projects.push({
-          projectName: '',
-          projectUrl: '',
-          projectCity: '',
-          projectDate:'',
-          projectBulletPoint: ['']
+        projectName: '',
+        projectUrl: '',
+        projectCity: '',
+        projectDate:'',
+        projectBulletPoint: ['']
       });
     };
 
     $scope.addAnotherJob = function() {
       $scope.resume.experience.push({
-          companyName: '',
-          jobTitle: '',
-          companyUrl: '',
-          companyCity: '',
-          startDate: '',
-          endDate: '',
-          jobBulletPoint: ['']
+        companyName: '',
+        jobTitle: '',
+        companyUrl: '',
+        companyCity: '',
+        startDate: '',
+        endDate: '',
+        jobBulletPoint: ['']
       });
     };
 
@@ -123,7 +123,6 @@ module.exports = function(app) {
       bulletPointList.splice(bulletPointList.indexOf(bullet), 1);
     }
 
-
     $scope.printResume = function(divId) {
       var printContent = document.getElementById(divId).innerHTML;
       var popup = window.open('', '_myResume', 'top=100,left=100,width=960,height=400');
@@ -134,11 +133,10 @@ module.exports = function(app) {
     $scope.getAll();
 
     $scope.updateFlexOrder = function() {
-        $scope.resume.skillOrder = $scope.flexOrder.skills.number;
-        $scope.resume.projectsOrder = $scope.flexOrder.projects.number;
-        $scope.resume.experienceOrder = $scope.flexOrder.experience.number;
-        $scope.resume.educationOrder = $scope.flexOrder.education.number;
-
+      $scope.resume.skillOrder = $scope.flexOrder.skills.number;
+      $scope.resume.projectsOrder = $scope.flexOrder.projects.number;
+      $scope.resume.experienceOrder = $scope.flexOrder.experience.number;
+      $scope.resume.educationOrder = $scope.flexOrder.education.number;
     }
 
     $scope.moveSectionDown = function(formBlock) {
@@ -152,6 +150,7 @@ module.exports = function(app) {
         }
       }
     }
+
     $scope.moveSectionUp = function(formBlock) {
       var currentBlockObject = $scope.flexOrder[formBlock];
       for(block in $scope.flexOrder){
