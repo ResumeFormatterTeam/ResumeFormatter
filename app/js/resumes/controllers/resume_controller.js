@@ -52,6 +52,14 @@ module.exports = function(app) {
           $scope.flexOrder[block].class = 'flex-order-fourth';
         }
       }
+     $scope.screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+      if ($scope.screenWidth < 1401){
+        $scope.formAndResume = false;
+        $scope.adjustLayoutWidth();
+      } else {
+        $scope.formAndResume = true;
+        $scope.adjustLayoutWidth();
+      }
       })
     };
 
@@ -132,6 +140,7 @@ module.exports = function(app) {
       popup.document.close();
     }
     $scope.getAll();
+
 
     $scope.updateFlexOrder = function() {
         $scope.resume.skillOrder = $scope.flexOrder.skills.number;
