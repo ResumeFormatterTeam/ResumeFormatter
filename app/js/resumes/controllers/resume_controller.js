@@ -13,7 +13,7 @@ module.exports = function(app) {
     } else {
       $scope.layoutWidth = 'full-width-centered-layout';
       }
-    }
+    };
 
     // displays all resumes in database
     $scope.getAll = function() {
@@ -42,8 +42,8 @@ module.exports = function(app) {
         projects: {number: $scope.resume.projectsOrder},
         experience: {number: $scope.resume.experienceOrder},
         education: {number: $scope.resume.educationOrder}
-      }
-      for (block in $scope.flexOrder) {
+      };
+      for (var block in $scope.flexOrder) {
         //This assigns a css class for every block in the flex order.
         if ($scope.flexOrder[block].number === 0) {
           $scope.flexOrder[block].class = 'flex-order-first';
@@ -69,7 +69,7 @@ module.exports = function(app) {
         $scope.formAndResume = true;
         $scope.adjustLayoutWidth();
       }
-      })
+      });
     };
 
     //adds new resume to database
@@ -130,24 +130,24 @@ module.exports = function(app) {
 
     $scope.addProjectBullet = function(project) {
       project.projectBulletPoint.push("");
-    }
+    };
 
     $scope.addJobBullet = function(job) {
       job.jobBulletPoint.push("");
-    }
+    };
 
     $scope.removeBullet = function(bulletPointList, bullet) {
       bulletPointList.splice(bulletPointList.indexOf(bullet), 1);
-    }
+    };
 
 
     $scope.printResume = function(divId) {
       var printContent = document.getElementById(divId).innerHTML;
       var popup = window.open('', '_myResume', 'top=100,left=100,width=960,height=400');
-      popup.document.open()
+      popup.document.open();
       popup.document.write('<html><head><link rel="stylesheet" type="text/css" href="application.css" /></head><body onload="window.print()">' + printContent + '<script src="bundle.js"></script></html>');
       popup.document.close();
-    }
+    };
     $scope.getAll();
 
     $scope.updateFlexOrder = function() {
@@ -155,31 +155,30 @@ module.exports = function(app) {
         $scope.resume.projectsOrder = $scope.flexOrder.projects.number;
         $scope.resume.experienceOrder = $scope.flexOrder.experience.number;
         $scope.resume.educationOrder = $scope.flexOrder.education.number;
-
-    }
+    };
 
     $scope.moveSectionDown = function(formBlock) {
       var currentBlockObject = $scope.flexOrder[formBlock];
-      for(block in $scope.flexOrder){
+      for (var block in $scope.flexOrder){
         if ($scope.flexOrder[block].number === currentBlockObject.number + 1){
           $scope.flexOrder[formBlock] = $scope.flexOrder[block];
           $scope.flexOrder[block] = currentBlockObject;
           $scope.updateFlexOrder();
-          return
+          return;
         }
       }
-    }
+    };
     $scope.moveSectionUp = function(formBlock) {
       var currentBlockObject = $scope.flexOrder[formBlock];
-      for(block in $scope.flexOrder){
+      for (var block in $scope.flexOrder){
         if ($scope.flexOrder[block].number === currentBlockObject.number - 1){
           $scope.flexOrder[formBlock] = $scope.flexOrder[block];
           $scope.flexOrder[block] = currentBlockObject;
           $scope.updateFlexOrder();
-          return
+          return;
         }
       }
-    }
+    };
 
   }]);
 };
