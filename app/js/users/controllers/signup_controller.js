@@ -5,7 +5,6 @@ module.exports = function(app) {
     $scope.buttonText = 'Sign Up';
 
     $scope.authenticate = function(user) {
-      sweetAlert("Yay!", "Account created.", "success");
       $http.post('/api/signup', user)
         .then(function(res){
           $cookies.put('token', res.data.token);

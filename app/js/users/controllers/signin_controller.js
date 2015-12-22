@@ -5,7 +5,6 @@ module.exports = function(app) {
     $scope.buttonText = 'Sign In';
 
     $scope.authenticate = function(user) {
-      sweetAlert("Yay!", "You are now signed in.", "success");
       $http({
         method: 'GET',
         url: '/api/signin',
