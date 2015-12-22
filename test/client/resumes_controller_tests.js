@@ -36,8 +36,10 @@ describe('Resume Controller', function() {
       $httpBackend.expectGET('/api/resumes').respond(200, [{_id: 1, firstName: 'Goldilocks', lastName: '3Bears'}]);
       $scope.getAll();
       $httpBackend.flush();
-      expect($scope.resume[0].firstName).toBe('Goldilocks');
-      expect($scope.resume[0].lastName).toBe('3Bears');
+      console.log('resume' + $scope.resume);
+      console.log($scope.resumes);
+      expect($scope.resumes[0].firstName).toBe('Goldilocks');
+      expect($scope.resumes[0].lastName).toBe('3Bears');
     });
 
     it('should be able to create a new resume', function() {
