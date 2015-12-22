@@ -58,17 +58,20 @@ module.exports = function(app) {
             $scope.flexOrder[block].class = 'flex-order-fourth';
           }
         }
-
-        //This method sets the layout for the first time the page loads.
-        //It uses the screenWidth and if it's over 1401 pixles, then we see both the form and resume
-        $scope.screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        if ($scope.screenWidth < 1401){
-          $scope.formAndResume = false;
-          $scope.adjustLayoutWidth();
-        } else {
-          $scope.formAndResume = true;
-          $scope.adjustLayoutWidth();
-        }
+      //This method sets the layout for the first time the page loads.
+      //It uses the screenWidth and if it's over 1401 pixles, then we see both the form and resume
+     $scope.screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+      if ($scope.screenWidth < 1401){
+        $scope.formAndResume = false;
+        $scope.resumeOnly = false;
+        $scope.formOnly = true;
+        $scope.adjustLayoutWidth();
+      } else {
+        $scope.formAndResume = true;
+        $scope.resumeOnly = false;
+        $scope.formOnly = false;
+        $scope.adjustLayoutWidth();
+      }
       });
     };
 
