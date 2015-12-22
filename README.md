@@ -8,7 +8,7 @@ A Tool To Help Create Clean and Reader Friendly Resumes
 User has the option to either Sign up for a new account or Sign in to an existing account. The Switch button will toggle back and forth between Sign in and Sign up.
   * Sign Up - If username already exists, creation of new account will fail.
   * Sign In - If username and/or password is incorrect, sign in will fail.
-  * Future Feature - User will be notified of reason for failed sign in/sign up attempts.
+  * User will be notified via pop up alert of Sign up/Sign in success or error.
   * Future Feature - User will have the option to sign in with LinkedIn account.
 
 ##Step 2:
