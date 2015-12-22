@@ -5,7 +5,6 @@ module.exports = function(app) {
     $scope.buttonText = 'Sign In';
 
     $scope.authenticate = function(user) {
-      sweetAlert("Yay!", "You are now signed in.", "success");
       $http({
         method: 'GET',
         url: '/api/signin',
@@ -17,6 +16,7 @@ module.exports = function(app) {
         $cookies.put('token', res.data.token);
         $scope.getUser(); //from auth controller
         $location.path('/resumes');
+        sweetAlert("Yay!", "You are now signed in.", "success");
       }, function(err) {
         sweetAlert("Oops...", "Incorrect username and/or password!", "error");
         console.log(err);
