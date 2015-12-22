@@ -19,9 +19,12 @@ module.exports = function(app) {
     $scope.getAll = function() {
       resumeResource.getAll(function (err, data) {
         if (err) return err;
-
+        //Get all the resumes for the user
         $scope.resumes = data;
+        //Choose the first resume from all of the resumes for that user (one empty one is already created)
         $scope.resume = data[0];
+
+        //An empty resume has no projects or experience or education, so here, we're populating it with objects
         if ($scope.resume.projects.length === 0){
           $scope.addAnotherProject();
         }
@@ -32,13 +35,16 @@ module.exports = function(app) {
           $scope.addAnotherInstitution();
         }
 
+        //This sets up the flexOrder of the scope, the order of the items in the resume. Do projects come first? Etc.
        $scope.flexOrder = {
+        //This method gets the order of the blocks from the DB.
         skills: {number: $scope.resume.skillOrder},
         projects: {number: $scope.resume.projectsOrder},
         experience: {number: $scope.resume.experienceOrder},
         education: {number: $scope.resume.educationOrder}
       }
       for (block in $scope.flexOrder) {
+        //This assigns a css class for every block in the flex order.
         if ($scope.flexOrder[block].number === 0) {
           $scope.flexOrder[block].class = 'flex-order-first';
         }
@@ -52,6 +58,9 @@ module.exports = function(app) {
           $scope.flexOrder[block].class = 'flex-order-fourth';
         }
       }
+
+      //This method sets the layout for the first time the page loads.
+      //It uses the screenWidth and if it's over 1401 pixles, then we see both the form and resume
      $scope.screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
       if ($scope.screenWidth < 1401){
         $scope.formAndResume = false;
@@ -140,7 +149,6 @@ module.exports = function(app) {
       popup.document.close();
     }
     $scope.getAll();
-
 
     $scope.updateFlexOrder = function() {
         $scope.resume.skillOrder = $scope.flexOrder.skills.number;
