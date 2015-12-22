@@ -62,7 +62,7 @@ gulp.task('jshint', function() {
 });
 
 gulp.task('mocha', ['jshint'], function() {
-  return gulp.src('./test/resume_test.js', {read:false})
+  return gulp.src('./test/server_test.js', {read:false})
   .pipe(mocha({reporter:'spec'}));
 });
 

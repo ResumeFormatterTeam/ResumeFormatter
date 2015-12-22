@@ -1,7 +1,7 @@
 require(__dirname + '/../../app/js/entry');
 require('angular-mocks');
 
-describe('Resumes Controller', function() {
+describe('Resume Controller', function() {
   var $httpBackend;
   var $ControllerConstructor;
   var $scope;
@@ -14,7 +14,7 @@ describe('Resumes Controller', function() {
   }));
 
   it('should be able to create a controller', function() {
-    var controller = $ControllerConstructor('ResumesController', {$scope:$scope});
+    var controller = $ControllerConstructor('ResumeController', {$scope:$scope});
     expect(typeof $scope).toBe('object');
     expect(typeof controller).toBe ('object');
     expect(Array.isArray($scope.resume)).toBe(true);
@@ -24,7 +24,7 @@ describe('Resumes Controller', function() {
     beforeEach(angular.mock.inject(function(_$httpBackend_, $rootScope) {
       $httpBackend = _$httpBackend_;
       $scope = $rootScope.$new();
-      $ControllerConstructor('ResumesController', {$scope: $scope});
+      $ControllerConstructor('ResumeController', {$scope: $scope});
     }));
 
     afterEach(function() {
