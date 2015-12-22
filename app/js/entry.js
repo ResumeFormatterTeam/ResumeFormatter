@@ -28,5 +28,5 @@ resumeApp.config(['$routeProvider', function($route) {
   })
   .otherwise({
     redirectTo: '/signup'
-  })
+  });
 }]);
