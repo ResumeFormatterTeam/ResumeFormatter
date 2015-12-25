@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  app.controller('ResumeController', ['$scope', '$http', 'crudResource', 'currentResume', function($scope, $http, crudResource, currentResume){
+  app.controller('ResumeController', ['$scope', '$http', '$cookies', '$location', 'crudResource', 'currentResume', function($scope, $http, $cookies, $location, crudResource, currentResume){
     $scope.resumes = [];
     $scope.errors = [];
     $scope.resume = currentResume();
@@ -7,14 +7,59 @@ module.exports = function(app) {
     $scope.newResume = angular.copy($scope.defaults);
     var resumeResource = crudResource('resumes');
 
-    $scope.adjustLayoutWidth = function() {
-    if ($scope.formAndResume) {
-      $scope.layoutWidth = 'form-and-resume-layout';
-    } else {
-      $scope.layoutWidth = 'full-width-centered-layout';
-      }
-    };
+    $scope.init = function () {
+     $scope.intializeLayout();
 
+     if (!$scope.currentUser) {
+         $cookies.put('resume', $scope.resume);
+         $scope.updateFlexOrder();
+         return;
+      }
+      $scope.getAll();
+    }
+
+    $scope.intializeLayout = function() {
+      //This method sets the layout for the first time the page loads.
+      //It uses the screenWidth and if it's over 1401 pixles, then we see both the form and resume
+     $scope.screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+      if ($scope.screenWidth < 1401){
+        $scope.formAndResume = false;
+        $scope.resumeOnly = false;
+        $scope.formOnly = true;
+        $scope.adjustLayoutWidth();
+      } else {
+        $scope.formAndResume = true;
+        $scope.resumeOnly = false;
+        $scope.formOnly = false;
+        $scope.adjustLayoutWidth();
+      }
+    }
+
+    $scope.initializeFlexOrder = function() {
+      //This sets up the flexOrder of the scope, the order of the items in the resume. Do projects come first? Etc.
+      $scope.flexOrder = {
+      //This method gets the order of the blocks from the DB.
+        skills: {number: $scope.resume.skillOrder},
+        projects: {number: $scope.resume.projectsOrder},
+        experience: {number: $scope.resume.experienceOrder},
+        education: {number: $scope.resume.educationOrder}
+      };
+      for (var block in $scope.flexOrder) {
+        //This assigns a css class for every block in the flex order.
+        if ($scope.flexOrder[block].number === 0) {
+          $scope.flexOrder[block].class = 'flex-order-first';
+        }
+        if ($scope.flexOrder[block].number === 1) {
+          $scope.flexOrder[block].class = 'flex-order-second';
+        }
+        if ($scope.flexOrder[block].number === 2) {
+           $scope.flexOrder[block].class = 'flex-order-third';
+        }
+        if ($scope.flexOrder[block].number === 3) {
+          $scope.flexOrder[block].class = 'flex-order-fourth';
+        }
+      }
+    }
     // displays all resumes in database
     $scope.getAll = function() {
       resumeResource.getAll(function (err, data) {
@@ -35,43 +80,7 @@ module.exports = function(app) {
           $scope.addAnotherInstitution();
         }
 
-        //This sets up the flexOrder of the scope, the order of the items in the resume. Do projects come first? Etc.
-        $scope.flexOrder = {
-        //This method gets the order of the blocks from the DB.
-          skills: {number: $scope.resume.skillOrder},
-          projects: {number: $scope.resume.projectsOrder},
-          experience: {number: $scope.resume.experienceOrder},
-          education: {number: $scope.resume.educationOrder}
-        };
-        for (var block in $scope.flexOrder) {
-          //This assigns a css class for every block in the flex order.
-          if ($scope.flexOrder[block].number === 0) {
-            $scope.flexOrder[block].class = 'flex-order-first';
-          }
-          if ($scope.flexOrder[block].number === 1) {
-            $scope.flexOrder[block].class = 'flex-order-second';
-          }
-          if ($scope.flexOrder[block].number === 2) {
-             $scope.flexOrder[block].class = 'flex-order-third';
-          }
-          if ($scope.flexOrder[block].number === 3) {
-            $scope.flexOrder[block].class = 'flex-order-fourth';
-          }
-        }
-      //This method sets the layout for the first time the page loads.
-      //It uses the screenWidth and if it's over 1401 pixles, then we see both the form and resume
-     $scope.screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-      if ($scope.screenWidth < 1401){
-        $scope.formAndResume = false;
-        $scope.resumeOnly = false;
-        $scope.formOnly = true;
-        $scope.adjustLayoutWidth();
-      } else {
-        $scope.formAndResume = true;
-        $scope.resumeOnly = false;
-        $scope.formOnly = false;
-        $scope.adjustLayoutWidth();
-      }
+        $scope.initializeFlexOrder();
       });
     };
 
@@ -89,6 +98,9 @@ module.exports = function(app) {
     //updates existing resume in database
     $scope.update = function(resumes) {
       resumes.editing = false;
+      if (!$scope.currentUser) {
+        $location.path('/signup');
+      }
       resumeResource.update(resumes, function (err, data) {
         if (err) return err;
       });
@@ -104,6 +116,13 @@ module.exports = function(app) {
       });
     };
 
+    $scope.adjustLayoutWidth = function() {
+    if ($scope.formAndResume) {
+      $scope.layoutWidth = 'form-and-resume-layout';
+    } else {
+      $scope.layoutWidth = 'full-width-centered-layout';
+      }
+    };
     //adds another Project, Job or Institution block to form
     $scope.addAnotherProject = function() {
       $scope.resume.projects.push({
@@ -150,7 +169,6 @@ module.exports = function(app) {
       popup.document.write('<html><head><link rel="stylesheet" type="text/css" href="application.css" /></head><body onload="window.print()">' + printContent + '<script src="bundle.js"></script></html>');
       popup.document.close();
     };
-    $scope.getAll();
 
     $scope.updateFlexOrder = function() {
       $scope.resume.skillOrder = $scope.flexOrder.skills.number;
@@ -182,6 +200,8 @@ module.exports = function(app) {
         }
       }
     };
+
+    $scope.init();
 
   }]);
 };

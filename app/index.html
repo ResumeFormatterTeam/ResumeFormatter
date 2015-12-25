@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="application.css">
     <title>The Amazing Resume Formatter</title>
   </head>
-  <body data-ng-app="resumeApp" data-ng-controller="AuthController" data-ng-init="getUser()">
+  <body data-ng-app="resumeApp" data-ng-controller="AuthController">
     <header class="main-header">
       <h1 class="logo">The Amazing Resume Formatter!</h1>
       <div class="logout" data-ng-if="currentUser">Logged in as {{currentUser}} <a href data-ng-click="logOut()">Log Out</a> </div>

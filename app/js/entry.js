@@ -14,6 +14,10 @@ require('./users/users')(resumeApp);
 
 resumeApp.config(['$routeProvider', function($route) {
   $route
+  .when('/', {
+    templateUrl: 'templates/main_template.html',
+    controller: 'ResumeController'
+  })
   .when('/resumes', {
     templateUrl: 'templates/main_template.html',
     controller: 'ResumeController'
