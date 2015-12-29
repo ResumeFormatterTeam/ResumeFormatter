@@ -12,7 +12,7 @@ require('./services/services')(resumeApp);
 require('./resumes/resumes')(resumeApp);
 require('./users/users')(resumeApp);
 
-resumeApp.config(['$routeProvider', function($route) {
+resumeApp.config(['$routeProvider', '$locationProvider', function($route, $location) {
   $route
   .when('/', {
     templateUrl: 'templates/main_template.html',
@@ -31,6 +31,8 @@ resumeApp.config(['$routeProvider', function($route) {
     controller: 'SigninController'
   })
   .otherwise({
-    redirectTo: '/signup'
+    redirectTo: '/'
   });
+
+  $location.html5Mode(true);
 }]);

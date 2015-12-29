@@ -1,6 +1,6 @@
 module.exports = function(app) {
   require('./../../../../node_modules/sweetalert/dist/sweetalert.min.js');
-  app.controller('SigninController', ['$scope', '$http', '$location', '$base64', '$cookies', function($scope, $http, $location, $base64, $cookies) {
+  app.controller('SigninController', ['$scope', '$http', '$location', '$route', '$base64', '$cookies', function($scope, $http, $location, $route, $base64, $cookies) {
     $scope.headingText = 'Sign In to Existing User';
     $scope.buttonText = 'Sign In';
 
@@ -15,7 +15,7 @@ module.exports = function(app) {
       .then(function(res) {
         $cookies.put('token', res.data.token);
         $scope.getUser(); //from auth controller
-        $location.path('/resumes');
+        //$location.path('/resumes');
         sweetAlert("Yay!", "You are now signed in.", "success");
       }, function(err) {
         sweetAlert("Oops...", "Incorrect username and/or password!", "error");

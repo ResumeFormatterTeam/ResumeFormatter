@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
      <meta name="description" content="The resume formatter makes it easy to create clean, readable and editable resumes. Just start typing and watch your resume come to life!">
      <meta name="google-site-verification" content="3ddTVIR06NnoQlEF70Y4daGqsJgut-WrRl1FCZDTvW8" />
+     <base href="/">
     <link rel="stylesheet" href="application.css">
     <title>The Amazing Resume Formatter</title>
   </head>
-  <body data-ng-app="resumeApp" data-ng-controller="AuthController">
+  <body data-ng-app="resumeApp" data-ng-controller="AuthController" data-ng-init="getUser()">
     <header class="main-header">
       <h1 class="logo">The Amazing Resume Formatter!</h1>
-      <div class="logout" data-ng-if="currentUser">Logged in as {{currentUser}} <a href data-ng-click="logOut()">Log Out</a> </div>
+      <div class="logout" data-ng-if="currentUser">Logged in as {{currentUser}} <a href data-ng-click="logOut()">Log Out</a></div>
+      <div class="login-signup" data-ng-if="!currentUser">
+        <a ng-href="signin">Sign In</a> |
+        <a ng-href="signup">Sign Up</a>
+      </div>
     </header>
     <main>
       <article data-ng-view></article>

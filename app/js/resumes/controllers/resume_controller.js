@@ -1,18 +1,18 @@
 module.exports = function(app) {
+  require('./../../../../node_modules/sweetalert/dist/sweetalert.min.js');
   app.controller('ResumeController', ['$scope', '$http', '$cookies', '$location', 'crudResource', 'currentResume', function($scope, $http, $cookies, $location, crudResource, currentResume){
-    $scope.resumes = [];
-    $scope.errors = [];
-    $scope.resume = currentResume();
-    var defaults = {};
-    $scope.newResume = angular.copy($scope.defaults);
     var resumeResource = crudResource('resumes');
 
     $scope.init = function () {
+      $scope.resumes = [];
+      $scope.errors = [];
+      $scope.resume = currentResume();
+      var defaults = {};
+    $scope.newResume = angular.copy($scope.defaults);
      $scope.intializeLayout();
-
-     if (!$scope.currentUser) {
-         $cookies.put('resume', $scope.resume);
-         $scope.updateFlexOrder();
+     if ($scope.currentUser === undefined || $scope.currentUser === null) {
+         $cookies.putObject('resume', $scope.resume);
+         //$scope.updateFlexOrder();
          return;
       }
       $scope.getAll();
@@ -98,11 +98,31 @@ module.exports = function(app) {
     //updates existing resume in database
     $scope.update = function(resumes) {
       resumes.editing = false;
-      if (!$scope.currentUser) {
-        $location.path('/signup');
+      $cookies.putObject('resume', $scope.resume);
+      if ($scope.currentUser === undefined || $scope.currentUser === null) {
+        sweetAlert({
+          title: "Create an account?",
+          text: "Please sign up to save your resume.",
+          showCancelButton: true,
+          cancelButtonText: "No thanks, maybe later",
+          closeOnCancel: true,
+          showConfirmButton: true,
+          confirmButtonText: "Sign Me Up!",
+          closeOnConfirm: true
+        },
+        function(isConfirm){
+          if (isConfirm) {
+            $location.path('/signup');
+            $scope.$apply();
+          } else {
+            return;
+          }
+        });
+        return;
       }
       resumeResource.update(resumes, function (err, data) {
         if (err) return err;
+        sweetAlert("Resume Saved!", "(Feels good, doesn't it?", "success");
       });
     };
 
