@@ -122,7 +122,7 @@ module.exports = function(app) {
       }
       resumeResource.update(resumes, function (err, data) {
         if (err) return err;
-        sweetAlert("Resume Saved!", "(Feels good, doesn't it?", "success");
+        sweetAlert("Resume Saved!", "Feels good, doesn't it?", "success");
       });
     };
 
