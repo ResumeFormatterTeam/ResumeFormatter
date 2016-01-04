@@ -12,7 +12,7 @@ require('./services/services')(resumeApp);
 require('./resumes/resumes')(resumeApp);
 require('./users/users')(resumeApp);
 
-resumeApp.config(['$routeProvider', '$locationProvider', function($route, $location) {
+resumeApp.config(['$routeProvider', function($route) {
   $route
   .when('/', {
     templateUrl: 'templates/main_template.html',
@@ -33,6 +33,4 @@ resumeApp.config(['$routeProvider', '$locationProvider', function($route, $locat
   .otherwise({
     redirectTo: '/'
   });
-
-  $location.html5Mode(true);
 }]);
