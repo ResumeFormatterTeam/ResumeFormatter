@@ -28,7 +28,11 @@ module.exports = function(app) {
           endDate: '',
           jobBulletPoint: ['']
         }],
-        education:[{}]
+        education:[{}],
+        skillOrder: 0,
+        projectsOrder: 1,
+        experienceOrder: 2,
+        educationOrder: 3
       };
       return resume;
     };
