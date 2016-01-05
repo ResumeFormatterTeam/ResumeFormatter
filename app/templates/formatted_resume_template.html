@@ -7,7 +7,7 @@
     <ul class="contact-info">
       <li data-ng-show="resume.phoneNumber">
         <strong>Phone:</strong>
-        <a href="{{resume.phoneNumber}}" itemprop="telephone">{{resume.phoneNumber}}</a>
+        <a href="tel:{{resume.phoneNumber}}" itemprop="telephone">{{resume.phoneNumber}}</a>
       </li>
       <li data-ng-show="resume.website">
         <strong>Website:</strong>
@@ -88,13 +88,10 @@
   </h2>
   <section data-ng-show="resume.education[0].institutionName || resume.education[0].degree || resume.education[0].major || resume.education[0].minor || resume.education[0].startDate || resume.education[0].endDate" class="education {{flexOrder.education.class}}" data-ng-repeat="edu in resume.education">
     <span itemscope itemtype="https://schema.org/CollegeOrUniversity" itemprop="name">
-      <span itemprop="name">{{edu.institutionName}}</span>
-      <span data-ng-show="edu.institutionName">,</span>
-      {{edu.degree}}
-      <span data-ng-show="edu.degree">,</span>
-      {{edu.major}}
-      <span data-ng-show="edu.major">,</span>
-      {{edu.minor}}
+      <span itemprop="name" data-ng-show="edu.institutionName"><strong>{{edu.institutionName}}</strong>,</span>
+      <span data-ng-show="edu.degree">{{edu.degree}},</span>
+      <span data-ng-show="edu.major">{{edu.major}},</span>
+      <span data-ng-show="edu.minor">{{edu.minor}},</span>
       <span data-ng-show="edu.startDate || edu.endDate">
         (
         <time>{{edu.startDate}}</time>

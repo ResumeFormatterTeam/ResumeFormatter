@@ -1,0 +1,119 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/kenjicrosland/.nvm/versions/node/v4.2.3/bin/node',
+1 verbose cli   '/Users/kenjicrosland/.nvm/versions/node/v4.2.3/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'angular-location',
+1 verbose cli   '--save' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.3
+4 verbose install initial load of /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/package.json
+5 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/angular/package.json
+6 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/angular-animate/package.json
+7 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/angular-base64/package.json
+8 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/angular-cookies/package.json
+9 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/angular-mocks/package.json
+10 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/angular-route/package.json
+11 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/bcrypt/package.json
+12 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/body-parser/package.json
+13 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/chai/package.json
+14 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/chai-http/package.json
+15 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/eat/package.json
+16 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/express/package.json
+17 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/gulp/package.json
+18 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/gulp-concat-css/package.json
+19 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/gulp-jshint/package.json
+20 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/gulp-minify-css/package.json
+21 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/gulp-mocha/package.json
+22 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/gulp-sass/package.json
+23 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/gulp-sourcemaps/package.json
+24 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/gulp-watch/package.json
+25 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/jasmine-core/package.json
+26 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/jshint/package.json
+27 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/karma/package.json
+28 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/karma-jasmine/package.json
+29 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/karma-phantomjs-launcher/package.json
+30 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/mocha/package.json
+31 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/mongoose/package.json
+32 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/mongoose-unique-validator/package.json
+33 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/phantomjs/package.json
+34 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/sweetalert/package.json
+35 verbose installManyTop reading scoped package data from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/node_modules/webpack-stream/package.json
+36 info package.json eat@0.1.1 No license field.
+37 info package.json chai-http@1.0.0 No license field.
+38 info package.json gulp-concat-css@2.2.0 No license field.
+39 verbose readDependencies loading dependencies from /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter/package.json
+40 silly cache add args [ 'angular-location', null ]
+41 verbose cache add spec angular-location
+42 silly cache add parsed spec Result {
+42 silly cache add   raw: 'angular-location',
+42 silly cache add   scope: null,
+42 silly cache add   name: 'angular-location',
+42 silly cache add   rawSpec: '',
+42 silly cache add   spec: '*',
+42 silly cache add   type: 'range' }
+43 silly addNamed angular-location@*
+44 verbose addNamed "*" is a valid semver range for angular-location
+45 silly addNameRange { name: 'angular-location', range: '*', hasData: false }
+46 silly mapToRegistry name angular-location
+47 silly mapToRegistry using default registry
+48 silly mapToRegistry registry https://registry.npmjs.org/
+49 silly mapToRegistry uri https://registry.npmjs.org/angular-location
+50 verbose addNameRange registry:https://registry.npmjs.org/angular-location not in flight; fetching
+51 verbose request uri https://registry.npmjs.org/angular-location
+52 verbose request no auth needed
+53 info attempt registry request try #1 at 10:29:40 AM
+54 verbose request using bearer token for auth
+55 verbose request id 73a1a4620525e734
+56 http request GET https://registry.npmjs.org/angular-location
+57 http 404 https://registry.npmjs.org/angular-location
+58 verbose headers { 'content-type': 'application/json',
+58 verbose headers   'cache-control': 'max-age=0',
+58 verbose headers   'content-length': '2',
+58 verbose headers   'accept-ranges': 'bytes',
+58 verbose headers   date: 'Tue, 29 Dec 2015 18:29:40 GMT',
+58 verbose headers   via: '1.1 varnish',
+58 verbose headers   connection: 'keep-alive',
+58 verbose headers   'x-served-by': 'cache-lax1421-LAX',
+58 verbose headers   'x-cache': 'MISS',
+58 verbose headers   'x-cache-hits': '0',
+58 verbose headers   'x-timer': 'S1451413780.382096,VS0,VE77' }
+59 silly get cb [ 404,
+59 silly get   { 'content-type': 'application/json',
+59 silly get     'cache-control': 'max-age=0',
+59 silly get     'content-length': '2',
+59 silly get     'accept-ranges': 'bytes',
+59 silly get     date: 'Tue, 29 Dec 2015 18:29:40 GMT',
+59 silly get     via: '1.1 varnish',
+59 silly get     connection: 'keep-alive',
+59 silly get     'x-served-by': 'cache-lax1421-LAX',
+59 silly get     'x-cache': 'MISS',
+59 silly get     'x-cache-hits': '0',
+59 silly get     'x-timer': 'S1451413780.382096,VS0,VE77' } ]
+60 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/angular-location
+60 verbose stack     at makeError (/Users/kenjicrosland/.nvm/versions/node/v4.2.3/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+60 verbose stack     at CachingRegistryClient.<anonymous> (/Users/kenjicrosland/.nvm/versions/node/v4.2.3/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:242:14)
+60 verbose stack     at Request._callback (/Users/kenjicrosland/.nvm/versions/node/v4.2.3/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+60 verbose stack     at Request.self.callback (/Users/kenjicrosland/.nvm/versions/node/v4.2.3/lib/node_modules/npm/node_modules/request/request.js:198:22)
+60 verbose stack     at emitTwo (events.js:87:13)
+60 verbose stack     at Request.emit (events.js:172:7)
+60 verbose stack     at Request.<anonymous> (/Users/kenjicrosland/.nvm/versions/node/v4.2.3/lib/node_modules/npm/node_modules/request/request.js:1063:14)
+60 verbose stack     at emitOne (events.js:82:20)
+60 verbose stack     at Request.emit (events.js:169:7)
+60 verbose stack     at IncomingMessage.<anonymous> (/Users/kenjicrosland/.nvm/versions/node/v4.2.3/lib/node_modules/npm/node_modules/request/request.js:1009:12)
+61 verbose statusCode 404
+62 verbose pkgid angular-location
+63 verbose cwd /Users/kenjicrosland/Desktop/Accelerator/ResumeFormatter
+64 error Darwin 15.0.0
+65 error argv "/Users/kenjicrosland/.nvm/versions/node/v4.2.3/bin/node" "/Users/kenjicrosland/.nvm/versions/node/v4.2.3/bin/npm" "install" "angular-location" "--save"
+66 error node v4.2.3
+67 error npm  v2.14.7
+68 error code E404
+69 error 404 Registry returned 404 for GET on https://registry.npmjs.org/angular-location
+69 error 404
+69 error 404 'angular-location' is not in the npm registry.
+69 error 404 You should bug the author to publish it (or use the name yourself!)
+69 error 404 It was specified as a dependency of 'resume_formatter'
+69 error 404
+69 error 404 Note that you can also install from a
+69 error 404 tarball, folder, http url, or git url.
+70 verbose exit [ 1, true ]
